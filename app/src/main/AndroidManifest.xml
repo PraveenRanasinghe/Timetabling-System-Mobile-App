@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".admin_classroom_operations"></activity>
+        <activity android:name=".add_batch"></activity>
+        <activity android:name=".add_module" />
+        <activity android:name=".add_lecturer" />
+        <activity android:name=".add_student" />
+        <activity android:name=".admin_classroom_operations" />
         <activity android:name=".admin_batch_operations" />
         <activity android:name=".admin_module_operations" />
         <activity android:name=".admin_user_operations" />
