@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="115dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="612dp"
+        android:maxHeight="20px"
+        android:src="@drawable/homeicon" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="207dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="112dp"
+        android:layout_marginEnd="112dp"
+        android:layout_marginBottom="95dp"
+        android:background="@drawable/add_button"
+        android:fontFamily="sans-serif"
+        android:onClick="adminHome"
+        android:text="Login"
+        android:textSize="30sp" />
+
+    <EditText
+        android:id="@+id/editTextTextEmailAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="52dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="46dp"
+        android:layout_marginEnd="43dp"
+        android:layout_marginBottom="330dp"
+        android:drawablePadding="12dp"
+        android:ems="10"
+        android:background="@drawable/custom_input"
+        android:drawableStart="@drawable/email"
+        android:hint="johndoe@gmail.com"
+        android:inputType="textEmailAddress"
+        android:textColorLink="#070606"
+        android:textCursorDrawable="@android:color/background_dark" />
+
+    <EditText
+        android:id="@+id/editTextTextPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="54dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="46dp"
+        android:layout_marginEnd="43dp"
+        android:layout_marginBottom="217dp"
+        android:drawablePadding="12dp"
+        android:ems="10"
+        android:background="@drawable/custom_input"
+        android:drawableStart="@drawable/lock"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:textColorLink="#0C0C0C"
+        android:textCursorDrawable="@android:color/background_dark" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="21dp"
+        android:layout_marginEnd="19dp"
+        android:layout_marginBottom="529dp"
+        android:fontFamily="sans-serif"
+        android:text="Login Here "
+        android:textAlignment="center"
+        android:textColor="#090505"
+        android:textSize="55sp" />
+
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="157dp"
+        android:layout_height="108dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="127dp"
+        android:layout_marginEnd="126dp"
+        android:layout_marginBottom="422dp"
+        android:src="@drawable/login" />
+</RelativeLayout>
