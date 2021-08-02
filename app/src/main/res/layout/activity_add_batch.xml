@@ -47,6 +47,7 @@
         android:layout_marginEnd="43dp"
         android:layout_marginBottom="544dp"
         android:background="@drawable/custom_input"
+        android:id="@+id/batchId"
         android:hint="APIIT_any"
         android:inputType="textUri"
         android:padding="10dp"
@@ -94,6 +95,7 @@
         android:layout_marginBottom="435dp"
         android:background="@drawable/custom_input"
         android:hint="SE batch"
+        android:id="@+id/batchName"
         android:inputType="textUri"
         android:padding="10dp"
         android:textColor="#0C0707" />
@@ -172,6 +174,7 @@
         android:layout_marginEnd="130dp"
         android:layout_marginBottom="103dp"
         android:background="@drawable/add_button"
+        android:onClick="createBatch"
         android:text="Create Batch"
         android:textSize="18sp" />
 
