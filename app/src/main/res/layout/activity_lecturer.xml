@@ -23,11 +23,13 @@
         android:layout_width="wrap_content"
         android:layout_height="80dp"
         android:layout_weight="1"
-        android:text="Welcome Student"
+        android:text="Welcome Lecturer"
         android:textAlignment="center"
         android:textColor="#050303"
         android:textSize="30sp"
         android:textStyle="bold" />
+
+
 
 
 

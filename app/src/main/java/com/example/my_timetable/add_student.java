@@ -19,29 +19,9 @@ public class add_student extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_student);
-
-        drawerLayout=findViewById(R.id.drawerLayout);
-    }
-
-    public void clickMenu(View view){
-        openDrawer(drawerLayout);
-    }
-
-    private static void openDrawer(DrawerLayout drawerLayout) {
-        drawerLayout.openDrawer(GravityCompat.START);
     }
 
 
-
-    public void ClickHome(View view){
-         redirectToActivity(add_student.this,Admin.class);
-    }
-
-    public static void redirectToActivity(Activity activity, Class aClass){
-        Intent intent = new Intent(activity,aClass);
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        activity.startActivity(intent);
-    }
 
     public void addStudents(View view){
         final String studEmail=((EditText)findViewById(R.id.studEmail)).getText().toString().trim();
