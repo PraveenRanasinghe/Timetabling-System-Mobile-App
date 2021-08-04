@@ -7,18 +7,6 @@
     tools:context=".Admin"
     android:background="@drawable/background">
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="93dp"
-        android:layout_height="75dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginEnd="319dp"
-        android:layout_marginBottom="656dp"
-        app:srcCompat="@drawable/settings" />
-
     <TextView
         android:id="@+id/textView2"
         android:layout_width="285dp"
@@ -26,11 +14,11 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="94dp"
-        android:layout_marginEnd="26dp"
-        android:layout_marginBottom="687dp"
+        android:layout_marginStart="62dp"
+        android:layout_marginEnd="62dp"
+        android:layout_marginBottom="765dp"
         android:text="WELCOME ADMIN"
-        android:textAlignment="viewStart"
+        android:textAlignment="center"
         android:textColor="#050303"
         android:textSize="30sp"
         android:textStyle="bold" />
@@ -44,7 +32,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="40dp"
         android:layout_marginEnd="220dp"
-        android:layout_marginBottom="380dp"
+        android:layout_marginBottom="450dp"
         android:background="@drawable/buttons"
         android:onClick="adminUserOperations"
         android:text="User Operations"
@@ -60,7 +48,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="40dp"
         android:layout_marginEnd="220dp"
-        android:layout_marginBottom="190dp"
+        android:layout_marginBottom="250dp"
         android:background="@drawable/buttons"
         android:onClick="adminBatchOperations"
         android:text="Batch Operations"
@@ -75,7 +63,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="222dp"
         android:layout_marginEnd="40dp"
-        android:layout_marginBottom="380dp"
+        android:layout_marginBottom="450dp"
         android:background="@drawable/buttons"
         android:onClick="adminModuleOperations"
         android:text="Module Operations"
@@ -91,7 +79,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="222dp"
         android:layout_marginEnd="40dp"
-        android:layout_marginBottom="190dp"
+        android:layout_marginBottom="250dp"
         android:background="@drawable/buttons"
         android:onClick="adminClassroomOperations"
         android:text="Class-Room Operations"
@@ -104,9 +92,9 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="27dp"
+        android:layout_marginStart="26dp"
         android:layout_marginEnd="26dp"
-        android:layout_marginBottom="562dp"
+        android:layout_marginBottom="673dp"
         app:srcCompat="@drawable/homeicon" />
 
 </RelativeLayout>
