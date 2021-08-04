@@ -14,7 +14,7 @@ public class admin_user_operations extends AppCompatActivity {
         setContentView(R.layout.activity_admin_user_operations);
     }
 
-    public void addStudent(View view){
+    public void addNewStudent(View view){
         startActivity(new Intent(admin_user_operations.this,add_student.class));
     }
 

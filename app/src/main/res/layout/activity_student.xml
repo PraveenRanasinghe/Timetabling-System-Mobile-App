@@ -17,7 +17,8 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:title="'YoYo'" />
+            app:title="Time Tabling Portal"
+            android:background="@drawable/header"/>
 
 
         <TextView

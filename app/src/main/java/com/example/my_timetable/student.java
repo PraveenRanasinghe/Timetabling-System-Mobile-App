@@ -43,9 +43,19 @@ public class student extends AppCompatActivity {
 
                 switch (item.getItemId()) {
                     case R.id.home:
-                        Intent intent = new Intent(student.this, Admin.class);
+                        Intent intent = new Intent(student.this, student.class);
                         startActivity(intent);
                         return true;
+
+                    case R.id.myAccount:
+                        Intent myAccountIntent = new Intent(student.this, my_account.class);
+                        startActivity(myAccountIntent);
+                        return true;
+                    case R.id.WeeklyTimetable:
+                        Intent weeklyTimetable = new Intent(student.this,weekly_timetable.class);
+                        startActivity(weeklyTimetable);
+                        return true;
+
                 }
                 return false;
             }
