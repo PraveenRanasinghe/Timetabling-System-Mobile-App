@@ -4,38 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:context=".my_account"
     android:background="@drawable/background">
 
-
-    <TextView
-        android:id="@+id/textView22"
-        android:layout_width="match_parent"
-        android:layout_height="185dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginTop="0dp"
-        android:layout_marginBottom="661dp"
-        android:background="@drawable/header"
-        android:text="Add New Modules"
-        android:textAlignment="center"
-        android:textColor="#0B0606"
-        android:textSize="36sp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/textView23"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="94dp"
+        android:layout_height="85dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="56dp"
-        android:layout_marginEnd="60dp"
-        android:layout_marginBottom="745dp"
-        android:text="You can Add New Modules to the University Here!"
-        android:textAlignment="center"
-        android:textColor="#0C0707"
-        android:textSize="19sp" />
+        android:layout_marginStart="158dp"
+        android:layout_marginEnd="158dp"
+        android:layout_marginBottom="678dp"
+        app:srcCompat="@drawable/user_square" />
 
     <TextView
         android:id="@+id/textView27"
@@ -44,14 +26,13 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="115dp"
-        android:layout_marginEnd="115dp"
-        android:layout_marginBottom="515dp"
-        android:text="Module Name"
+        android:layout_marginStart="112dp"
+        android:layout_marginEnd="112dp"
+        android:layout_marginBottom="530dp"
+        android:text="First Name"
         android:textAlignment="center"
         android:textColor="#0B0606"
-        android:textSize="20sp"
-        android:textStyle="bold" />
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/textView28"
@@ -60,14 +41,13 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="115dp"
-        android:layout_marginEnd="115dp"
-        android:layout_marginBottom="418dp"
-        android:text="Lecturer Name"
+        android:layout_marginStart="113dp"
+        android:layout_marginEnd="113dp"
+        android:layout_marginBottom="434dp"
+        android:text="Last Name"
         android:textAlignment="center"
         android:textColor="#0B0606"
-        android:textSize="20sp"
-        android:textStyle="bold" />
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/textView29"
@@ -76,14 +56,28 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="115dp"
-        android:layout_marginEnd="115dp"
-        android:layout_marginBottom="319dp"
-        android:text="Assign the Batch"
+        android:layout_marginStart="112dp"
+        android:layout_marginEnd="112dp"
+        android:layout_marginBottom="335dp"
+        android:text="Batch ID"
         android:textAlignment="center"
         android:textColor="#0B0606"
-        android:textSize="20sp"
-        android:textStyle="bold" />
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/textView30"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="112dp"
+        android:layout_marginEnd="112dp"
+        android:layout_marginBottom="236dp"
+        android:text="Contact Number"
+        android:textAlignment="center"
+        android:textColor="#0B0606"
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/textView26"
@@ -92,101 +86,102 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="115dp"
-        android:layout_marginEnd="115dp"
-        android:layout_marginBottom="610dp"
-        android:text="Module ID"
+        android:layout_marginStart="114dp"
+        android:layout_marginEnd="114dp"
+        android:layout_marginBottom="630dp"
+        android:text="Email Address"
         android:textAlignment="center"
         android:textColor="#0B0606"
-        android:textSize="20sp"
-        android:textStyle="bold" />
+        android:textSize="20sp" />
 
     <EditText
-        android:id="@+id/moduleId"
+        android:id="@+id/studEmail"
         android:layout_width="312dp"
-        android:layout_height="45dp"
+        android:layout_height="50dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="62dp"
-        android:layout_marginEnd="62dp"
-        android:layout_marginBottom="566dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="573dp"
         android:background="@drawable/custom_input"
         android:ems="10"
-        android:hint="MOD_any"
+        android:hint="johndoe@gmail.com"
         android:inputType="textEmailAddress" />
 
     <EditText
-        android:id="@+id/moduleName"
+        android:id="@+id/fName"
         android:layout_width="307dp"
-        android:layout_height="45dp"
+        android:layout_height="50dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="62dp"
-        android:layout_marginEnd="62dp"
-        android:layout_marginBottom="468dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="477dp"
         android:background="@drawable/custom_input"
         android:ems="10"
-        android:hint="EEA"
+        android:hint="John"
         android:inputType="textPersonName" />
 
     <EditText
-        android:id="@+id/lecName"
+        android:id="@+id/lName"
         android:layout_width="307dp"
-        android:layout_height="45dp"
+        android:layout_height="50dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="62dp"
-        android:layout_marginEnd="62dp"
-        android:layout_marginBottom="369dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="378dp"
         android:background="@drawable/custom_input"
         android:ems="10"
-        android:hint="Mr. Nipunu Wijesinghe"
+        android:hint="Doe"
         android:inputType="textPersonName" />
 
     <EditText
-        android:id="@+id/batch"
+        android:id="@+id/batchId"
         android:layout_width="307dp"
-        android:layout_height="45dp"
+        android:layout_height="50dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="62dp"
-        android:layout_marginEnd="62dp"
-        android:layout_marginBottom="268dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="279dp"
         android:background="@drawable/custom_input"
         android:ems="10"
         android:hint="APIITCOSE21SE"
         android:inputType="textPersonName" />
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="216dp"
+    <EditText
+        android:id="@+id/contactNum"
+        android:layout_width="307dp"
+        android:layout_height="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="180dp"
+        android:background="@drawable/custom_input"
+        android:ems="10"
+        android:hint="+94715869878"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="139dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="95dp"
-        android:layout_marginEnd="95dp"
-        android:layout_marginBottom="154dp"
-        android:background="@drawable/add_button"
-        android:onClick="addNewModule"
-        android:text="Add Module"
-        android:textSize="19dp"
+        android:layout_marginStart="130dp"
+        android:layout_marginEnd="130dp"
+        android:layout_marginBottom="766dp"
+        android:text="My Info"
+        android:textAlignment="center"
+        android:textColor="#220A0A"
+        android:textSize="30sp"
         android:textStyle="bold" />
-
-    <ImageView
-        android:id="@+id/imageView9"
-        android:layout_width="203dp"
-        android:layout_height="121dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="105dp"
-        android:layout_marginEnd="103dp"
-        android:layout_marginBottom="652dp"
-        android:src="@drawable/module" />
-
 </RelativeLayout>

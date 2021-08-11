@@ -3,8 +3,12 @@ package com.example.my_timetable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 public class add_classroom extends AppCompatActivity {
 
@@ -26,5 +30,26 @@ public class add_classroom extends AppCompatActivity {
 
         ArrayAdapter arrayAdapter1 = new ArrayAdapter(this,R.layout.support_simple_spinner_dropdown_item,items1);
         spinner1.setAdapter(arrayAdapter1);
+    }
+
+    public void addClassRoom(View view){
+        final String classRoomId=((EditText)findViewById(R.id.classRoomId)).getText().toString().trim();
+        final String capacity=((EditText)findViewById(R.id.capacity)).getText().toString().trim();
+        final String  ac=((Spinner)findViewById(R.id.spinner)).toString().trim();
+        final String smartBoard=((Spinner)findViewById(R.id.spinner1)).toString().trim();
+
+        if(classRoomId.isEmpty()){
+            Toast.makeText(getApplicationContext(), "Please fill the ClassRoom Id Field.", Toast.LENGTH_SHORT).show();
+        }
+        else if(capacity.isEmpty()){
+            Toast.makeText(getApplicationContext(), "Please Enter the Capacity of the ClassRoom", Toast.LENGTH_SHORT).show();
+        }
+        else if(ac.isEmpty()){
+            Toast.makeText(getApplicationContext(), "Please Enter the Air Condition Status of the ClassRoom", Toast.LENGTH_SHORT).show();
+        }
+        else if(smartBoard.isEmpty()){
+            Toast.makeText(getApplicationContext(), "Please Enter the SmartBoard Status of the ClassRoom", Toast.LENGTH_SHORT).show();
+        }
+
     }
 }

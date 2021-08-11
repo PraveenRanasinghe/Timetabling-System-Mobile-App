@@ -45,7 +45,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="112dp"
         android:layout_marginEnd="112dp"
-        android:layout_marginBottom="654dp"
+        android:layout_marginBottom="671dp"
         android:text="User Type"
         android:textAlignment="center"
         android:textColor="#0B0606"
@@ -60,7 +60,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="112dp"
         android:layout_marginEnd="112dp"
-        android:layout_marginBottom="453dp"
+        android:layout_marginBottom="470dp"
         android:text="First Name"
         android:textAlignment="center"
         android:textColor="#0B0606"
@@ -75,7 +75,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="113dp"
         android:layout_marginEnd="113dp"
-        android:layout_marginBottom="357dp"
+        android:layout_marginBottom="374dp"
         android:text="Last Name"
         android:textAlignment="center"
         android:textColor="#0B0606"
@@ -90,7 +90,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="112dp"
         android:layout_marginEnd="112dp"
-        android:layout_marginBottom="258dp"
+        android:layout_marginBottom="275dp"
         android:text="Batch ID"
         android:textAlignment="center"
         android:textColor="#0B0606"
@@ -105,7 +105,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="112dp"
         android:layout_marginEnd="112dp"
-        android:layout_marginBottom="159dp"
+        android:layout_marginBottom="176dp"
         android:text="Contact Number"
         android:textAlignment="center"
         android:textColor="#0B0606"
@@ -120,7 +120,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="114dp"
         android:layout_marginEnd="114dp"
-        android:layout_marginBottom="553dp"
+        android:layout_marginBottom="570dp"
         android:text="Email Address"
         android:textAlignment="center"
         android:textColor="#0B0606"
@@ -129,7 +129,7 @@
     <EditText
         android:id="@+id/textView25"
         android:layout_width="308dp"
-        android:layout_height="38dp"
+        android:layout_height="50dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
@@ -142,9 +142,9 @@
         android:textAlignment="textStart" />
 
     <EditText
-        android:id="@+id/editTextTextEmailAddress2"
+        android:id="@+id/studEmail"
         android:layout_width="312dp"
-        android:layout_height="38dp"
+        android:layout_height="50dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
@@ -157,9 +157,9 @@
         android:inputType="textEmailAddress" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName3"
+        android:id="@+id/fName"
         android:layout_width="307dp"
-        android:layout_height="36dp"
+        android:layout_height="50dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
@@ -172,9 +172,9 @@
         android:inputType="textPersonName" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName4"
+        android:id="@+id/lName"
         android:layout_width="307dp"
-        android:layout_height="36dp"
+        android:layout_height="50dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
@@ -187,9 +187,9 @@
         android:inputType="textPersonName" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName5"
+        android:id="@+id/batchId"
         android:layout_width="307dp"
-        android:layout_height="36dp"
+        android:layout_height="50dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
@@ -202,9 +202,9 @@
         android:inputType="textPersonName" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName6"
+        android:id="@+id/contactNum"
         android:layout_width="307dp"
-        android:layout_height="36dp"
+        android:layout_height="50dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
@@ -227,6 +227,7 @@
         android:layout_marginEnd="115dp"
         android:layout_marginBottom="40dp"
         android:background="@drawable/add_button"
+        android:onClick="addStudents"
         android:text="Create Account" />
 
     <ImageView

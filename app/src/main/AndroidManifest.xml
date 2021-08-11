@@ -9,11 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".add_classroom"></activity>
+        <activity android:name=".weekly_timetable"></activity>
+        <activity android:name=".my_account" />
+        <activity android:name=".student_timetable" />
+        <activity android:name=".lecturer" />
+        <activity android:name=".student" />
+        <activity android:name=".add_classroom" />
         <activity android:name=".add_batch" />
         <activity android:name=".add_module" />
         <activity android:name=".add_lecturer" />
-        <activity android:name=".add_student" />
         <activity android:name=".admin_classroom_operations" />
         <activity android:name=".admin_batch_operations" />
         <activity android:name=".admin_module_operations" />

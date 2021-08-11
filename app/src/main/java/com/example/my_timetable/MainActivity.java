@@ -17,4 +17,6 @@ public class MainActivity extends AppCompatActivity {
     public void adminHome(View view){
         startActivity(new Intent(MainActivity.this,Admin.class));
     }
+
+    public void studentHome(View view){startActivity(new Intent(MainActivity.this, student.class));}
 }

@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">My_Timetable</string>
+    <string name="c">Open</string>
+    <string name="o">Open</string>
 </resources>
