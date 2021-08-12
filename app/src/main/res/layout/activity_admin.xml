@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Admin"
-    android:background="@drawable/background">
+    android:background="@drawable/bg2">
 
     <TextView
         android:id="@+id/textView2"
@@ -32,7 +32,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="40dp"
         android:layout_marginEnd="220dp"
-        android:layout_marginBottom="450dp"
+        android:layout_marginBottom="400dp"
         android:background="@drawable/buttons"
         android:onClick="adminUserOperations"
         android:text="User Operations"
@@ -48,7 +48,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="40dp"
         android:layout_marginEnd="220dp"
-        android:layout_marginBottom="250dp"
+        android:layout_marginBottom="200dp"
         android:background="@drawable/buttons"
         android:onClick="adminBatchOperations"
         android:text="Batch Operations"
@@ -63,7 +63,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="222dp"
         android:layout_marginEnd="40dp"
-        android:layout_marginBottom="450dp"
+        android:layout_marginBottom="400dp"
         android:background="@drawable/buttons"
         android:onClick="adminModuleOperations"
         android:text="Module Operations"
@@ -79,7 +79,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="222dp"
         android:layout_marginEnd="40dp"
-        android:layout_marginBottom="250dp"
+        android:layout_marginBottom="200dp"
         android:background="@drawable/buttons"
         android:onClick="adminClassroomOperations"
         android:text="Class-Room Operations"
@@ -90,11 +90,13 @@
         android:layout_width="358dp"
         android:layout_height="87dp"
         android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="26dp"
-        android:layout_marginEnd="26dp"
-        android:layout_marginBottom="673dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="612dp"
         app:srcCompat="@drawable/homeicon" />
 
 </RelativeLayout>

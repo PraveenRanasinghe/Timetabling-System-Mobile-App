@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background">
+    android:background="@drawable/bg2">
 
 
     <TextView
@@ -51,7 +51,7 @@
         android:textAlignment="center"
         android:textColor="#0B0606"
         android:textSize="20sp"
-        android:textStyle="bold" />
+          />
 
     <TextView
         android:id="@+id/textView28"
@@ -67,7 +67,7 @@
         android:textAlignment="center"
         android:textColor="#0B0606"
         android:textSize="20sp"
-        android:textStyle="bold" />
+          />
 
     <TextView
         android:id="@+id/textView29"
@@ -83,7 +83,7 @@
         android:textAlignment="center"
         android:textColor="#0B0606"
         android:textSize="20sp"
-        android:textStyle="bold" />
+          />
 
     <TextView
         android:id="@+id/textView26"
@@ -99,7 +99,7 @@
         android:textAlignment="center"
         android:textColor="#0B0606"
         android:textSize="20sp"
-        android:textStyle="bold" />
+          />
 
     <EditText
         android:id="@+id/moduleId"
