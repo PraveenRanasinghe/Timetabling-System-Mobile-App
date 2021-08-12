@@ -5,7 +5,7 @@
     android:id="@+id/drawerLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
+    android:background="@drawable/bg3"
     android:fitsSystemWindows="true"
     tools:context=".student">
 
@@ -18,7 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:title="Time Tabling Portal"
-            android:background="@drawable/header"/>
+            android:background="@drawable/header_stud"/>
 
 
         <TextView
