@@ -8,7 +8,7 @@
     android:fitsSystemWindows="true"
     tools:context=".student"
     tools:openDrawer="end"
-    android:background="@drawable/bg3">
+    android:background="@drawable/lec">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -19,7 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:title="Time Tabling Portal"
-            android:background="@drawable/header_stud"/>
+            android:background="@drawable/header"/>
 
 
         <TextView

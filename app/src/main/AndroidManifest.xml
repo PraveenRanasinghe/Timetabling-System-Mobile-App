@@ -9,7 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".weekly_timetable"></activity>
+        <activity
+            android:name=".weekly_lec_timetable"
+            android:exported="true" />
+        <activity
+            android:name=".lecturer_timetable"
+            android:exported="true" />
+        <activity android:name=".weekly_timetable" />
         <activity android:name=".my_account" />
         <activity android:name=".student_timetable" />
         <activity android:name=".lecturer" />

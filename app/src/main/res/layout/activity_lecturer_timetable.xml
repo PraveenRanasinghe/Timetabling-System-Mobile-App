@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".weekly_timetable">
+    tools:context=".lecturer_timetable">
 
     <RelativeLayout
         android:layout_width="385dp"
         android:layout_height="182dp"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="10dp"
-        android:background="@drawable/card"
+        android:background="@drawable/card_lec"
         android:padding="20dp">
 
 
@@ -23,7 +23,7 @@
             android:layout_alignParentEnd="true"
             android:layout_marginStart="46dp"
             android:layout_marginEnd="42dp"
-            android:text="Module Name"
+            android:text="Batch Id"
             android:textAlignment="center"
             android:textColor="@android:color/black"
             android:textSize="23dp"

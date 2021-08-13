@@ -34,7 +34,7 @@
         android:layout_marginBottom="95dp"
         android:background="@drawable/add_button"
         android:fontFamily="sans-serif"
-        android:onClick="adminHome"
+        android:onClick="studentHome"
         android:text="Login"
         android:textSize="30sp" />
 
