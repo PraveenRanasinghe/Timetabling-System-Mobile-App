@@ -19,7 +19,7 @@ public class Adapter extends RecyclerView.Adapter <Adapter.ViewHolder> {
 
         public ViewHolder(View view) {
             super(view);
-            cardView = (CardView) view.findViewById(R.id.studentCardView);
+            cardView = (CardView)view.findViewById(R.id.studentCardView);
         }
 
         public CardView getTextView() {
@@ -33,10 +33,12 @@ public class Adapter extends RecyclerView.Adapter <Adapter.ViewHolder> {
 
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
+    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        LayoutInflater inflater = LayoutInflater.from(parent.getContext());
+        View view = inflater.inflate(R.layout.activity_student_timetable,parent,false);
+        ViewHolder viewHolder= new ViewHolder(view);
 
-
-        return null;
+        return  viewHolder;
     }
 
     @Override
@@ -44,10 +46,6 @@ public class Adapter extends RecyclerView.Adapter <Adapter.ViewHolder> {
 
     }
 
-//    @Override
-//    public void onBindViewHolder(@NonNull Adapter holder, int position) {
-//
-//    }
 
     @Override
     public int getItemCount() {

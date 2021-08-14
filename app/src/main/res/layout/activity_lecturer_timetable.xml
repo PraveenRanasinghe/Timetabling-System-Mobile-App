@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/lecCardView"
     tools:context=".lecturer_timetable">
 
     <RelativeLayout
@@ -16,7 +17,7 @@
 
 
         <TextView
-            android:id="@+id/textView8"
+            android:id="@+id/batchId"
             android:layout_width="283dp"
             android:layout_height="35dp"
             android:layout_alignParentStart="true"
@@ -30,7 +31,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/textView23"
+            android:id="@+id/date"
             android:layout_width="283dp"
             android:layout_height="25dp"
             android:layout_alignParentStart="true"
@@ -106,7 +107,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/textView22"
+            android:id="@+id/classRoomId"
             android:layout_width="150dp"
             android:layout_height="30dp"
             android:layout_alignParentBottom="true"

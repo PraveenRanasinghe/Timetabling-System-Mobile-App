@@ -13,5 +13,8 @@ public interface ApiCalls {
     @GET("viewStudentHome")
     Call<List<Timetable>> getTodayTimetableToStudent();
 
+    @GET("lecturerHome")
+    Call<List<Timetable>> getTodayTimetableToLecturer();
+
 
 }

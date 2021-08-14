@@ -28,8 +28,6 @@ public class student_timetable extends AppCompatActivity {
     private TextView endTime;
     private TextView classRoomId;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
