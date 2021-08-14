@@ -20,21 +20,20 @@
 
 
         <TextView
-            android:id="@+id/textView8"
+            android:id="@+id/moduleName"
             android:layout_width="283dp"
             android:layout_height="35dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
             android:layout_marginStart="46dp"
             android:layout_marginEnd="42dp"
-            android:text="Module Name"
             android:textAlignment="center"
             android:textColor="@android:color/black"
             android:textSize="23dp"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/textView23"
+            android:id="@+id/scheduledDate"
             android:layout_width="283dp"
             android:layout_height="25dp"
             android:layout_alignParentStart="true"
@@ -110,7 +109,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/textView22"
+            android:id="@+id/classRoomId"
             android:layout_width="150dp"
             android:layout_height="30dp"
             android:layout_alignParentBottom="true"
