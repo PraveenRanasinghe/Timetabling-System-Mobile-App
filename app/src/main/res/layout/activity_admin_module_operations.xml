@@ -57,8 +57,9 @@
         android:layout_marginStart="99dp"
         android:layout_marginEnd="99dp"
         android:layout_marginBottom="360dp"
-        android:text="Schedule Classes For Modules"
-        android:background="@drawable/add_button"/>
+        android:background="@drawable/add_button"
+        android:onClick="viewModules"
+        android:text="Schedule Classes For Modules" />
 
     <Button
         android:id="@+id/button12"
