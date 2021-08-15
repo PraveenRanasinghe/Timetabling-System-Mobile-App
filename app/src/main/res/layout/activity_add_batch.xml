@@ -33,6 +33,7 @@
         android:textSize="16sp" />
 
     <EditText
+        android:id="@+id/batchId"
         android:layout_width="340dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -43,7 +44,6 @@
         android:layout_marginEnd="43dp"
         android:layout_marginBottom="544dp"
         android:background="@drawable/custom_input"
-        android:id="@+id/batchId"
         android:hint="APIIT_any"
         android:inputType="textUri"
         android:padding="10dp"
@@ -80,6 +80,7 @@
         android:textSize="20sp" />
 
     <EditText
+        android:id="@+id/batchName"
         android:layout_width="340dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -91,7 +92,6 @@
         android:layout_marginBottom="435dp"
         android:background="@drawable/custom_input"
         android:hint="SE batch"
-        android:id="@+id/batchName"
         android:inputType="textUri"
         android:padding="10dp"
         android:textColor="#0C0707" />
@@ -110,39 +110,53 @@
         android:textColor="#050303"
         android:textSize="20sp" />
 
-    <Button
-        android:id="@+id/dateOfCommencement"
-        style="?android:spinnerStyle"
-        android:layout_width="332dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
+    <TextView
+        android:id="@+id/commencementDate"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="50dp"
-        android:layout_marginEnd="50dp"
         android:layout_marginBottom="324dp"
         android:background="@drawable/custom_input"
-        android:onClick="openDatePicker"
         android:textAlignment="center"
         android:textSize="20sp"
         tools:text="mm-dd-yyyy" />
 
     <Button
-        android:id="@+id/dateOfTermination"
-        style="?android:spinnerStyle"
-        android:layout_width="332dp"
-        android:layout_height="wrap_content"
+        android:id="@+id/selectDate"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="320dp"
+        android:layout_marginBottom="324dp"
+        android:background="@drawable/card_lec"
+        android:text="select"
+        android:textAlignment="center" />
+
+
+    <TextView
+        android:id="@+id/terminationDate"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
         android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="50dp"
-        android:layout_marginEnd="50dp"
-        android:layout_marginBottom="211dp"
+        android:layout_marginBottom="212dp"
         android:background="@drawable/custom_input"
-        android:onClick="openDatePicker"
         android:textAlignment="center"
         android:textSize="20sp"
         tools:text="mm-dd-yyyy" />
+
+    <Button
+        android:id="@+id/selectDate2"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="320dp"
+        android:layout_marginBottom="212dp"
+        android:background="@drawable/card_lec"
+        android:textAlignment="center"
+        tools:text="select" />
 
     <TextView
         android:id="@+id/textView19"
