@@ -34,12 +34,12 @@
         android:layout_marginBottom="95dp"
         android:background="@drawable/add_button"
         android:fontFamily="sans-serif"
-        android:onClick="studentHome"
+        android:onClick="Login"
         android:text="Login"
         android:textSize="30sp" />
 
     <EditText
-        android:id="@+id/editTextTextEmailAddress"
+        android:id="@+id/email"
         android:layout_width="wrap_content"
         android:layout_height="52dp"
         android:layout_alignParentStart="true"
@@ -48,17 +48,17 @@
         android:layout_marginStart="46dp"
         android:layout_marginEnd="43dp"
         android:layout_marginBottom="330dp"
-        android:drawablePadding="12dp"
-        android:ems="10"
         android:background="@drawable/custom_input"
         android:drawableStart="@drawable/email"
+        android:drawablePadding="12dp"
+        android:ems="10"
         android:hint="johndoe@gmail.com"
         android:inputType="textEmailAddress"
         android:textColorLink="#070606"
         android:textCursorDrawable="@android:color/background_dark" />
 
     <EditText
-        android:id="@+id/editTextTextPassword"
+        android:id="@+id/password"
         android:layout_width="wrap_content"
         android:layout_height="54dp"
         android:layout_alignParentStart="true"
@@ -67,17 +67,17 @@
         android:layout_marginStart="46dp"
         android:layout_marginEnd="43dp"
         android:layout_marginBottom="217dp"
-        android:drawablePadding="12dp"
-        android:ems="10"
         android:background="@drawable/custom_input"
         android:drawableStart="@drawable/lock"
+        android:drawablePadding="12dp"
+        android:ems="10"
         android:hint="Password"
         android:inputType="textPassword"
         android:textColorLink="#0C0C0C"
         android:textCursorDrawable="@android:color/background_dark" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/error"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"

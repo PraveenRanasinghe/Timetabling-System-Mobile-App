@@ -15,11 +15,21 @@ public class Adapter extends RecyclerView.Adapter <Adapter.ViewHolder> {
     private CardView[] cardViews;
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-         private final CardView cardView;
+        private CardView cardView;
+        private TextView moduleName;
+        private TextView scheduledDate;
+        private TextView startTime;
+        private TextView endTime;
+        private TextView classRoomId;
 
         public ViewHolder(View view) {
             super(view);
-            cardView = (CardView)view.findViewById(R.id.studentCardView);
+            cardView = view.findViewById(R.id.studentCardView);
+            moduleName = view.findViewById(R.id.moduleName);
+            scheduledDate= view.findViewById(R.id.scheduledDate);
+            startTime = view.findViewById(R.id.startTime);
+            endTime = view.findViewById(R.id.endTime);
+            classRoomId = view.findViewById(R.id.classRoomId);
         }
 
         public CardView getTextView() {
