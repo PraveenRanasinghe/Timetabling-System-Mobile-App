@@ -102,6 +102,7 @@ public class student extends AppCompatActivity {
         toggle.syncState();
 
         drawerLayout.addDrawerListener(toggle);
+
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
