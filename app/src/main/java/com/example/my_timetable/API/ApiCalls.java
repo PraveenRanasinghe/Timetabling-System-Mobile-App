@@ -1,5 +1,6 @@
 package com.example.my_timetable.API;
 
+import com.example.my_timetable.Model.JwtRequest;
 import com.example.my_timetable.Model.JwtResponse;
 import com.example.my_timetable.Model.Timetable;
 import com.example.my_timetable.Model.User;
@@ -20,6 +21,6 @@ public interface ApiCalls {
     Call<List<Timetable>> getTodayTimetableToLecturer();
 
     @POST("/mobileAuthentication")
-    Call<JwtResponse> authenticateUser(@Body User users);
+    Call<JwtResponse> authenticateUser(@Body JwtRequest users);
 
 }

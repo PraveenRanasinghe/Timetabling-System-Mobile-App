@@ -1,5 +1,6 @@
 package com.example.my_timetable;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -11,6 +12,7 @@ import android.widget.Toast;
 
 import com.example.my_timetable.API.ApiCalls;
 import com.example.my_timetable.API.Retrofit;
+import com.example.my_timetable.Model.JwtRequest;
 import com.example.my_timetable.Model.JwtResponse;
 import com.example.my_timetable.Model.User;
 
@@ -45,20 +47,38 @@ public class MainActivity extends AppCompatActivity {
     public void studentHome(View view){startActivity(new Intent(MainActivity.this, student.class));}
 
     public void Login(View view){
-        User user = new User();
+        JwtRequest user = new JwtRequest();
         Retrofit retrofit = new Retrofit();
-        user.setEmail(email.getText().toString());
+        user.setUsername(email.getText().toString());
         user.setPassword(password.getText().toString());
 
         ApiCalls apiCalls = retrofit.getRetrofit().create(ApiCalls.class);
         Call<JwtResponse> jwtResponseCall = apiCalls.authenticateUser(user);
         jwtResponseCall.enqueue(new Callback<JwtResponse>() {
             @Override
-            public void onResponse(Call<JwtResponse> call, Response<JwtResponse> response) {
+            public void onResponse(@NonNull Call<JwtResponse> call, @NonNull Response<JwtResponse> response) {
                 if(response.isSuccessful()){
                     JwtResponse jwtResponse =response.body();
-
-                    Toast.makeText(getApplicationContext(),"Operation Successful! "+jwtResponse.getEmail(), Toast.LENGTH_LONG).show();
+                    if(jwtResponse != null) {
+                        switch (jwtResponse.getUserRole().toLowerCase()) {
+                            case "admin": {
+                                Intent intent = new Intent(MainActivity.this, Admin.class);
+                                startActivity(intent);
+                                break;
+                            }
+                            case "lecturer": {
+                                Intent intent = new Intent(MainActivity.this, lecturer.class);
+                                startActivity(intent);
+                                break;
+                            }
+                            case "student": {
+                                Intent intent = new Intent(MainActivity.this, student.class);
+                                startActivity(intent);
+                                break;
+                            }
+                        }
+                        Toast.makeText(getApplicationContext(), "Operation Successful! " + jwtResponse.getEmail(), Toast.LENGTH_LONG).show();
+                    }
                 }
             }
 
