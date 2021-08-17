@@ -1,5 +1,7 @@
 package com.example.my_timetable.Model;
 
+import androidx.recyclerview.widget.RecyclerView;
+
 import java.time.LocalTime;
 import java.util.Date;
 import java.util.List;
@@ -12,6 +14,8 @@ public class Timetable {
     private Module module;
     private Classroom classRoom;
     private List<Batch> batches;
+
+
 
     public Timetable(int timetableId, LocalTime startTime, LocalTime endTime, Date scheduledDate, Module module, Classroom classRoom, List<Batch> batches) {
         this.timetableId = timetableId;

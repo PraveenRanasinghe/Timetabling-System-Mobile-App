@@ -11,12 +11,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.my_timetable.API.ApiCalls;
-import com.example.my_timetable.API.Retrofit;
+import com.example.my_timetable.API.RetrofitAPI;
 import com.example.my_timetable.Model.JwtRequest;
 import com.example.my_timetable.Model.JwtResponse;
-import com.example.my_timetable.Model.User;
-
-import org.w3c.dom.Text;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -48,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void Login(View view){
         JwtRequest user = new JwtRequest();
-        Retrofit retrofit = new Retrofit();
+        RetrofitAPI retrofit = new RetrofitAPI();
         user.setUsername(email.getText().toString());
         user.setPassword(password.getText().toString());
 

@@ -6,59 +6,60 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class Adapter extends RecyclerView.Adapter <Adapter.ViewHolder> {
+import com.example.my_timetable.Model.Timetable;
 
+import java.sql.Time;
+import java.util.List;
 
-    private CardView[] cardViews;
+public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
 
-    public static class ViewHolder extends RecyclerView.ViewHolder {
-        private CardView cardView;
-        private TextView moduleName;
-        private TextView scheduledDate;
-        private TextView startTime;
-        private TextView endTime;
-        private TextView classRoomId;
+    List<Timetable> timetableList;
 
-        public ViewHolder(View view) {
-            super(view);
-            cardView = view.findViewById(R.id.studentCardView);
-            moduleName = view.findViewById(R.id.moduleName);
-            scheduledDate= view.findViewById(R.id.scheduledDate);
-            startTime = view.findViewById(R.id.startTime);
-            endTime = view.findViewById(R.id.endTime);
-            classRoomId = view.findViewById(R.id.classRoomId);
-        }
-
-        public CardView getTextView() {
-            return cardView;
-        }
-    }
-
-    public Adapter(CardView[] cardView) {
-        this.cardViews = cardView;
+    public Adapter(List<Timetable> timetableList) {
+        this.timetableList = timetableList;
     }
 
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        View view = inflater.inflate(R.layout.activity_student_timetable,parent,false);
-        ViewHolder viewHolder= new ViewHolder(view);
-
-        return  viewHolder;
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.timetable_for_students,parent, false);
+        ViewHolder viewHolder = new ViewHolder(view);
+        return viewHolder;
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-
+        Timetable timetable =timetableList.get(position);
+        holder.classRoomId.setText(timetable.getClassRoom().getClassRoomID());
+        holder.startTime.setText(timetable.getStartTime().toString());
+        holder.endTime.setText(timetable.getEndTime().toString());
+        holder.scheduledDate.setText(timetable.getScheduledDate().toString());
     }
-
 
     @Override
     public int getItemCount() {
-        return 0;
+        return timetableList.size();
+    }
+
+    public class ViewHolder extends RecyclerView.ViewHolder {
+
+        TextView moduleName;
+        TextView scheduledDate;
+        TextView startTime;
+        TextView endTime;
+        TextView classRoomId;
+
+
+        public ViewHolder(@NonNull View itemView) {
+            super(itemView);
+
+            moduleName=itemView.findViewById(R.id.moduleName);
+            scheduledDate=itemView.findViewById(R.id.scheduledDate);
+            startTime=itemView.findViewById(R.id.endTime);
+            endTime=itemView.findViewById(R.id.endTime);
+            classRoomId=itemView.findViewById(R.id.classRoomId);
+        }
     }
 }

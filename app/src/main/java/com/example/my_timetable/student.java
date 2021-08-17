@@ -17,6 +17,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.my_timetable.API.ApiCalls;
+import com.example.my_timetable.API.RetrofitAPI;
+import com.example.my_timetable.Model.JwtResponse;
 import com.example.my_timetable.Model.Timetable;
 import com.google.android.material.navigation.NavigationView;
 
@@ -35,19 +37,13 @@ public class student extends AppCompatActivity {
     private NavigationView navigationView;
     private RecyclerView recyclerView;
     private Adapter adapter;
-    private CardView cardView;
-    private TextView moduleName;
-    private TextView scheduledDate;
-    private TextView startTime;
-    private TextView endTime;
-    private TextView classRoomId;
+    private RecyclerView.Adapter recyclerAdapter;
+    private RecyclerView.LayoutManager recyclerLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student);
-
-
 
         drawerLayout = findViewById(R.id.drawerLayout);
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -55,45 +51,25 @@ public class student extends AppCompatActivity {
         recyclerView =findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-
-        cardView = findViewById(R.id.studentCardView);
-        moduleName = findViewById(R.id.moduleName);
-        scheduledDate= findViewById(R.id.scheduledDate);
-        startTime =findViewById(R.id.startTime);
-        endTime = findViewById(R.id.endTime);
-        classRoomId = findViewById(R.id.classRoomId);
-
-
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://localhost:8080/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-
-        ApiCalls apiCalls = retrofit.create(ApiCalls.class);
-        Call<List<Timetable>> listCall = apiCalls.getTodayTimetableToStudent();
-        listCall.enqueue(new Callback<List<Timetable>>() {
+        RetrofitAPI retrofit = new RetrofitAPI();
+        ApiCalls apiCalls = retrofit.getRetrofit().create(ApiCalls.class);
+        Call<List<Timetable>> getTimetables = apiCalls.getTodayTimetableToStudent();
+        getTimetables.enqueue(new Callback<List<Timetable>>() {
             @Override
             public void onResponse(Call<List<Timetable>> call, Response<List<Timetable>> response) {
-                if(!response.isSuccessful()){
-                    Toast.makeText(getApplicationContext(), "Operation Failed !", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-                List<Timetable> timetables = response.body();
+                if(response.isSuccessful()){
+                    List<Timetable> timetableList = response.body();
+                    recyclerView.setAdapter(new Adapter(timetableList));
 
-                for(Timetable timetable:timetables){
-                    moduleName.setText(timetable.getModule().getModuleName());
-                    scheduledDate.setText(timetable.getScheduledDate().toString());
-                    startTime.setText(timetable.getStartTime().toString());
-                    endTime.setText(timetable.getEndTime().toString());
-                    classRoomId.setText(timetable.getClassRoom().getClassRoomID());
                 }
             }
 
             @Override
             public void onFailure(Call<List<Timetable>> call, Throwable t) {
-                Toast.makeText(getApplicationContext(),"Operation Failed! "+t, Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),"Operation Failed! "+t, Toast.LENGTH_LONG).show();
             }
         });
+
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawerLayout, toolbar, R.string.o, R.string.c

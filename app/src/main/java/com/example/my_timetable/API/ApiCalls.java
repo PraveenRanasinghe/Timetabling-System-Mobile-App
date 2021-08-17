@@ -14,7 +14,7 @@ import retrofit2.http.POST;
 
 public interface ApiCalls {
 
-    @GET("viewStudentHome")
+    @GET("/todayLecturersForStudent")
     Call<List<Timetable>> getTodayTimetableToStudent();
 
     @GET("lecturerHome")

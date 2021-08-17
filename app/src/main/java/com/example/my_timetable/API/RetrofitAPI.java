@@ -4,7 +4,7 @@ import com.google.gson.GsonBuilder;
 
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class Retrofit {
+public class RetrofitAPI {
 
     public retrofit2.Retrofit getRetrofit() {
         return retrofit;
