@@ -26,6 +26,7 @@
         <entry key="..\:/Users/dell/Desktop/My Projects/EEA_Mobile/EEA-Mobile/app/src/main/res/layout/activity_lecturer_timetable.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/dell/Desktop/My Projects/EEA_Mobile/EEA-Mobile/app/src/main/res/layout/activity_main.xml" value="0.25625" />
         <entry key="..\:/Users/dell/Desktop/My Projects/EEA_Mobile/EEA-Mobile/app/src/main/res/layout/activity_my_account.xml" value="0.3015625" />
+        <entry key="..\:/Users/dell/Desktop/My Projects/EEA_Mobile/EEA-Mobile/app/src/main/res/layout/activity_schedule_classes.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/dell/Desktop/My Projects/EEA_Mobile/EEA-Mobile/app/src/main/res/layout/activity_student.xml" value="0.2760416666666667" />
         <entry key="..\:/Users/dell/Desktop/My Projects/EEA_Mobile/EEA-Mobile/app/src/main/res/layout/activity_student_timetable.xml" value="0.25" />
         <entry key="..\:/Users/dell/Desktop/My Projects/EEA_Mobile/EEA-Mobile/app/src/main/res/layout/activity_view_all_modules.xml" value="0.23541666666666666" />
@@ -35,7 +36,9 @@
         <entry key="..\:/Users/dell/Desktop/My Projects/EEA_Mobile/EEA-Mobile/app/src/main/res/layout/header_stud.xml" value="0.2760416666666667" />
         <entry key="..\:/Users/dell/Desktop/My Projects/EEA_Mobile/EEA-Mobile/app/src/main/res/layout/timetable_for_lecturer.xml" value="0.24427083333333333" />
         <entry key="..\:/Users/dell/Desktop/My Projects/EEA_Mobile/EEA-Mobile/app/src/main/res/layout/timetable_for_students.xml" value="0.24427083333333333" />
+        <entry key="..\:/Users/dell/Desktop/My Projects/EEA_Mobile/EEA-Mobile/app/src/main/res/layout/view_lecturers.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/dell/Desktop/My Projects/EEA_Mobile/EEA-Mobile/app/src/main/res/layout/view_module.xml" value="0.33" />
+        <entry key="..\:/Users/dell/Desktop/My Projects/EEA_Mobile/EEA-Mobile/app/src/main/res/layout/view_students.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/dell/Desktop/My Projects/EEA_Mobile/EEA-Mobile/app/src/main/res/menu/main_menu.xml" value="0.315625" />
       </map>
     </option>
