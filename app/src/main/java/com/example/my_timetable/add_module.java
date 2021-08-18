@@ -16,10 +16,10 @@ public class add_module extends AppCompatActivity {
     }
 
     public void addNewModule(View view){
-        final String moduleId=((EditText)findViewById(R.id.moduleId)).getText().toString().trim();
-        final String moduleName=((EditText)findViewById(R.id.moduleName)).getText().toString().trim();
-        final String lecName=((EditText)findViewById(R.id.lecName)).getText().toString().trim();
-        final String batchName=((EditText)findViewById(R.id.batch)).getText().toString().trim();
+        final String moduleId=((EditText)findViewById(R.id.AMmoduleId)).getText().toString().trim();
+        final String moduleName=((EditText)findViewById(R.id.AMmoduleName)).getText().toString().trim();
+        final String lecName=((EditText)findViewById(R.id.AMlecName)).getText().toString().trim();
+        final String batchName=((EditText)findViewById(R.id.AMbatch)).getText().toString().trim();
 
         if(moduleId.isEmpty()){
             Toast.makeText(getApplicationContext(), "Please Enter the Module Id", Toast.LENGTH_SHORT).show();

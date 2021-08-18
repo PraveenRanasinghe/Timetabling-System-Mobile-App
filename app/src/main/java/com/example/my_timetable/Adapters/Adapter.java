@@ -1,5 +1,6 @@
-package com.example.my_timetable;
+package com.example.my_timetable.Adapters;
 
+import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,8 +10,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.my_timetable.Model.Timetable;
+import com.example.my_timetable.R;
 
-import java.sql.Time;
 import java.util.List;
 
 public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
@@ -24,9 +25,8 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.timetable_for_students,parent, false);
-        ViewHolder viewHolder = new ViewHolder(view);
-        return viewHolder;
+        return new ViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.timetable_for_students,parent, false));
+
     }
 
     @Override
@@ -51,15 +51,14 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
         TextView endTime;
         TextView classRoomId;
 
-
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            moduleName=itemView.findViewById(R.id.moduleName);
-            scheduledDate=itemView.findViewById(R.id.scheduledDate);
-            startTime=itemView.findViewById(R.id.endTime);
-            endTime=itemView.findViewById(R.id.endTime);
-            classRoomId=itemView.findViewById(R.id.classRoomId);
+            moduleName=itemView.findViewById(R.id.TmoduleName);
+            scheduledDate=itemView.findViewById(R.id.TscheduledDate);
+            startTime=itemView.findViewById(R.id.TendTime);
+            endTime=itemView.findViewById(R.id.TendTime);
+            classRoomId=itemView.findViewById(R.id.TclassRoomId);
         }
     }
 }

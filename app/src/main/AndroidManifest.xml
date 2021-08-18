@@ -13,20 +13,24 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".view_all_lecturers"
+            android:exported="true" />
+        <activity
+            android:name=".view_all_students"
+            android:exported="true" />
+        <activity
+            android:name=".weekly_timetable_for_student"
+            android:exported="true" />
+        <activity
             android:name=".ScheduleClasses"
             android:exported="true" />
         <activity
             android:name=".view_all_modules"
             android:exported="true" />
         <activity
-            android:name=".weekly_lec_timetable"
-            android:exported="true" />
-        <activity
             android:name=".lecturer_timetable"
             android:exported="true" />
-        <activity android:name=".weekly_timetable" />
         <activity android:name=".my_account" />
-        <activity android:name=".student_timetable" />
         <activity android:name=".lecturer" />
         <activity android:name=".student" />
         <activity android:name=".add_classroom" />

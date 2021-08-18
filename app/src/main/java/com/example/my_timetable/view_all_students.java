@@ -4,11 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class weekly_lec_timetable extends AppCompatActivity {
+public class view_all_students extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_weekly_lec_timetable);
+        setContentView(R.layout.activity_view_all_students);
     }
 }

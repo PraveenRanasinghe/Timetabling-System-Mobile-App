@@ -18,7 +18,7 @@ public class admin_module_operations extends AppCompatActivity {
         startActivity(new Intent(admin_module_operations.this,add_module.class));
     }
 
-    public void viewModules(View view){
+    public void viewAllModules(View view){
         startActivity(new Intent(admin_module_operations.this,view_all_modules.class));
     }
 }

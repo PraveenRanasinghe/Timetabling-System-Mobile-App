@@ -17,8 +17,14 @@ public interface ApiCalls {
     @GET("/todayLecturersForStudent")
     Call<List<Timetable>> getTodayTimetableToStudent();
 
-    @GET("lecturerHome")
+    @GET("/allTimetablesForStudent")
+    Call<List<Timetable>> getAllTimetablesToStudent();
+
+    @GET("/todayLecturersForLecturer")
     Call<List<Timetable>> getTodayTimetableToLecturer();
+
+    @GET("/allTimetablesForLecturer")
+    Call<List<Timetable>> getAllTimetablesToLecturer();
 
     @POST("/mobileAuthentication")
     Call<JwtResponse> authenticateUser(@Body JwtRequest users);

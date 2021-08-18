@@ -21,4 +21,12 @@ public class admin_user_operations extends AppCompatActivity {
     public void addLecturer(View view){
         startActivity(new Intent(admin_user_operations.this,add_lecturer.class));
     }
+
+    public void studentOperations(View view){
+        startActivity(new Intent(admin_user_operations.this, view_all_students.class));
+    }
+
+    public void lecturerOperations(View view){
+        startActivity(new Intent(admin_user_operations.this, view_all_lecturers.class));
+    }
 }

@@ -102,7 +102,7 @@
           />
 
     <EditText
-        android:id="@+id/moduleId"
+        android:id="@+id/AMmoduleId"
         android:layout_width="312dp"
         android:layout_height="45dp"
         android:layout_alignParentStart="true"
@@ -117,7 +117,7 @@
         android:inputType="textEmailAddress" />
 
     <EditText
-        android:id="@+id/moduleName"
+        android:id="@+id/AMmoduleName"
         android:layout_width="307dp"
         android:layout_height="45dp"
         android:layout_alignParentStart="true"
@@ -132,7 +132,7 @@
         android:inputType="textPersonName" />
 
     <EditText
-        android:id="@+id/lecName"
+        android:id="@+id/AMlecName"
         android:layout_width="307dp"
         android:layout_height="45dp"
         android:layout_alignParentStart="true"
@@ -147,7 +147,7 @@
         android:inputType="textPersonName" />
 
     <EditText
-        android:id="@+id/batch"
+        android:id="@+id/AMbatch"
         android:layout_width="307dp"
         android:layout_height="45dp"
         android:layout_alignParentStart="true"
