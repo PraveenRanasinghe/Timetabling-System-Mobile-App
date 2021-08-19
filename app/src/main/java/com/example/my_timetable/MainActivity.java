@@ -2,7 +2,10 @@ package com.example.my_timetable;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -48,6 +51,14 @@ public class MainActivity extends AppCompatActivity {
             public void onResponse(@NonNull Call<JwtResponse> call, @NonNull Response<JwtResponse> response) {
                 if (response.isSuccessful()) {
                     JwtResponse jwtResponse = response.body();
+
+                    SharedPreferences prefs = getSharedPreferences("SHARED", Context.MODE_PRIVATE);
+                    SharedPreferences.Editor editor = prefs.edit();
+                    editor.putString("token",jwtResponse.getJwtToken());
+
+                    System.out.println(jwtResponse.getJwtToken());
+                    editor.apply();
+
                     if (jwtResponse != null) {
                         switch (jwtResponse.getUserRole().toLowerCase()) {
                             case "admin": {

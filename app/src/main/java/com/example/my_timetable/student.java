@@ -9,8 +9,11 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.MenuItem;
 import android.widget.Toast;
 
@@ -43,11 +46,14 @@ public class student extends AppCompatActivity {
 
         recyclerView =findViewById(R.id.recyclerView);
 
-        RetrofitAPI retrofit = new RetrofitAPI();
-        ApiCalls apiCalls = retrofit.getRetrofit().create(ApiCalls.class);
+//        RetrofitAPI retrofit = new RetrofitAPI();
+//        ApiCalls apiCalls = RetrofitAPI.getRetrofit().create(ApiCalls.class);
 
+        SharedPreferences prefs = getSharedPreferences("SHARED", Context.MODE_PRIVATE);
+        String name = prefs.getString("token", null);
+        String jwt = "Bearer " + name;
 
-        Call<List<Timetable>> getTimetables = apiCalls.getTodayTimetableToStudent();
+        Call<List<Timetable>> getTimetables = RetrofitAPI.getRetrofit().create(ApiCalls.class).getTodayTimetableToStudent(jwt);
 
         getTimetables.enqueue(new Callback<List<Timetable>>() {
             @Override
@@ -62,7 +68,6 @@ public class student extends AppCompatActivity {
 
                 }
             }
-
 
             @Override
             public void onFailure(Call<List<Timetable>> call, Throwable t) {

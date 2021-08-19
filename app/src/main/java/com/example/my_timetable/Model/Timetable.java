@@ -8,24 +8,14 @@ import java.util.List;
 
 public class Timetable {
     private int timetableId;
-    private LocalTime startTime;
-    private LocalTime endTime;
+    private String startTime;
+    private String endTime;
     private Date scheduledDate;
-    private Module module;
+    private Module modules;
     private Classroom classRoom;
     private List<Batch> batches;
 
 
-
-    public Timetable(int timetableId, LocalTime startTime, LocalTime endTime, Date scheduledDate, Module module, Classroom classRoom, List<Batch> batches) {
-        this.timetableId = timetableId;
-        this.startTime = startTime;
-        this.endTime = endTime;
-        this.scheduledDate = scheduledDate;
-        this.module = module;
-        this.classRoom = classRoom;
-        this.batches = batches;
-    }
 
     public Timetable() {
     }
@@ -38,19 +28,19 @@ public class Timetable {
         this.timetableId = timetableId;
     }
 
-    public LocalTime getStartTime() {
+    public String getStartTime() {
         return startTime;
     }
 
-    public void setStartTime(LocalTime startTime) {
+    public void setStartTime(String startTime) {
         this.startTime = startTime;
     }
 
-    public LocalTime getEndTime() {
+    public String getEndTime() {
         return endTime;
     }
 
-    public void setEndTime(LocalTime endTime) {
+    public void setEndTime(String endTime) {
         this.endTime = endTime;
     }
 
@@ -62,12 +52,12 @@ public class Timetable {
         this.scheduledDate = scheduledDate;
     }
 
-    public Module getModule() {
-        return module;
+    public Module getModules() {
+        return modules;
     }
 
-    public void setModule(Module module) {
-        this.module = module;
+    public void setModules(Module modules) {
+        this.modules = modules;
     }
 
     public Classroom getClassRoom() {

@@ -33,8 +33,8 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Timetable timetable =timetableList.get(position);
         holder.classRoomId.setText(timetable.getClassRoom().getClassRoomID());
-        holder.startTime.setText(timetable.getStartTime().toString());
-        holder.endTime.setText(timetable.getEndTime().toString());
+        holder.startTime.setText(timetable.getStartTime());
+        holder.endTime.setText(timetable.getEndTime());
         holder.scheduledDate.setText(timetable.getScheduledDate().toString());
     }
 
