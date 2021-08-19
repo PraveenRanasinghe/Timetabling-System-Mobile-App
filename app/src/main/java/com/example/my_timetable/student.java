@@ -17,6 +17,7 @@ import android.widget.Toast;
 import com.example.my_timetable.API.ApiCalls;
 import com.example.my_timetable.API.RetrofitAPI;
 import com.example.my_timetable.Adapters.Adapter;
+import com.example.my_timetable.Model.JwtResponse;
 import com.example.my_timetable.Model.Timetable;
 import com.google.android.material.navigation.NavigationView;
 
@@ -44,7 +45,10 @@ public class student extends AppCompatActivity {
 
         RetrofitAPI retrofit = new RetrofitAPI();
         ApiCalls apiCalls = retrofit.getRetrofit().create(ApiCalls.class);
+
+
         Call<List<Timetable>> getTimetables = apiCalls.getTodayTimetableToStudent();
+
         getTimetables.enqueue(new Callback<List<Timetable>>() {
             @Override
             public void onResponse(Call<List<Timetable>> call, Response<List<Timetable>> response) {
@@ -59,9 +63,10 @@ public class student extends AppCompatActivity {
                 }
             }
 
+
             @Override
             public void onFailure(Call<List<Timetable>> call, Throwable t) {
-                Toast.makeText(getApplicationContext(),"Operation Failed! "+t, Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(),"Operation Failed FuckerFuckerFuckerFuckerFuckerFucker! "+t, Toast.LENGTH_LONG).show();
                 System.out.println(t);
             }
         });

@@ -2,7 +2,6 @@ package com.example.my_timetable;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -25,20 +24,18 @@ public class MainActivity extends AppCompatActivity {
     EditText password;
     TextView textView;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        email=findViewById(R.id.email);
-        password=findViewById(R.id.password);
-        textView=findViewById(R.id.error);
-
+        email = findViewById(R.id.email);
+        password = findViewById(R.id.password);
+        textView = findViewById(R.id.error);
     }
 
+    public void Login(View view) {
 
-    public void Login(View view){
         JwtRequest user = new JwtRequest();
         RetrofitAPI retrofit = new RetrofitAPI();
         user.setUsername(email.getText().toString());
@@ -49,9 +46,9 @@ public class MainActivity extends AppCompatActivity {
         jwtResponseCall.enqueue(new Callback<JwtResponse>() {
             @Override
             public void onResponse(@NonNull Call<JwtResponse> call, @NonNull Response<JwtResponse> response) {
-                if(response.isSuccessful()){
-                    JwtResponse jwtResponse =response.body();
-                    if(jwtResponse != null) {
+                if (response.isSuccessful()) {
+                    JwtResponse jwtResponse = response.body();
+                    if (jwtResponse != null) {
                         switch (jwtResponse.getUserRole().toLowerCase()) {
                             case "admin": {
                                 Intent intent = new Intent(MainActivity.this, Admin.class);
@@ -72,14 +69,17 @@ public class MainActivity extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(), "Operation Successful! " + jwtResponse.getEmail(), Toast.LENGTH_LONG).show();
                     }
                 }
+
+
             }
+
 
             @Override
             public void onFailure(Call<JwtResponse> call, Throwable t) {
-                Toast.makeText(getApplicationContext(),"Operation Failed! "+t, Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Operation Failed! " + t, Toast.LENGTH_LONG).show();
+                System.out.println(t);
             }
         });
-
 
 
     }
