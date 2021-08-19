@@ -5,7 +5,7 @@
     android:id="@+id/studentCardView"
     android:clickable="false"
     android:focusable="true"
-    android:layout_height="match_parent">
+    android:layout_height="200dp">
 
     <RelativeLayout
         android:layout_width="385dp"
@@ -27,22 +27,21 @@
             android:textAlignment="center"
             android:textColor="@android:color/black"
             android:textSize="23dp"
-            android:textStyle="bold" />
+            android:textStyle="italic" />
 
         <TextView
             android:id="@+id/TscheduledDate"
-            android:layout_width="283dp"
-            android:layout_height="25dp"
+            android:layout_width="323dp"
+            android:layout_height="28dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
             android:layout_marginStart="46dp"
             android:layout_marginTop="40dp"
             android:layout_marginEnd="42dp"
-            android:text="8/13/2021"
             android:textAlignment="center"
             android:textColor="@android:color/black"
             android:textSize="23dp"
-            android:textStyle="bold" />
+            android:textStyle="italic" />
 
         <TextView
             android:id="@+id/TstartTime"
@@ -54,7 +53,6 @@
             android:layout_marginStart="4dp"
             android:layout_marginEnd="220dp"
             android:layout_marginBottom="30dp"
-            android:text="11:00 AM"
             android:textAlignment="center"
             android:textColor="@android:color/black"
             android:textSize="18dp"
@@ -70,7 +68,6 @@
             android:layout_marginStart="220dp"
             android:layout_marginEnd="4dp"
             android:layout_marginBottom="30dp"
-            android:text="13:00PM"
             android:textAlignment="center"
             android:textColor="@android:color/black"
             android:textSize="18dp"
@@ -112,11 +109,10 @@
             android:layout_alignParentBottom="true"
             android:layout_marginStart="125dp"
             android:layout_marginBottom="1dp"
-            android:text="L1LB1"
             android:textAlignment="center"
             android:textColor="@android:color/black"
             android:textSize="18dp"
-            android:textStyle="bold" />
+            android:textStyle="italic" />
 
 
     </RelativeLayout>

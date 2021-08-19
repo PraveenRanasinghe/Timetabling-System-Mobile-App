@@ -1,6 +1,5 @@
 package com.example.my_timetable.Adapters;
 
-import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,28 +13,29 @@ import com.example.my_timetable.R;
 
 import java.util.List;
 
-public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
+public class LecturerTimetableAdapter extends RecyclerView.Adapter<LecturerTimetableAdapter.ViewHolder>{
 
     List<Timetable> timetableList;
 
-    public Adapter(List<Timetable> timetableList) {
+    public LecturerTimetableAdapter(List<Timetable> timetableList) {
         this.timetableList = timetableList;
     }
 
+
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new ViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.timetable_for_students,parent, false));
-
+    public LecturerTimetableAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        return new LecturerTimetableAdapter.ViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.timetable_for_lecturer,parent, false));
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull LecturerTimetableAdapter.ViewHolder holder, int position) {
         Timetable timetable =timetableList.get(position);
         holder.classRoomId.setText(timetable.getClassRoom().getClassRoomID());
         holder.startTime.setText(timetable.getStartTime());
         holder.endTime.setText(timetable.getEndTime());
         holder.scheduledDate.setText(timetable.getScheduledDate().toString());
+//        holder.batchId.setText(timetable.getBatches().toString());
     }
 
     @Override
@@ -46,6 +46,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
         TextView moduleName;
+        TextView batchId;
         TextView scheduledDate;
         TextView startTime;
         TextView endTime;
@@ -54,11 +55,12 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            moduleName=itemView.findViewById(R.id.TmoduleName);
-            scheduledDate=itemView.findViewById(R.id.TscheduledDate);
-            startTime=itemView.findViewById(R.id.TendTime);
-            endTime=itemView.findViewById(R.id.TendTime);
-            classRoomId=itemView.findViewById(R.id.TclassRoomId);
+            moduleName=itemView.findViewById(R.id.moduleId);
+            batchId=itemView.findViewById(R.id.batchId);
+            scheduledDate=itemView.findViewById(R.id.date);
+            startTime=itemView.findViewById(R.id.startTime);
+            endTime=itemView.findViewById(R.id.endTime);
+            classRoomId=itemView.findViewById(R.id.classRoomId);
         }
     }
 }

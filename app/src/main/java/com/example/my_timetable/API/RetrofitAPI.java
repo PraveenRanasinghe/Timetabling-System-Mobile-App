@@ -22,17 +22,4 @@ public class RetrofitAPI {
         return retrofit;
     }
 
-
-
 }
-
-
-//    OkHttpClient client = new OkHttpClient.Builder().addInterceptor(new Interceptor() {
-//        @Override
-//        public Response intercept(Chain chain) throws IOException {
-//            Request newRequest  = chain.request().newBuilder()
-//                    .addHeader("Authorization", "Bearer ")
-//                    .build();
-//            return chain.proceed(newRequest);
-//        }
-//    }).build();

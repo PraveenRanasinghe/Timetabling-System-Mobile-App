@@ -21,13 +21,13 @@ public interface ApiCalls {
     Call<List<Timetable>> getTodayTimetableToStudent(@Header("Authorization") String authorization);
 
     @GET("/allTimetablesForStudent")
-    Call<List<Timetable>> getAllTimetablesToStudent();
+    Call<List<Timetable>> getAllTimetablesToStudent(@Header("Authorization") String authorization);
 
     @GET("/todayLecturersForLecturer")
-    Call<List<Timetable>> getTodayTimetableToLecturer();
+    Call<List<Timetable>> getTodayTimetableToLecturer(@Header("Authorization") String authorization);
 
     @GET("/allTimetablesForLecturer")
-    Call<List<Timetable>> getAllTimetablesToLecturer();
+    Call<List<Timetable>> getAllTimetablesToLecturer(@Header("Authorization") String authorization);
 
     @POST("/mobileAuthentication")
     Call<JwtResponse> authenticateUser(@Body JwtRequest users);

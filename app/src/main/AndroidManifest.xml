@@ -13,6 +13,9 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".weekly_timetable_for_lecturer"
+            android:exported="true" />
+        <activity
             android:name=".view_all_lecturers"
             android:exported="true" />
         <activity
@@ -26,9 +29,6 @@
             android:exported="true" />
         <activity
             android:name=".view_all_modules"
-            android:exported="true" />
-        <activity
-            android:name=".lecturer_timetable"
             android:exported="true" />
         <activity android:name=".my_account" />
         <activity android:name=".lecturer" />

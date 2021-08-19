@@ -4,14 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".weekly_timetable_for_student"
-    android:background="@drawable/bg3">
+    tools:context=".weekly_timetable_for_lecturer"
+    android:background="@drawable/lec">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
-
 
 
         <TextView
@@ -20,17 +18,17 @@
             android:layout_height="50dp"
             android:layout_centerHorizontal="true"
             android:layout_weight="1"
-            android:text="Weekly Timetable for Your Batch"
+            android:text="Weekly Timetable for You"
             android:textAlignment="center"
             android:textColor="#050303"
             android:textSize="28sp" />
 
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/weeklyRecyclerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@id/textView3"
+            android:id="@+id/weeklyRecyclerViewLec"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
