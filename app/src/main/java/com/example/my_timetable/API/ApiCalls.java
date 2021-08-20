@@ -51,6 +51,7 @@ public interface ApiCalls {
     @GET("/viewAllClassRooms")
     Call<List<Classroom>> getAllClassRooms(@Header("Authorization") String authorization);
 
-
+    @POST("/addStudents")
+    Call<User> addStudents(@Body User user);
 
 }

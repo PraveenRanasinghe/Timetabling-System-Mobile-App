@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg2"
+    android:background="@drawable/background"
     >
 
     <TextView
@@ -16,7 +16,7 @@
         android:textAlignment="center"
         android:textColor="#150C0C"
         android:textSize="30sp"
-        android:textStyle="bold" />
+        android:textStyle="italic" />
 
     <TextView
         android:id="@+id/textView6"
@@ -40,7 +40,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="100dp"
         android:layout_marginEnd="100dp"
-        android:layout_marginBottom="585dp"
+        android:layout_marginBottom="545dp"
         android:text="Class Room Id"
         android:textAlignment="center"
         android:textColor="#0C0707"
@@ -55,7 +55,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="70dp"
         android:layout_marginEnd="70dp"
-        android:layout_marginBottom="542dp"
+        android:layout_marginBottom="500dp"
         android:background="@drawable/custom_input"
         android:ems="10"
         android:hint="Enter the classRoom ID :CLZ_any"
@@ -70,7 +70,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="106dp"
         android:layout_marginEnd="106dp"
-        android:layout_marginBottom="482dp"
+        android:layout_marginBottom="420dp"
         android:text="Capacity of the Room"
         android:textAlignment="center"
         android:textColor="#0B0606"
@@ -85,7 +85,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="70dp"
         android:layout_marginEnd="70dp"
-        android:layout_marginBottom="442dp"
+        android:layout_marginBottom="380dp"
         android:background="@drawable/custom_input"
         android:ems="10"
         android:hint="Enter the capacity of class"
@@ -100,7 +100,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="106dp"
         android:layout_marginEnd="106dp"
-        android:layout_marginBottom="382dp"
+        android:layout_marginBottom="300dp"
         android:text="Air-Conditioned "
         android:textAlignment="center"
         android:textColor="#070404"
@@ -115,7 +115,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="160dp"
         android:layout_marginEnd="160dp"
-        android:layout_marginBottom="347dp"
+        android:layout_marginBottom="260dp"
         android:background="@drawable/custom_input" />
 
     <TextView
@@ -127,7 +127,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="106dp"
         android:layout_marginEnd="106dp"
-        android:layout_marginBottom="287dp"
+        android:layout_marginBottom="190dp"
         android:text="Smart Board "
         android:textAlignment="center"
         android:textColor="#0E0808"
@@ -142,7 +142,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="160dp"
         android:layout_marginEnd="160dp"
-        android:layout_marginBottom="248dp"
+        android:layout_marginBottom="150dp"
         android:background="@drawable/custom_input" />
 
     <Button
@@ -154,7 +154,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="113dp"
         android:layout_marginEnd="113dp"
-        android:layout_marginBottom="129dp"
+        android:layout_marginBottom="25dp"
         android:background="@drawable/add_button"
         android:onClick="addClassRoom"
         android:text="Add Class Room"
