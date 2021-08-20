@@ -30,9 +30,9 @@
         <activity
             android:name=".view_all_modules"
             android:exported="true" />
-        <activity android:name=".my_account" />
-        <activity android:name=".lecturer" />
-        <activity android:name=".student" />
+        <activity android:name=".My_account" />
+        <activity android:name=".Lecturer" />
+        <activity android:name=".Student" />
         <activity android:name=".add_classroom" />
         <activity android:name=".add_batch" />
         <activity android:name=".add_module" />

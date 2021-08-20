@@ -18,7 +18,7 @@ import android.widget.Toast;
 
 import com.example.my_timetable.API.ApiCalls;
 import com.example.my_timetable.API.RetrofitAPI;
-import com.example.my_timetable.Adapters.StudentTimetableAdapter;
+import com.example.my_timetable.Adapters.LecturerTimetableAdapter;
 import com.example.my_timetable.Model.Timetable;
 import com.google.android.material.navigation.NavigationView;
 
@@ -28,8 +28,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-
-public class student extends AppCompatActivity {
+public class Lecturer extends AppCompatActivity {
 
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
@@ -40,23 +39,22 @@ public class student extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-        recyclerView =findViewById(R.id.recyclerView);
-
+        recyclerView =findViewById(R.id.lecRecyclerView);
 
         SharedPreferences prefs = getSharedPreferences("SHARED", Context.MODE_PRIVATE);
         String name = prefs.getString("token", null);
         String jwt = "Bearer " + name;
 
-        Call<List<Timetable>> getTimetables = RetrofitAPI.getRetrofit().create(ApiCalls.class).getTodayTimetableToStudent(jwt);
+        Call<List<Timetable>> getTimetables = RetrofitAPI.getRetrofit().create(ApiCalls.class).getTodayTimetableToLecturer(jwt);
 
         getTimetables.enqueue(new Callback<List<Timetable>>() {
             @Override
             public void onResponse(Call<List<Timetable>> call, Response<List<Timetable>> response) {
                 if(response.isSuccessful()){
                     List<Timetable> timetableList = response.body();
-                    StudentTimetableAdapter adapter = new StudentTimetableAdapter(timetableList);
+                    LecturerTimetableAdapter adapter = new LecturerTimetableAdapter(timetableList);
                     recyclerView.setAdapter(adapter);
-                    recyclerView.setLayoutManager(new LinearLayoutManager(student.this));
+                    recyclerView.setLayoutManager(new LinearLayoutManager(Lecturer.this));
 
                     System.out.println(adapter.getItemCount());
 
@@ -75,9 +73,9 @@ public class student extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_student);
+        setContentView(R.layout.activity_lecturer);
 
-        drawerLayout = findViewById(R.id.drawerLayout);
+        drawerLayout = findViewById(R.id.lecDrawer);
         Toolbar toolbar = findViewById(R.id.toolbar);
         navigationView = findViewById(R.id.navigationView);
 
@@ -99,16 +97,17 @@ public class student extends AppCompatActivity {
 
                 switch (item.getItemId()) {
                     case R.id.home:
-                        Intent intent = new Intent(student.this, student.class);
+                        Intent intent = new Intent(Lecturer.this, Lecturer.class);
                         startActivity(intent);
                         return true;
 
                     case R.id.myAccount:
-                        Intent myAccountIntent = new Intent(student.this, my_account.class);
+                        Intent myAccountIntent = new Intent(Lecturer.this, My_account.class);
                         startActivity(myAccountIntent);
                         return true;
+
                     case R.id.WeeklyTimetable:
-                        Intent weeklyTimetable = new Intent(student.this,weekly_timetable_for_student.class);
+                        Intent weeklyTimetable = new Intent(Lecturer.this,weekly_timetable_for_lecturer.class);
                         startActivity(weeklyTimetable);
                         return true;
 

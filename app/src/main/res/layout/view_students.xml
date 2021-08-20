@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="185dp">
 
     <RelativeLayout
         android:layout_width="385dp"
@@ -13,14 +13,28 @@
 
 
         <TextView
-            android:id="@+id/studName"
-            android:layout_width="283dp"
+            android:id="@+id/studFname"
+            android:layout_width="280dp"
             android:layout_height="30dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginStart="46dp"
-            android:layout_marginEnd="42dp"
-            android:text="Praveen Ranasinghe"
+            android:layout_marginStart="35dp"
+            android:layout_marginEnd="182dp"
+            android:text="Praveen"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textSize="24dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/studLname"
+            android:layout_width="280dp"
+            android:layout_height="30dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="172dp"
+            android:layout_marginEnd="35dp"
+            android:text="Ranasinghe"
             android:textAlignment="center"
             android:textColor="@android:color/black"
             android:textSize="24dp"
@@ -49,7 +63,7 @@
             android:textStyle="italic" />
 
         <TextView
-            android:id="@+id/contactNum"
+            android:id="@+id/studContactNum"
             android:layout_width="350dp"
             android:layout_height="25dp"
             android:layout_marginStart="180dp"
@@ -58,7 +72,7 @@
             android:textAlignment="center"
             android:textColor="@android:color/black"
             android:textSize="15dp"
-            android:textStyle="italic"/>
+            android:textStyle="italic" />
 
         <TextView
             android:id="@+id/studEmail"

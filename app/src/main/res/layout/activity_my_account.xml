@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".my_account"
+    tools:context=".My_account"
     android:background="@drawable/bg3">
 
     <TextView

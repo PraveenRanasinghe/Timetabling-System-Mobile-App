@@ -29,6 +29,13 @@ public interface ApiCalls {
     @GET("/allTimetablesForLecturer")
     Call<List<Timetable>> getAllTimetablesToLecturer(@Header("Authorization") String authorization);
 
+    @GET("/viewAllStudents")
+    Call<List<User>> getAllStudents(@Header("Authorization") String authorization);
+
+    @GET("/viewAllLecturers")
+    Call<List<User>> getAllLecturers(@Header("Authorization") String authorization);
+
+
     @POST("/mobileAuthentication")
     Call<JwtResponse> authenticateUser(@Body JwtRequest users);
 

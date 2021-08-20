@@ -67,12 +67,12 @@ public class MainActivity extends AppCompatActivity {
                                 break;
                             }
                             case "lecturer": {
-                                Intent intent = new Intent(MainActivity.this, lecturer.class);
+                                Intent intent = new Intent(MainActivity.this, Lecturer.class);
                                 startActivity(intent);
                                 break;
                             }
                             case "student": {
-                                Intent intent = new Intent(MainActivity.this, student.class);
+                                Intent intent = new Intent(MainActivity.this, Student.class);
                                 startActivity(intent);
                                 break;
                             }
