@@ -43,6 +43,7 @@
         <activity android:name=".add_batch" />
         <activity android:name=".add_module" />
         <activity android:name=".add_lecturer" />
+        <activity android:name=".add_student" />
         <activity android:name=".admin_classroom_operations" />
         <activity android:name=".admin_batch_operations" />
         <activity android:name=".admin_module_operations" />

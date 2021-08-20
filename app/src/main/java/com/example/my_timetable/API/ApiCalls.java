@@ -1,5 +1,7 @@
 package com.example.my_timetable.API;
 
+import com.example.my_timetable.Model.Batch;
+import com.example.my_timetable.Model.Classroom;
 import com.example.my_timetable.Model.JwtRequest;
 import com.example.my_timetable.Model.JwtResponse;
 import com.example.my_timetable.Model.Module;
@@ -17,6 +19,10 @@ import retrofit2.http.Headers;
 import retrofit2.http.POST;
 
 public interface ApiCalls {
+
+
+    @POST("/mobileAuthentication")
+    Call<JwtResponse> authenticateUser(@Body JwtRequest users);
 
     @GET("/todayLecturersForStudent")
     Call<List<Timetable>> getTodayTimetableToStudent(@Header("Authorization") String authorization);
@@ -39,7 +45,12 @@ public interface ApiCalls {
     @GET("/viewAllModules")
     Call<List<Module>> getAllModules(@Header("Authorization") String authorization);
 
-    @POST("/mobileAuthentication")
-    Call<JwtResponse> authenticateUser(@Body JwtRequest users);
+    @GET("/viewAllBatches")
+    Call<List<Batch>> getAllBatches(@Header("Authorization") String authorization);
+
+    @GET("/viewAllClassRooms")
+    Call<List<Classroom>> getAllClassRooms(@Header("Authorization") String authorization);
+
+
 
 }

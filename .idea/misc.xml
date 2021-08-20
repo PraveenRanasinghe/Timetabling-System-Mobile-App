@@ -32,7 +32,7 @@
         <entry key="..\:/Users/dell/Desktop/My Projects/EEA_Mobile/EEA-Mobile/app/src/main/res/layout/activity_view_all_lecturers.xml" value="0.2109375" />
         <entry key="..\:/Users/dell/Desktop/My Projects/EEA_Mobile/EEA-Mobile/app/src/main/res/layout/activity_view_all_modules.xml" value="0.23541666666666666" />
         <entry key="..\:/Users/dell/Desktop/My Projects/EEA_Mobile/EEA-Mobile/app/src/main/res/layout/activity_view_all_students.xml" value="0.2109375" />
-        <entry key="..\:/Users/dell/Desktop/My Projects/EEA_Mobile/EEA-Mobile/app/src/main/res/layout/activity_view_batches.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/dell/Desktop/My Projects/EEA_Mobile/EEA-Mobile/app/src/main/res/layout/activity_view_batches.xml" value="0.25" />
         <entry key="..\:/Users/dell/Desktop/My Projects/EEA_Mobile/EEA-Mobile/app/src/main/res/layout/activity_view_classrooms.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/dell/Desktop/My Projects/EEA_Mobile/EEA-Mobile/app/src/main/res/layout/activity_weekly_lec_timetable.xml" value="0.35260416666666666" />
         <entry key="..\:/Users/dell/Desktop/My Projects/EEA_Mobile/EEA-Mobile/app/src/main/res/layout/activity_weekly_timetable.xml" value="0.33" />
@@ -43,6 +43,8 @@
         <entry key="..\:/Users/dell/Desktop/My Projects/EEA_Mobile/EEA-Mobile/app/src/main/res/layout/lec_header.xml" value="0.2859375" />
         <entry key="..\:/Users/dell/Desktop/My Projects/EEA_Mobile/EEA-Mobile/app/src/main/res/layout/timetable_for_lecturer.xml" value="0.24427083333333333" />
         <entry key="..\:/Users/dell/Desktop/My Projects/EEA_Mobile/EEA-Mobile/app/src/main/res/layout/timetable_for_students.xml" value="0.24427083333333333" />
+        <entry key="..\:/Users/dell/Desktop/My Projects/EEA_Mobile/EEA-Mobile/app/src/main/res/layout/view_batch.xml" value="0.22291666666666668" />
+        <entry key="..\:/Users/dell/Desktop/My Projects/EEA_Mobile/EEA-Mobile/app/src/main/res/layout/view_class.xml" value="0.22291666666666668" />
         <entry key="..\:/Users/dell/Desktop/My Projects/EEA_Mobile/EEA-Mobile/app/src/main/res/layout/view_lecturers.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/dell/Desktop/My Projects/EEA_Mobile/EEA-Mobile/app/src/main/res/layout/view_module.xml" value="0.33" />
         <entry key="..\:/Users/dell/Desktop/My Projects/EEA_Mobile/EEA-Mobile/app/src/main/res/layout/view_students.xml" value="0.36666666666666664" />
