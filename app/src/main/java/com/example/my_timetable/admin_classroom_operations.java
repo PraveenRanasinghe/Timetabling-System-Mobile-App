@@ -17,4 +17,8 @@ public class admin_classroom_operations extends AppCompatActivity {
     public void addClassroom(View view){
         startActivity(new Intent(admin_classroom_operations.this,add_classroom.class));
     }
+
+    public void viewClassRooms(View view){
+        startActivity(new Intent(admin_classroom_operations.this,ViewClassrooms.class));
+    }
 }

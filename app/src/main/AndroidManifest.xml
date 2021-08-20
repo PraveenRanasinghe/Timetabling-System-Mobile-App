@@ -13,6 +13,12 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".ViewBatches"
+            android:exported="true" />
+        <activity
+            android:name=".ViewClassrooms"
+            android:exported="true" />
+        <activity
             android:name=".weekly_timetable_for_lecturer"
             android:exported="true" />
         <activity

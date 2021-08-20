@@ -17,4 +17,8 @@ public class admin_batch_operations extends AppCompatActivity {
     public void addBatch(View view){
         startActivity(new Intent(admin_batch_operations.this,add_batch.class));
     }
+
+    public void viewBatches(View view){
+        startActivity(new Intent(admin_batch_operations.this,ViewBatches.class));
+    }
 }

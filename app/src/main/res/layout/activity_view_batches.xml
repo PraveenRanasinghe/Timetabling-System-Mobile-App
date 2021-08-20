@@ -4,14 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view_all_modules"
+    tools:context=".ViewBatches"
     android:background="@drawable/bg2">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
-
 
 
         <TextView
@@ -20,14 +18,14 @@
             android:layout_height="50dp"
             android:layout_centerHorizontal="true"
             android:layout_weight="1"
-            android:text="All Modules in Our University"
+            android:text="All Batches in Our University"
             android:textAlignment="center"
             android:textColor="#050303"
             android:textSize="28sp" />
 
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/viewAllModulesRecyclerView"
+            android:id="@+id/viewAllBatchesRecyclerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@id/textView3"
@@ -36,6 +34,5 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     </RelativeLayout>
-
 
 </androidx.drawerlayout.widget.DrawerLayout>

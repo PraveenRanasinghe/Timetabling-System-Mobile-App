@@ -2,6 +2,7 @@ package com.example.my_timetable.API;
 
 import com.example.my_timetable.Model.JwtRequest;
 import com.example.my_timetable.Model.JwtResponse;
+import com.example.my_timetable.Model.Module;
 import com.example.my_timetable.Model.Timetable;
 import com.example.my_timetable.Model.User;
 
@@ -35,6 +36,8 @@ public interface ApiCalls {
     @GET("/viewAllLecturers")
     Call<List<User>> getAllLecturers(@Header("Authorization") String authorization);
 
+    @GET("/viewAllModules")
+    Call<List<Module>> getAllModules(@Header("Authorization") String authorization);
 
     @POST("/mobileAuthentication")
     Call<JwtResponse> authenticateUser(@Body JwtRequest users);
