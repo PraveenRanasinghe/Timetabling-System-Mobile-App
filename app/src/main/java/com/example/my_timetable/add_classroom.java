@@ -2,6 +2,8 @@ package com.example.my_timetable;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -10,17 +12,30 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.example.my_timetable.API.ApiCalls;
+import com.example.my_timetable.API.RetrofitAPI;
+import com.example.my_timetable.Model.Classroom;
+import com.example.my_timetable.Model.User;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class add_classroom extends AppCompatActivity {
 
     private Spinner spinner, spinner1;
+    EditText classroomId;
+    EditText capa;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_classroom);
 
-        spinner = findViewById(R.id.spinner);
-        spinner1= findViewById(R.id.spinner1);
+        spinner = findViewById(R.id.spinnerAc);
+        spinner1= findViewById(R.id.spinnerSMB);
+        classroomId=findViewById(R.id.classRoomId);
+        capa=findViewById(R.id.capacity);
 
         String[] items={"Yes","No"};
         String[] items1={"Yes","No"};
@@ -33,12 +48,12 @@ public class add_classroom extends AppCompatActivity {
     }
 
     public void addClassRoom(View view){
-        final String classRoomId=((EditText)findViewById(R.id.classRoomId)).getText().toString().trim();
+        final String classId=((EditText)findViewById(R.id.classRoomId)).getText().toString().trim();
         final String capacity=((EditText)findViewById(R.id.capacity)).getText().toString().trim();
-        final String  ac=((Spinner)findViewById(R.id.spinner)).toString().trim();
-        final String smartBoard=((Spinner)findViewById(R.id.spinner1)).toString().trim();
+        final String  ac=((Spinner)findViewById(R.id.spinnerAc)).toString().trim();
+        final String smartBoard=((Spinner)findViewById(R.id.spinnerSMB)).toString().trim();
 
-        if(classRoomId.isEmpty()){
+        if(classId.isEmpty()){
             Toast.makeText(getApplicationContext(), "Please fill the ClassRoom Id Field.", Toast.LENGTH_SHORT).show();
         }
         else if(capacity.isEmpty()){
@@ -50,6 +65,39 @@ public class add_classroom extends AppCompatActivity {
         else if(smartBoard.isEmpty()){
             Toast.makeText(getApplicationContext(), "Please Enter the SmartBoard Status of the ClassRoom", Toast.LENGTH_SHORT).show();
         }
+
+
+        SharedPreferences prefs = getSharedPreferences("SHARED", Context.MODE_PRIVATE);
+        String name = prefs.getString("token", null);
+        String jwt = "Bearer " + name;
+
+        Classroom classroom=new Classroom();
+        RetrofitAPI retrofit = new RetrofitAPI();
+        classroom.setClassRoomID(classroomId.getText().toString());
+        classroom.setAc(spinner.toString());
+        classroom.setSmartBoard(spinner1.toString());
+        classroom.setCapacity(capa.getText().toString());
+
+
+        ApiCalls apiCalls = retrofit.getRetrofit().create(ApiCalls.class);
+        Call<Classroom> jwtResponseCall = apiCalls.addClassroom(jwt,classroom);
+
+        jwtResponseCall.enqueue(new Callback<Classroom>() {
+            @Override
+            public void onResponse(Call<Classroom> call, Response<Classroom> response) {
+                if(response.isSuccessful()){
+                    Toast.makeText(getApplicationContext(), "New Classroom has been added Successfully! ", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    Toast.makeText(getApplicationContext(), "Operation Failed ! ", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Classroom> call, Throwable t) {
+                Toast.makeText(getApplicationContext(), "Operation Failed! ", Toast.LENGTH_SHORT).show();
+            }
+        });
 
     }
 }

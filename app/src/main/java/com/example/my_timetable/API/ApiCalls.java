@@ -54,4 +54,11 @@ public interface ApiCalls {
     @POST("/addStudents")
     Call<User> addStudents(@Header("Authorization") String authorization,@Body User user);
 
+    @POST("/addLecturers")
+    Call<User> addLecturers(@Header("Authorization") String authorization,@Body User user);
+
+    @POST("/addClassrooms")
+    Call<Classroom> addClassroom(@Header("Authorization") String authorization,@Body Classroom classroom);
+
+
 }

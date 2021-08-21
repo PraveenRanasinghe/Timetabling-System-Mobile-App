@@ -37,8 +37,8 @@ public class add_batch extends AppCompatActivity implements DatePickerDialog.OnD
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                DialogFragment datePicker = new com.example.my_timetable.DatePicker();
-                datePicker.show(getSupportFragmentManager(),"Date Picker");
+                DialogFragment datePicker = new DatePicker2();
+                datePicker.show(getSupportFragmentManager(),"Date Picker 2");
             }
         });
     }
@@ -50,8 +50,13 @@ public class add_batch extends AppCompatActivity implements DatePickerDialog.OnD
         calendar.set(Calendar.MONTH,month);
         calendar.set(Calendar.DAY_OF_MONTH,dayOfMonth);
 
+        Calendar calendar2 = Calendar.getInstance();
+        calendar2.set(Calendar.YEAR,year);
+        calendar2.set(Calendar.MONTH,month);
+        calendar2.set(Calendar.DAY_OF_MONTH,dayOfMonth);
+
         String currentDate = DateFormat.getInstance().format(calendar.getTime());
-        String currentDate2 = DateFormat.getInstance().format(calendar.getTime());
+        String currentDate2 = DateFormat.getInstance().format(calendar2.getTime());
 
         TextView textView = (TextView) findViewById(R.id.commencementDate);
         textView.setText(currentDate);
@@ -59,8 +64,8 @@ public class add_batch extends AppCompatActivity implements DatePickerDialog.OnD
         TextView textView1 = (TextView) findViewById(R.id.terminationDate);
         textView1.setText(currentDate2);
 
-
     }
+
 
     public void createBatch(View view){
         final String batchId=((EditText)findViewById(R.id.batchId)).getText().toString().trim();

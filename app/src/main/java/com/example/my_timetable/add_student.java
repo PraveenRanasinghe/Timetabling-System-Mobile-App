@@ -50,6 +50,28 @@ public class add_student extends AppCompatActivity {
 
     public void addStudents(View view){
 
+        final String studentEmail=((EditText)findViewById(R.id.newStudEmail)).getText().toString().trim();
+        final String fName=((EditText)findViewById(R.id.studFName)).getText().toString().trim();
+        final String lName=((EditText)findViewById(R.id.studLName)).getText().toString().trim();
+        final String batchId=((EditText)findViewById(R.id.SbatchId)).getText().toString().trim();
+        final String contactNum=((EditText)findViewById(R.id.ScontactNum)).getText().toString().trim();
+
+        if(studentEmail.isEmpty()){
+            Toast.makeText(getApplicationContext(), "Please Enter the Student Email", Toast.LENGTH_SHORT).show();
+        }
+        else if(fName.isEmpty()){
+            Toast.makeText(getApplicationContext(), "Please fill the First Name field.", Toast.LENGTH_SHORT).show();
+        }
+        else if(lName.isEmpty()){
+            Toast.makeText(getApplicationContext(), "Please fill Last Name field.", Toast.LENGTH_SHORT).show();
+        }
+        else if(batchId.isEmpty()){
+            Toast.makeText(getApplicationContext(), "Please fill the Batch Id Field.", Toast.LENGTH_SHORT).show();
+        }
+        else if(contactNum.isEmpty()){
+            Toast.makeText(getApplicationContext(), "Please Enter the Contact Number.", Toast.LENGTH_SHORT).show();
+        }
+
         SharedPreferences prefs = getSharedPreferences("SHARED", Context.MODE_PRIVATE);
         String name = prefs.getString("token", null);
         String jwt = "Bearer " + name;
@@ -83,28 +105,6 @@ public class add_student extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "Operation Failed! ", Toast.LENGTH_SHORT).show();
             }
         });
-
-        final String studEmail=((EditText)findViewById(R.id.newStudEmail)).getText().toString().trim();
-        final String fName=((EditText)findViewById(R.id.studFName)).getText().toString().trim();
-        final String lName=((EditText)findViewById(R.id.studLName)).getText().toString().trim();
-        final String batchId=((EditText)findViewById(R.id.SbatchId)).getText().toString().trim();
-        final String contactNum=((EditText)findViewById(R.id.ScontactNum)).getText().toString().trim();
-
-        if(studEmail.isEmpty()){
-            Toast.makeText(getApplicationContext(), "Please Enter the Student Email", Toast.LENGTH_SHORT).show();
-        }
-        else if(fName.isEmpty()){
-            Toast.makeText(getApplicationContext(), "Please fill the First Name field.", Toast.LENGTH_SHORT).show();
-        }
-        else if(lName.isEmpty()){
-            Toast.makeText(getApplicationContext(), "Please fill Last Name field.", Toast.LENGTH_SHORT).show();
-        }
-        else if(batchId.isEmpty()){
-            Toast.makeText(getApplicationContext(), "Please fill the Batch Id Field.", Toast.LENGTH_SHORT).show();
-        }
-        else if(contactNum.isEmpty()){
-            Toast.makeText(getApplicationContext(), "Please Enter the Contact Number.", Toast.LENGTH_SHORT).show();
-        }
 
     }
 }
