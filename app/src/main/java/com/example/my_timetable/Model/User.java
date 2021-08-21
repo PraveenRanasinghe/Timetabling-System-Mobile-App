@@ -6,10 +6,20 @@ public class User {
     private String lName;
     private String contactNumber;
     private String userRole;
-    private Batch batchId;
+    private String batchId;
     private String password;
 
     public User() {
+    }
+
+    public User(String email, String fName, String lName, String contactNumber, String userRole, String batchId, String password) {
+        this.email = email;
+        this.fName = fName;
+        this.lName = lName;
+        this.contactNumber = contactNumber;
+        this.userRole = userRole;
+        this.batchId = batchId;
+        this.password = password;
     }
 
     public String getEmail() {
@@ -52,11 +62,11 @@ public class User {
         this.userRole = userRole;
     }
 
-    public Batch getBatchId() {
+    public String getBatchId() {
         return batchId;
     }
 
-    public void setBatchId(Batch batchId) {
+    public void setBatchId(String batchId) {
         this.batchId = batchId;
     }
 

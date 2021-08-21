@@ -5,7 +5,9 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -48,6 +50,10 @@ public class add_student extends AppCompatActivity {
 
     public void addStudents(View view){
 
+        SharedPreferences prefs = getSharedPreferences("SHARED", Context.MODE_PRIVATE);
+        String name = prefs.getString("token", null);
+        String jwt = "Bearer " + name;
+
         User user = new User();
         RetrofitAPI retrofit = new RetrofitAPI();
         user.setfName(studFName.getText().toString());
@@ -55,11 +61,11 @@ public class add_student extends AppCompatActivity {
         user.setPassword("User1234");
         user.setUserRole(userType.getText().toString());
         user.setEmail(studEmail.getText().toString());
-//        user.setBatchId((Batch)studBatch.getText());
+        user.setBatchId(studBatch.getText().toString());
         user.setContactNumber(studContact.getText().toString());
 
         ApiCalls apiCalls = retrofit.getRetrofit().create(ApiCalls.class);
-        Call<User> jwtResponseCall = apiCalls.addStudents(user);
+        Call<User> jwtResponseCall = apiCalls.addStudents(jwt,user);
 
         jwtResponseCall.enqueue(new Callback<User>() {
             @Override
@@ -68,20 +74,20 @@ public class add_student extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "New Student has been Added to the University Successfully! ", Toast.LENGTH_SHORT).show();
                 }
                 else {
-                    Toast.makeText(getApplicationContext(), "Operation Successful! ", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Operation Failed Response! ", Toast.LENGTH_SHORT).show();
                 }
             }
 
             @Override
             public void onFailure(Call<User> call, Throwable t) {
-
+                Toast.makeText(getApplicationContext(), "Operation Failed! ", Toast.LENGTH_SHORT).show();
             }
         });
 
         final String studEmail=((EditText)findViewById(R.id.newStudEmail)).getText().toString().trim();
         final String fName=((EditText)findViewById(R.id.studFName)).getText().toString().trim();
         final String lName=((EditText)findViewById(R.id.studLName)).getText().toString().trim();
-//        final String batchId=((EditText)findViewById(R.id.SbatchId)).getText().toString().trim();
+        final String batchId=((EditText)findViewById(R.id.SbatchId)).getText().toString().trim();
         final String contactNum=((EditText)findViewById(R.id.ScontactNum)).getText().toString().trim();
 
         if(studEmail.isEmpty()){
@@ -93,9 +99,9 @@ public class add_student extends AppCompatActivity {
         else if(lName.isEmpty()){
             Toast.makeText(getApplicationContext(), "Please fill Last Name field.", Toast.LENGTH_SHORT).show();
         }
-//        else if(batchId.isEmpty()){
-//            Toast.makeText(getApplicationContext(), "Please fill the Batch Id Field.", Toast.LENGTH_SHORT).show();
-//        }
+        else if(batchId.isEmpty()){
+            Toast.makeText(getApplicationContext(), "Please fill the Batch Id Field.", Toast.LENGTH_SHORT).show();
+        }
         else if(contactNum.isEmpty()){
             Toast.makeText(getApplicationContext(), "Please Enter the Contact Number.", Toast.LENGTH_SHORT).show();
         }
