@@ -60,5 +60,8 @@ public interface ApiCalls {
     @POST("/addClassrooms")
     Call<Classroom> addClassroom(@Header("Authorization") String authorization,@Body Classroom classroom);
 
+    @POST("/addBatch")
+    Call<Batch> addBatch(@Header("Authorization") String authorization,@Body Batch batch);
+
 
 }
