@@ -2,10 +2,12 @@ package com.example.my_timetable.API;
 
 import com.example.my_timetable.Model.Batch;
 import com.example.my_timetable.Model.Classroom;
+import com.example.my_timetable.Model.DtoUser;
 import com.example.my_timetable.Model.JwtRequest;
 import com.example.my_timetable.Model.JwtResponse;
 import com.example.my_timetable.Model.Module;
 import com.example.my_timetable.Model.Timetable;
+import com.example.my_timetable.Model.UDto;
 import com.example.my_timetable.Model.User;
 
 import java.io.Serializable;
@@ -37,7 +39,7 @@ public interface ApiCalls {
     Call<List<Timetable>> getAllTimetablesToLecturer(@Header("Authorization") String authorization);
 
     @GET("/viewAllStudents")
-    Call<List<User>> getAllStudents(@Header("Authorization") String authorization);
+    Call<List<UDto>> getAllStudents(@Header("Authorization") String authorization);
 
     @GET("/viewAllLecturers")
     Call<List<User>> getAllLecturers(@Header("Authorization") String authorization);
@@ -62,6 +64,9 @@ public interface ApiCalls {
 
     @POST("/addBatch")
     Call<Batch> addBatch(@Header("Authorization") String authorization,@Body Batch batch);
+
+    @POST("/addModule")
+    Call<Module> addModule(@Header("Authorization") String authorization,@Body Module module);
 
 
 }

@@ -13,7 +13,9 @@ import com.example.my_timetable.API.ApiCalls;
 import com.example.my_timetable.API.RetrofitAPI;
 import com.example.my_timetable.Adapters.StudentTimetableAdapter;
 import com.example.my_timetable.Adapters.ViewStudentsAdapter;
+import com.example.my_timetable.Model.DtoUser;
 import com.example.my_timetable.Model.Timetable;
+import com.example.my_timetable.Model.UDto;
 import com.example.my_timetable.Model.User;
 
 import java.util.List;
@@ -39,13 +41,13 @@ public class view_all_students extends AppCompatActivity {
         String name = prefs.getString("token", null);
         String jwt = "Bearer " + name;
 
-        Call<List<User>> getUsers = RetrofitAPI.getRetrofit().create(ApiCalls.class).getAllStudents(jwt);
+        Call<List<UDto>> getUsers = RetrofitAPI.getRetrofit().create(ApiCalls.class).getAllStudents(jwt);
 
-        getUsers.enqueue(new Callback<List<User>>() {
+        getUsers.enqueue(new Callback<List<UDto>>() {
             @Override
-            public void onResponse(Call<List<User>> call, Response<List<User>> response) {
+            public void onResponse(Call<List<UDto>> call, Response<List<UDto>> response) {
                 if(response.isSuccessful()){
-                    List<User> user = response.body();
+                    List<UDto> user = response.body();
                     ViewStudentsAdapter adapter = new ViewStudentsAdapter(user);
                     recyclerView.setAdapter(adapter);
                     recyclerView.setLayoutManager(new LinearLayoutManager(view_all_students.this));
@@ -54,7 +56,7 @@ public class view_all_students extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<List<User>> call, Throwable t) {
+            public void onFailure(Call<List<UDto>> call, Throwable t) {
                 Toast.makeText(getApplicationContext(),"Operation Failed ! "+t, Toast.LENGTH_LONG).show();
                 System.out.println(t);
             }

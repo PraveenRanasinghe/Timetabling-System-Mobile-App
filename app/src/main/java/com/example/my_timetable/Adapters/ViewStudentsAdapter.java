@@ -8,6 +8,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.my_timetable.Model.DtoUser;
+import com.example.my_timetable.Model.UDto;
 import com.example.my_timetable.Model.User;
 import com.example.my_timetable.R;
 
@@ -15,9 +17,9 @@ import java.util.List;
 
 public class ViewStudentsAdapter extends RecyclerView.Adapter<ViewStudentsAdapter.ViewHolder>{
 
-    List<User> userList;
+    List<UDto> userList;
 
-    public ViewStudentsAdapter(List<User> userList) {
+    public ViewStudentsAdapter(List<UDto> userList) {
         this.userList = userList;
     }
 
@@ -30,13 +32,12 @@ public class ViewStudentsAdapter extends RecyclerView.Adapter<ViewStudentsAdapte
 
     @Override
     public void onBindViewHolder(@NonNull ViewStudentsAdapter.ViewHolder holder, int position) {
-        User user = userList.get(position);
+        UDto user = userList.get(position);
         holder.studentEmail.setText(user.getEmail());
         holder.studentfName.setText(user.getfName());
         holder.studentlName.setText(user.getlName());
         holder.contactNum.setText(user.getContactNumber());
-        holder.batchId.setText(user.getBatchId());
-
+        holder.batchId.setText(user.getBatchId().toString());
     }
 
     @Override

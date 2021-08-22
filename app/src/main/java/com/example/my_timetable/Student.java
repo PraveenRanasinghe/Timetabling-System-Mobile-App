@@ -67,7 +67,6 @@ public class Student extends AppCompatActivity {
                 System.out.println(t);
             }
         });
-
     }
 
     @Override

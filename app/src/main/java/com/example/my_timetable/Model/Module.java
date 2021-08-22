@@ -5,17 +5,9 @@ import java.util.List;
 public class Module {
     private String moduleID;
     private String moduleName;
-    private User user;
-    private List<Timetable> lectureList;
+    private DtoUser user;
     private List<Batch> batches;
 
-    public Module(String moduleID, String moduleName, User user, List<Timetable> lectureList, List<Batch> batches) {
-        this.moduleID = moduleID;
-        this.moduleName = moduleName;
-        this.user = user;
-        this.lectureList = lectureList;
-        this.batches = batches;
-    }
 
     public Module() {
     }
@@ -36,20 +28,12 @@ public class Module {
         this.moduleName = moduleName;
     }
 
-    public User getUser() {
+    public DtoUser getUser() {
         return user;
     }
 
-    public void setUser(User user) {
+    public void setUser(DtoUser user) {
         this.user = user;
-    }
-
-    public List<Timetable> getLectureList() {
-        return lectureList;
-    }
-
-    public void setLectureList(List<Timetable> lectureList) {
-        this.lectureList = lectureList;
     }
 
     public List<Batch> getBatches() {
