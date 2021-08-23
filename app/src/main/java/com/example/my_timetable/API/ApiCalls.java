@@ -26,6 +26,9 @@ public interface ApiCalls {
     @POST("/mobileAuthentication")
     Call<JwtResponse> authenticateUser(@Body JwtRequest users);
 
+    @GET("/getStudentAccount")
+    Call<DtoUser> getMyAccount(@Header("Authorization") String authorization);
+
     @GET("/todayLecturersForStudent")
     Call<List<Timetable>> getTodayTimetableToStudent(@Header("Authorization") String authorization);
 

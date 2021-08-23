@@ -14,6 +14,7 @@ import com.example.my_timetable.R;
 import java.util.List;
 
 public class ViewLecturersAdapter extends RecyclerView.Adapter<ViewLecturersAdapter.ViewHolder>{
+
     List<User> userList;
 
     public ViewLecturersAdapter(List<User> userList) {
