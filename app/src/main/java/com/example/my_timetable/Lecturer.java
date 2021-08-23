@@ -106,10 +106,16 @@ public class Lecturer extends AppCompatActivity {
                         startActivity(myAccountIntent);
                         return true;
 
+                    case R.id.myModules:
+                        Intent myModules = new Intent(Lecturer.this, MyModulesLec.class);
+                        startActivity(myModules);
+                        return true;
+
                     case R.id.WeeklyTimetable:
                         Intent weeklyTimetable = new Intent(Lecturer.this,weekly_timetable_for_lecturer.class);
                         startActivity(weeklyTimetable);
                         return true;
+
 
                 }
                 return false;

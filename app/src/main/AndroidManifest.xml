@@ -13,6 +13,12 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".MyModulesStud"
+            android:exported="true" />
+        <activity
+            android:name=".MyModulesLec"
+            android:exported="true" />
+        <activity
             android:name=".ViewBatches"
             android:exported="true" />
         <activity

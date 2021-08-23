@@ -29,6 +29,12 @@ public interface ApiCalls {
     @GET("/getStudentAccount")
     Call<DtoUser> getMyAccount(@Header("Authorization") String authorization);
 
+    @GET("/myModules")
+    Call<List<Module>> getMyModulesToLec(@Header("Authorization") String authorization);
+
+    @GET("/batchModules")
+    Call<List<Module>> getBatchModules(@Header("Authorization") String authorization);
+
     @GET("/todayLecturersForStudent")
     Call<List<Timetable>> getTodayTimetableToStudent(@Header("Authorization") String authorization);
 

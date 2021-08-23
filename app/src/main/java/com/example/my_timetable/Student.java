@@ -104,6 +104,13 @@ public class Student extends AppCompatActivity {
                         Intent myAccountIntent = new Intent(Student.this, My_account.class);
                         startActivity(myAccountIntent);
                         return true;
+
+                    case R.id.myModules:
+                        Intent myModules = new Intent(Student.this, MyModulesStud.class);
+                        startActivity(myModules);
+                        return true;
+
+
                     case R.id.WeeklyTimetable:
                         Intent weeklyTimetable = new Intent(Student.this,weekly_timetable_for_student.class);
                         startActivity(weeklyTimetable);
