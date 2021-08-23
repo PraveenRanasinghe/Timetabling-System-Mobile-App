@@ -33,7 +33,6 @@ public class MyModulesStud extends AppCompatActivity {
 
         recyclerView =findViewById(R.id.viewMyModulesStudRecyclerView);
 
-
         SharedPreferences prefs = getSharedPreferences("SHARED", Context.MODE_PRIVATE);
         String name = prefs.getString("token", null);
         String jwt = "Bearer " + name;
@@ -59,7 +58,6 @@ public class MyModulesStud extends AppCompatActivity {
         });
 
     }
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

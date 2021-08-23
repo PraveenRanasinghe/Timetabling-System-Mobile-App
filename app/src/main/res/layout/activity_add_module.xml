@@ -4,14 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg2">
+    android:background="@drawable/bgbg">
 
 
     <TextView
         android:id="@+id/textView22"
         android:layout_width="match_parent"
         android:layout_height="65dp"
-        android:background="@drawable/header"
         android:text="Add New Modules"
         android:textAlignment="center"
         android:textColor="#0B0606"

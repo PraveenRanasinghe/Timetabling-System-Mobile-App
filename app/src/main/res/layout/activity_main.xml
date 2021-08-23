@@ -4,22 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg2"
+    android:background="@drawable/bgbg"
     tools:context=".MainActivity">
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="115dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="29dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="25dp"
-        android:layout_marginBottom="612dp"
+        android:layout_width="match_parent"
+        android:layout_height="126dp"
         android:maxHeight="20px"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:src="@drawable/homeicon" />
 
     <Button
@@ -31,7 +25,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="112dp"
         android:layout_marginEnd="112dp"
-        android:layout_marginBottom="95dp"
+        android:layout_marginBottom="65dp"
         android:background="@drawable/add_button"
         android:fontFamily="sans-serif"
         android:onClick="Login"
@@ -47,7 +41,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="46dp"
         android:layout_marginEnd="43dp"
-        android:layout_marginBottom="330dp"
+        android:layout_marginBottom="290dp"
         android:background="@drawable/custom_input"
         android:drawableStart="@drawable/email"
         android:drawablePadding="12dp"
@@ -55,7 +49,7 @@
         android:hint="johndoe@gmail.com"
         android:inputType="textEmailAddress"
         android:textColorLink="#070606"
-        android:textCursorDrawable="@android:color/background_dark" />
+        android:textCursorDrawable="@color/colorPrimary" />
 
     <EditText
         android:id="@+id/password"
@@ -66,7 +60,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="46dp"
         android:layout_marginEnd="43dp"
-        android:layout_marginBottom="217dp"
+        android:layout_marginBottom="170dp"
         android:background="@drawable/custom_input"
         android:drawableStart="@drawable/lock"
         android:drawablePadding="12dp"
@@ -85,7 +79,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="21dp"
         android:layout_marginEnd="19dp"
-        android:layout_marginBottom="529dp"
+        android:layout_marginBottom="465dp"
         android:fontFamily="sans-serif"
         android:text="Login Here "
         android:textAlignment="center"
@@ -101,6 +95,6 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="127dp"
         android:layout_marginEnd="126dp"
-        android:layout_marginBottom="422dp"
+        android:layout_marginBottom="360dp"
         android:src="@drawable/login" />
 </RelativeLayout>

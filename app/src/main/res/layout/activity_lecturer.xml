@@ -8,7 +8,7 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     tools:context=".Student"
-    android:background="@drawable/lec">
+    >
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -18,8 +18,8 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:title="Time Tabling Portal"
-            android:background="@drawable/header"/>
+            android:background="@drawable/add_button"
+            app:title="Time Tabling Portal" />
 
 
         <TextView
@@ -33,7 +33,7 @@
             android:textAlignment="center"
             android:textColor="#050303"
             android:textSize="30sp"
-            android:textStyle="bold" />
+            android:textStyle="normal" />
 
 
         <androidx.recyclerview.widget.RecyclerView

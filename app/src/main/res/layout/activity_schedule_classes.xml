@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg2"
+    android:background="@drawable/bgbg"
     tools:context=".ScheduleClasses">
 
     <TextView
         android:id="@+id/textView14"
         android:layout_width="match_parent"
         android:layout_height="58dp"
-        android:background="@drawable/header"
+        android:background="@drawable/header_stud"
         android:text="Schedule Timetable"
         android:textAlignment="center"
         android:textColor="#0C0707"
@@ -38,7 +38,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="320dp"
         android:layout_marginBottom="546dp"
-        android:background="@drawable/card_lec"
+        android:background="@drawable/add_button"
         android:text="select"
         android:textAlignment="center" />
 
@@ -122,7 +122,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="320dp"
         android:layout_marginBottom="324dp"
-        android:background="@drawable/card_lec"
+        android:background="@drawable/add_button"
         android:text="select"
         android:textAlignment="center" />
 
@@ -145,7 +145,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="320dp"
         android:layout_marginBottom="212dp"
-        android:background="@drawable/card_lec"
+        android:background="@drawable/add_button"
         android:textAlignment="center"
         tools:text="select" />
 

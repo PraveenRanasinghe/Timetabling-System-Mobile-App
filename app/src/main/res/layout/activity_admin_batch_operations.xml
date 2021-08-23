@@ -5,36 +5,39 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".admin_batch_operations"
-    android:background="@drawable/bg2">
+    android:background="@drawable/bgbg">
 
 
     <Button
         android:id="@+id/addBatch"
-        android:layout_width="155dp"
-        android:layout_height="135dp"
+        android:layout_width="296dp"
+        android:layout_height="100dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="227dp"
-        android:layout_marginBottom="350dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="337dp"
         android:background="@drawable/add_button"
         android:onClick="addBatch"
-        android:text="Create Batch" />
+        android:text="Create New Batch"
+        android:textSize="18dp" />
 
     <Button
         android:id="@+id/viewBatches"
-        android:layout_width="155dp"
-        android:layout_height="135dp"
+        android:layout_width="312dp"
+        android:layout_height="107dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="227dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginBottom="350dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="198dp"
         android:background="@drawable/add_button"
         android:onClick="viewBatches"
-        android:text="View Update and Remove Batches" />
+        android:text="View Update and Remove Batches"
+        android:textSize="18dp"
+        />
 
     <TextView
         android:layout_width="match_parent"

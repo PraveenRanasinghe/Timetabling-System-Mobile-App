@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg2">
+    android:background="@drawable/bgbg">
 
 
     <Button
@@ -51,6 +51,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="User Operations"
+        android:fontFamily="sans-serif"
         android:textAlignment="center"
         android:textColor="#070707"
         android:textSize="36sp" />
@@ -68,5 +69,41 @@
         android:background="@drawable/add_button"
         android:onClick="addLecturer"
         android:text="Add Lecturers" />
+
+<!--    <androidx.cardview.widget.CardView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="125dp"-->
+<!--        android:layout_marginLeft="20dp"-->
+<!--        android:layout_marginTop="75dp"-->
+<!--        android:layout_marginRight="20dp">-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:orientation="vertical">-->
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginLeft="50dp"-->
+<!--                android:layout_marginRight="50dp"-->
+<!--                android:text="ADD STUDENTS"-->
+<!--                android:textColor="@android:color/black"-->
+<!--                android:textSize="28dp"-->
+
+<!--                android:textStyle="normal" />-->
+
+<!--            <ImageView-->
+<!--                android:layout_width="65dp"-->
+<!--                android:layout_height="65dp"-->
+<!--                android:src="@drawable/user" />-->
+<!--        </LinearLayout>-->
+
+
+<!--    </androidx.cardview.widget.CardView>-->
+
+
+
 
 </RelativeLayout>
