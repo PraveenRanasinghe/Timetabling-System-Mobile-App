@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-public class admin_classroom_operations extends AppCompatActivity {
+public class Admin_classroom_operations extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -15,10 +15,10 @@ public class admin_classroom_operations extends AppCompatActivity {
     }
 
     public void addClassroom(View view){
-        startActivity(new Intent(admin_classroom_operations.this,add_classroom.class));
+        startActivity(new Intent(Admin_classroom_operations.this, Add_classroom.class));
     }
 
     public void viewClassRooms(View view){
-        startActivity(new Intent(admin_classroom_operations.this,ViewClassrooms.class));
+        startActivity(new Intent(Admin_classroom_operations.this,ViewClassrooms.class));
     }
 }

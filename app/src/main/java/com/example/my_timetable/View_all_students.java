@@ -11,12 +11,8 @@ import android.widget.Toast;
 
 import com.example.my_timetable.API.ApiCalls;
 import com.example.my_timetable.API.RetrofitAPI;
-import com.example.my_timetable.Adapters.StudentTimetableAdapter;
 import com.example.my_timetable.Adapters.ViewStudentsAdapter;
-import com.example.my_timetable.Model.DtoUser;
-import com.example.my_timetable.Model.Timetable;
 import com.example.my_timetable.Model.UDto;
-import com.example.my_timetable.Model.User;
 
 import java.util.List;
 
@@ -24,7 +20,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class view_all_students extends AppCompatActivity {
+public class View_all_students extends AppCompatActivity {
 
 
     private RecyclerView recyclerView;
@@ -50,7 +46,7 @@ public class view_all_students extends AppCompatActivity {
                     List<UDto> user = response.body();
                     ViewStudentsAdapter adapter = new ViewStudentsAdapter(user);
                     recyclerView.setAdapter(adapter);
-                    recyclerView.setLayoutManager(new LinearLayoutManager(view_all_students.this));
+                    recyclerView.setLayoutManager(new LinearLayoutManager(View_all_students.this));
 
                 }
             }

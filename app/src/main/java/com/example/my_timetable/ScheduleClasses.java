@@ -22,14 +22,22 @@ public class ScheduleClasses extends AppCompatActivity implements DatePickerDial
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_schedule_classes);
 
-        Button button1 = (Button)findViewById(R.id.selectDate);
+        Button dateButton = (Button)findViewById(R.id.selectDate);
+        Button timeButton=(Button)findViewById(R.id.time);
 
-
-        button1.setOnClickListener(new View.OnClickListener() {
+        dateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 DialogFragment datePicker = new com.example.my_timetable.DatePicker();
                 datePicker.show(getSupportFragmentManager(),"Date Picker");
+            }
+        });
+
+        timeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DialogFragment timePicker = new TimePicker();
+                timePicker.show(getSupportFragmentManager(),"Time Picker");
             }
         });
     }

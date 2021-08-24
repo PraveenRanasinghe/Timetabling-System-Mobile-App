@@ -18,7 +18,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class add_lecturer extends AppCompatActivity {
+public class Add_lecturer extends AppCompatActivity {
 
     EditText userType;
     EditText lecFName;

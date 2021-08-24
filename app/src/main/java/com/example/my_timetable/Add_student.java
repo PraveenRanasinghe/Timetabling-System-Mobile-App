@@ -23,7 +23,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class add_student extends AppCompatActivity {
+public class Add_student extends AppCompatActivity {
 
     EditText userType;
     EditText studFName;

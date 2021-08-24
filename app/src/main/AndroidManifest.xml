@@ -25,35 +25,35 @@
             android:name=".ViewClassrooms"
             android:exported="true" />
         <activity
-            android:name=".weekly_timetable_for_lecturer"
+            android:name=".Weekly_timetable_for_lecturer"
             android:exported="true" />
         <activity
-            android:name=".view_all_lecturers"
+            android:name=".View_all_lecturers"
             android:exported="true" />
         <activity
-            android:name=".view_all_students"
+            android:name=".View_all_students"
             android:exported="true" />
         <activity
-            android:name=".weekly_timetable_for_student"
+            android:name=".Weekly_timetable_for_student"
             android:exported="true" />
         <activity
             android:name=".ScheduleClasses"
             android:exported="true" />
         <activity
-            android:name=".view_all_modules"
+            android:name=".View_all_modules"
             android:exported="true" />
         <activity android:name=".My_account" />
         <activity android:name=".Lecturer" />
         <activity android:name=".Student" />
-        <activity android:name=".add_classroom" />
-        <activity android:name=".add_batch" />
-        <activity android:name=".add_module" />
-        <activity android:name=".add_lecturer" />
-        <activity android:name=".add_student" />
-        <activity android:name=".admin_classroom_operations" />
-        <activity android:name=".admin_batch_operations" />
-        <activity android:name=".admin_module_operations" />
-        <activity android:name=".admin_user_operations" />
+        <activity android:name=".Add_classroom" />
+        <activity android:name=".Add_batch" />
+        <activity android:name=".Add_module" />
+        <activity android:name=".Add_lecturer" />
+        <activity android:name=".Add_student" />
+        <activity android:name=".Admin_classroom_operations" />
+        <activity android:name=".Admin_batch_operations" />
+        <activity android:name=".Admin_module_operations" />
+        <activity android:name=".Admin_user_operations" />
         <activity android:name=".Admin" />
         <activity android:name=".MainActivity">
             <intent-filter>

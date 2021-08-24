@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bgbg"
-    tools:context=".view_all_students">
+    tools:context=".View_all_students">
 
     <RelativeLayout
         android:layout_width="match_parent"

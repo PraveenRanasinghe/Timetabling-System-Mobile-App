@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-public class admin_batch_operations extends AppCompatActivity {
+public class Admin_batch_operations extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -15,10 +15,10 @@ public class admin_batch_operations extends AppCompatActivity {
     }
 
     public void addBatch(View view){
-        startActivity(new Intent(admin_batch_operations.this,add_batch.class));
+        startActivity(new Intent(Admin_batch_operations.this, Add_batch.class));
     }
 
     public void viewBatches(View view){
-        startActivity(new Intent(admin_batch_operations.this,ViewBatches.class));
+        startActivity(new Intent(Admin_batch_operations.this,ViewBatches.class));
     }
 }

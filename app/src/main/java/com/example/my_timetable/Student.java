@@ -112,7 +112,7 @@ public class Student extends AppCompatActivity {
 
 
                     case R.id.WeeklyTimetable:
-                        Intent weeklyTimetable = new Intent(Student.this,weekly_timetable_for_student.class);
+                        Intent weeklyTimetable = new Intent(Student.this, Weekly_timetable_for_student.class);
                         startActivity(weeklyTimetable);
                         return true;
 

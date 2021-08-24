@@ -26,7 +26,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class add_batch extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
+public class Add_batch extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
 
     EditText batchId;
     EditText batchName;

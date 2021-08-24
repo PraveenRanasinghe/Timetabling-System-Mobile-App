@@ -11,7 +11,6 @@ import android.widget.Toast;
 
 import com.example.my_timetable.API.ApiCalls;
 import com.example.my_timetable.API.RetrofitAPI;
-import com.example.my_timetable.Adapters.LecturerTimetableAdapter;
 import com.example.my_timetable.Adapters.StudentTimetableAdapter;
 import com.example.my_timetable.Model.Timetable;
 
@@ -21,7 +20,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class weekly_timetable_for_lecturer extends AppCompatActivity {
+public class Weekly_timetable_for_student extends AppCompatActivity {
 
     private RecyclerView recyclerView;
 
@@ -29,23 +28,23 @@ public class weekly_timetable_for_lecturer extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-        recyclerView =findViewById(R.id.weeklyRecyclerViewLec);
+        recyclerView =findViewById(R.id.weeklyRecyclerView);
 
 
         SharedPreferences prefs = getSharedPreferences("SHARED", Context.MODE_PRIVATE);
         String token = prefs.getString("token", null);
         String jwt = "Bearer " + token;
 
-        Call<List<Timetable>> getTimetables = RetrofitAPI.getRetrofit().create(ApiCalls.class).getAllTimetablesToLecturer(jwt);
+        Call<List<Timetable>> getTimetables = RetrofitAPI.getRetrofit().create(ApiCalls.class).getAllTimetablesToStudent(jwt);
 
         getTimetables.enqueue(new Callback<List<Timetable>>() {
             @Override
             public void onResponse(Call<List<Timetable>> call, Response<List<Timetable>> response) {
                 if(response.isSuccessful()){
                     List<Timetable> timetableList = response.body();
-                    LecturerTimetableAdapter adapter = new LecturerTimetableAdapter(timetableList);
+                    StudentTimetableAdapter adapter = new StudentTimetableAdapter(timetableList);
                     recyclerView.setAdapter(adapter);
-                    recyclerView.setLayoutManager(new LinearLayoutManager(weekly_timetable_for_lecturer.this));
+                    recyclerView.setLayoutManager(new LinearLayoutManager(Weekly_timetable_for_student.this));
 
                     System.out.println(adapter.getItemCount());
 
@@ -64,6 +63,6 @@ public class weekly_timetable_for_lecturer extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_weekly_timetable_for_lecturer);
+        setContentView(R.layout.activity_weekly_timetable_for_student);
     }
 }

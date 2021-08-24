@@ -62,7 +62,7 @@ public class Admin extends AppCompatActivity {
 
 
                     case R.id.WeeklyTimetable:
-                        Intent weeklyTimetable = new Intent(Admin.this,weekly_timetable_for_student.class);
+                        Intent weeklyTimetable = new Intent(Admin.this, Weekly_timetable_for_student.class);
                         startActivity(weeklyTimetable);
                         return true;
 
@@ -73,18 +73,18 @@ public class Admin extends AppCompatActivity {
     }
 
     public void adminBatchOperations(View view){
-        startActivity(new Intent(Admin.this,admin_batch_operations.class));
+        startActivity(new Intent(Admin.this, Admin_batch_operations.class));
     }
 
     public void adminModuleOperations(View view){
-        startActivity(new Intent(Admin.this,admin_module_operations.class));
+        startActivity(new Intent(Admin.this, Admin_module_operations.class));
     }
 
     public void adminClassroomOperations(View view){
-        startActivity(new Intent(Admin.this,admin_classroom_operations.class));
+        startActivity(new Intent(Admin.this, Admin_classroom_operations.class));
     }
 
     public void adminUserOperations(View view){
-        startActivity(new Intent(Admin.this,admin_user_operations.class));
+        startActivity(new Intent(Admin.this, Admin_user_operations.class));
     }
 }

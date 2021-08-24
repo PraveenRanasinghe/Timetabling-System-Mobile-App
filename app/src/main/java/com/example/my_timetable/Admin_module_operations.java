@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-public class admin_module_operations extends AppCompatActivity {
+public class Admin_module_operations extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -15,10 +15,10 @@ public class admin_module_operations extends AppCompatActivity {
     }
 
     public void addModule(View view){
-        startActivity(new Intent(admin_module_operations.this,add_module.class));
+        startActivity(new Intent(Admin_module_operations.this, Add_module.class));
     }
 
     public void viewAllModules(View view){
-        startActivity(new Intent(admin_module_operations.this,view_all_modules.class));
+        startActivity(new Intent(Admin_module_operations.this, View_all_modules.class));
     }
 }

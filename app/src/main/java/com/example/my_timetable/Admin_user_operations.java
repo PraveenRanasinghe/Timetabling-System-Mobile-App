@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-public class admin_user_operations extends AppCompatActivity {
+public class Admin_user_operations extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -15,18 +15,18 @@ public class admin_user_operations extends AppCompatActivity {
     }
 
     public void addNewStudent(View view){
-        startActivity(new Intent(admin_user_operations.this,add_student.class));
+        startActivity(new Intent(Admin_user_operations.this, Add_student.class));
     }
 
     public void addLecturer(View view){
-        startActivity(new Intent(admin_user_operations.this,add_lecturer.class));
+        startActivity(new Intent(Admin_user_operations.this, Add_lecturer.class));
     }
 
     public void studentOperations(View view){
-        startActivity(new Intent(admin_user_operations.this, view_all_students.class));
+        startActivity(new Intent(Admin_user_operations.this, View_all_students.class));
     }
 
     public void lecturerOperations(View view){
-        startActivity(new Intent(admin_user_operations.this, view_all_lecturers.class));
+        startActivity(new Intent(Admin_user_operations.this, View_all_lecturers.class));
     }
 }
