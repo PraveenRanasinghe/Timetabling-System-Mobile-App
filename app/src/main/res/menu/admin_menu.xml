@@ -15,14 +15,6 @@
         android:id="@+id/myAccount"
         android:title="My Account" />
 
-    <item
-        android:id="@+id/myModules"
-        android:title="My Modules" />
-
-    <item
-        android:id="@+id/WeeklyTimetable"
-        android:title="Weekly Time Table" />
-
     <item android:title="= = = = = = OTHER = = = = = =">
         <menu>
 

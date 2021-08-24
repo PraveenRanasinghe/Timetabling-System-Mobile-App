@@ -17,7 +17,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="50dp"
         android:layout_marginEnd="50dp"
-        android:layout_marginBottom="337dp"
+        android:layout_marginBottom="320dp"
         android:background="@drawable/add_button"
         android:onClick="addBatch"
         android:text="Create New Batch"
@@ -32,20 +32,19 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="50dp"
         android:layout_marginEnd="50dp"
-        android:layout_marginBottom="198dp"
+        android:layout_marginBottom="140dp"
         android:background="@drawable/add_button"
         android:onClick="viewBatches"
         android:text="View Update and Remove Batches"
-        android:textSize="18dp"
-        />
+        android:textSize="18dp" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="548dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="488dp"
         android:text="Batch Operations"
         android:textAlignment="center"
         android:textColor="#070404"
@@ -53,15 +52,15 @@
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="127dp"
-        android:layout_height="102dp"
+        android:layout_width="249dp"
+        android:layout_height="163dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="140dp"
-        android:layout_marginEnd="144dp"
-        android:layout_marginBottom="630dp"
-        android:src="@drawable/school" />
+        android:layout_marginStart="81dp"
+        android:layout_marginEnd="79dp"
+        android:layout_marginBottom="569dp"
+        android:src="@drawable/batch" />
 
 
 </RelativeLayout>

@@ -15,7 +15,7 @@
         android:textAlignment="center"
         android:textColor="#0B0606"
         android:textSize="29sp"
-        android:textStyle="italic" />
+        android:textStyle="normal" />
 
     <TextView
         android:id="@+id/textView24"
