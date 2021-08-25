@@ -7,10 +7,12 @@ import com.example.my_timetable.Model.JwtRequest;
 import com.example.my_timetable.Model.JwtResponse;
 import com.example.my_timetable.Model.Module;
 import com.example.my_timetable.Model.Timetable;
+import com.example.my_timetable.Model.TimetableDTO;
 import com.example.my_timetable.Model.UDto;
 import com.example.my_timetable.Model.User;
 
 import java.io.Serializable;
+import java.sql.Time;
 import java.util.List;
 
 import retrofit2.Call;
@@ -34,6 +36,10 @@ public interface ApiCalls {
 
     @GET("/getAllLecturers")
     Call<List<Classroom>> getAllClassesToList(@Header("Authorization")String authorization);
+
+    @GET("/getAllTimetablesForAdmin")
+    Call<List<TimetableDTO>> getAllTimetablesToAdmin(@Header("Authorization")String authorization);
+
 
     @GET("/myModules")
     Call<List<Module>> getMyModulesToLec(@Header("Authorization") String authorization);
@@ -82,6 +88,9 @@ public interface ApiCalls {
 
     @POST("/addModule")
     Call<Module> addModule(@Header("Authorization") String authorization,@Body Module module);
+
+    @POST("/scheduleClasses")
+    Call<Timetable> scheduleClasses(@Header("Authorization") String authorization, @Body Timetable timetable);
 
 
 }

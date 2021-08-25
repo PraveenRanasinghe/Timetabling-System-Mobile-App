@@ -11,8 +11,13 @@ import android.widget.Toast;
 
 import com.example.my_timetable.API.ApiCalls;
 import com.example.my_timetable.API.RetrofitAPI;
+import com.example.my_timetable.Model.Batch;
 import com.example.my_timetable.Model.Classroom;
+import com.example.my_timetable.Model.DtoUser;
 import com.example.my_timetable.Model.Module;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -64,9 +69,17 @@ public class Add_module extends AppCompatActivity {
         Module module=new Module();
         RetrofitAPI retrofit = new RetrofitAPI();
 
+        String lec=lecturer.getText().toString();
+        DtoUser user = new DtoUser();
+        user.setEmail(lec);
+
+        String batches=learningBatches.getText().toString();
+        List<Batch> batchList=new ArrayList<>();
+
+
         module.setModuleID(ModuleId.getText().toString());
         module.setModuleName(ModuleName.getText().toString());
-//        module.setUser(lecturer.getText().toString());
+        module.setUser(user);
 //        module.setBatches(learningBatches.getText());
 
 

@@ -50,8 +50,8 @@ public class Add_classroom extends AppCompatActivity {
     public void addClassRoom(View view){
         final String classId=((EditText)findViewById(R.id.classRoomId)).getText().toString().trim();
         final String capacity=((EditText)findViewById(R.id.capacity)).getText().toString().trim();
-        final String  ac=((Spinner)findViewById(R.id.spinnerAc)).toString().trim();
-        final String smartBoard=((Spinner)findViewById(R.id.spinnerSMB)).toString().trim();
+        final String  ac=(findViewById(R.id.spinnerAc)).toString().trim();
+        final String smartBoard=(findViewById(R.id.spinnerSMB).toString().trim());
 
         if(classId.isEmpty()){
             Toast.makeText(getApplicationContext(), "Please fill the ClassRoom Id Field.", Toast.LENGTH_SHORT).show();

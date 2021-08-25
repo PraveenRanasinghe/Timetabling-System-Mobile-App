@@ -20,19 +20,23 @@ import com.example.my_timetable.Model.Batch;
 import com.example.my_timetable.Model.User;
 
 import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class Add_batch extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
+public class Add_batch extends AppCompatActivity{
 
-    EditText batchId;
-    EditText batchName;
+    EditText batchID;
+    EditText BatchName;
     TextView commencementDate;
     TextView terminationDate;
-
+    Button commencement;
+    Button termination;
 
 
     @Override
@@ -40,57 +44,63 @@ public class Add_batch extends AppCompatActivity implements DatePickerDialog.OnD
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_batch);
 
-        batchId=findViewById(R.id.batchId);
-        batchName=findViewById(R.id.batchName);
+        batchID=findViewById(R.id.batchId);
+        BatchName=findViewById(R.id.batchName);
         commencementDate=findViewById(R.id.commencementDate);
         terminationDate=findViewById(R.id.terminationDate);
 
-        Button button1 = (Button)findViewById(R.id.selectDate);
-        Button button2 = (Button)findViewById(R.id.selectDate2);
+        commencement=findViewById(R.id.selectDate);
+        termination=findViewById(R.id.selectDate2);
 
-
-        button1.setOnClickListener(new View.OnClickListener() {
+        commencement.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                DialogFragment datePicker = new com.example.my_timetable.DatePicker();
-                datePicker.show(getSupportFragmentManager(),"Date Picker");
+                handleCommencementDate();
             }
         });
 
-        button2.setOnClickListener(new View.OnClickListener() {
+        termination.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                DialogFragment datePicker = new DatePicker2();
-                datePicker.show(getSupportFragmentManager(),"Date Picker 2");
+                handleTerminationDate();
             }
         });
+
     }
 
-    @Override
-    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+    private void handleCommencementDate() {
         Calendar calendar = Calendar.getInstance();
-        calendar.set(Calendar.YEAR,year);
-        calendar.set(Calendar.MONTH,month);
-        calendar.set(Calendar.DAY_OF_MONTH,dayOfMonth);
+        int Y=calendar.get(Calendar.YEAR);
+        int M=calendar.get(Calendar.MONTH);
+        int D=calendar.get(Calendar.DAY_OF_MONTH);
 
-        Calendar calendar2 = Calendar.getInstance();
-        calendar2.set(Calendar.YEAR,year);
-        calendar2.set(Calendar.MONTH,month);
-        calendar2.set(Calendar.DAY_OF_MONTH,dayOfMonth);
-
-        String currentDate = DateFormat.getInstance().format(calendar.getTime());
-        String currentDate2 = DateFormat.getInstance().format(calendar2.getTime());
-
-        TextView textView = (TextView) findViewById(R.id.commencementDate);
-        textView.setText(currentDate);
-
-        TextView textView1 = (TextView) findViewById(R.id.terminationDate);
-        textView1.setText(currentDate2);
-
+        DatePickerDialog datePickerDialog = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                String date=dayOfMonth+"/"+month+"/"+year;
+                commencementDate.setText(date);
+            }
+        }, Y,M,D);
+        datePickerDialog.show();
     }
 
+    private void handleTerminationDate() {
+        Calendar calendar = Calendar.getInstance();
+        int Y=calendar.get(Calendar.YEAR);
+        int M=calendar.get(Calendar.MONTH);
+        int D=calendar.get(Calendar.DAY_OF_MONTH);
 
-    public void createBatch(View view){
+        DatePickerDialog datePickerDialog = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                String date=dayOfMonth+"/"+month+"/"+year;
+                terminationDate.setText(date);
+            }
+        }, Y,M,D);
+        datePickerDialog.show();
+    }
+
+    public void createBatch(View view) throws ParseException {
         final String batchId=((EditText)findViewById(R.id.batchId)).getText().toString().trim();
         final String batchName=((EditText)findViewById(R.id.batchName)).getText().toString().trim();
         final String dateOfCommencement=((TextView)findViewById(R.id.commencementDate)).getText().toString().trim();
@@ -115,6 +125,17 @@ public class Add_batch extends AppCompatActivity implements DatePickerDialog.OnD
 
         Batch batch = new Batch();
         RetrofitAPI retrofit = new RetrofitAPI();
+
+
+        String cDate=commencementDate.getText().toString();
+        String tDate=terminationDate.getText().toString();
+        Date date = new SimpleDateFormat("dd/MM/yyyy").parse(cDate);
+        Date ter = new SimpleDateFormat("dd/MM/yyyy").parse(tDate);
+
+        batch.setBatchID(batchID.getText().toString());
+        batch.setBatchName(BatchName.getText().toString());
+        batch.setStartDate(date);
+        batch.setEndDate(ter);
 
         ApiCalls apiCalls = retrofit.getRetrofit().create(ApiCalls.class);
         Call<Batch> jwtResponseCall = apiCalls.addBatch(jwt,batch);

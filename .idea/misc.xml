@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/dell/.gradle/caches/transforms-2/files-2.1/b473e62df626c1eb4bbfbc172801cf02/appcompat-1.3.1/res/layout/support_simple_spinner_dropdown_item.xml" value="0.2598958333333333" />
         <entry key="..\:/Users/dell/Desktop/My Projects/EEA_Mobile/EEA-Mobile/app/src/main/res/drawable/add_button.xml" value="0.3338541666666667" />
         <entry key="..\:/Users/dell/Desktop/My Projects/EEA_Mobile/EEA-Mobile/app/src/main/res/drawable/background.xml" value="0.27708333333333335" />
         <entry key="..\:/Users/dell/Desktop/My Projects/EEA_Mobile/EEA-Mobile/app/src/main/res/drawable/batch_card.xml" value="0.22864583333333333" />
@@ -39,6 +40,7 @@
         <entry key="..\:/Users/dell/Desktop/My Projects/EEA_Mobile/EEA-Mobile/app/src/main/res/layout/activity_student_timetable.xml" value="0.25" />
         <entry key="..\:/Users/dell/Desktop/My Projects/EEA_Mobile/EEA-Mobile/app/src/main/res/layout/activity_view_all_lecturers.xml" value="0.2109375" />
         <entry key="..\:/Users/dell/Desktop/My Projects/EEA_Mobile/EEA-Mobile/app/src/main/res/layout/activity_view_all_modules.xml" value="0.23541666666666666" />
+        <entry key="..\:/Users/dell/Desktop/My Projects/EEA_Mobile/EEA-Mobile/app/src/main/res/layout/activity_view_all_scheduled_classes.xml" value="0.34270833333333334" />
         <entry key="..\:/Users/dell/Desktop/My Projects/EEA_Mobile/EEA-Mobile/app/src/main/res/layout/activity_view_all_students.xml" value="0.2109375" />
         <entry key="..\:/Users/dell/Desktop/My Projects/EEA_Mobile/EEA-Mobile/app/src/main/res/layout/activity_view_batches.xml" value="0.25" />
         <entry key="..\:/Users/dell/Desktop/My Projects/EEA_Mobile/EEA-Mobile/app/src/main/res/layout/activity_view_classrooms.xml" value="0.22" />
@@ -51,7 +53,8 @@
         <entry key="..\:/Users/dell/Desktop/My Projects/EEA_Mobile/EEA-Mobile/app/src/main/res/layout/header_stud.xml" value="0.2760416666666667" />
         <entry key="..\:/Users/dell/Desktop/My Projects/EEA_Mobile/EEA-Mobile/app/src/main/res/layout/lec_header.xml" value="0.2859375" />
         <entry key="..\:/Users/dell/Desktop/My Projects/EEA_Mobile/EEA-Mobile/app/src/main/res/layout/lecturer_modules.xml" value="0.2421875" />
-        <entry key="..\:/Users/dell/Desktop/My Projects/EEA_Mobile/EEA-Mobile/app/src/main/res/layout/timetable_for_lecturer.xml" value="0.24427083333333333" />
+        <entry key="..\:/Users/dell/Desktop/My Projects/EEA_Mobile/EEA-Mobile/app/src/main/res/layout/timetable_for_admin.xml" value="0.2994791666666667" />
+        <entry key="..\:/Users/dell/Desktop/My Projects/EEA_Mobile/EEA-Mobile/app/src/main/res/layout/timetable_for_lecturer.xml" value="0.67" />
         <entry key="..\:/Users/dell/Desktop/My Projects/EEA_Mobile/EEA-Mobile/app/src/main/res/layout/timetable_for_students.xml" value="0.24427083333333333" />
         <entry key="..\:/Users/dell/Desktop/My Projects/EEA_Mobile/EEA-Mobile/app/src/main/res/layout/view_batch.xml" value="0.22291666666666668" />
         <entry key="..\:/Users/dell/Desktop/My Projects/EEA_Mobile/EEA-Mobile/app/src/main/res/layout/view_class.xml" value="0.33" />

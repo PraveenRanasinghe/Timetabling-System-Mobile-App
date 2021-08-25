@@ -41,22 +41,12 @@
             android:textSize="18dp"
             android:textStyle="normal" />
 
-        <TextView
-            android:layout_width="150dp"
-            android:layout_height="25dp"
-            android:layout_marginStart="4dp"
-            android:layout_marginTop="48dp"
-            android:text="Teaching Modules"
-            android:textAlignment="center"
-            android:textColor="@android:color/black"
-            android:textSize="16dp"
-            android:textStyle="normal" />
 
         <TextView
             android:layout_width="150dp"
             android:layout_height="20dp"
-            android:layout_marginStart="180dp"
-            android:layout_marginTop="58dp"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="60dp"
             android:text="Contact Number"
             android:textAlignment="center"
             android:textColor="@android:color/black"
@@ -67,8 +57,9 @@
             android:id="@+id/lecContactNum"
             android:layout_width="350dp"
             android:layout_height="25dp"
-            android:layout_marginStart="220dp"
-            android:layout_marginTop="78dp"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="85dp"
+            android:layout_marginEnd="100dp"
             android:text="+9471-5268748"
             android:textAlignment="center"
             android:textColor="@android:color/black"
@@ -82,7 +73,7 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
             android:layout_marginStart="80dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="30dp"
             android:layout_marginEnd="80dp"
             android:text="disal@gmail.com"
             android:textAlignment="center"
@@ -90,39 +81,28 @@
             android:textSize="17dp"
             android:textStyle="normal" />
 
-        <TextView
-            android:id="@+id/teachingModules"
-            android:layout_width="120dp"
-            android:layout_height="45dp"
-            android:layout_alignParentStart="true"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="70dp"
-            android:text="EIRLS ISEI-Web-Mobile"
-            android:textAlignment="center"
-            android:textColor="@android:color/black"
-            android:textSize="15dp"
-            android:textStyle="normal" />
 
         <ImageView
             android:id="@+id/imageView6"
             android:layout_width="50dp"
             android:layout_height="45dp"
+            android:layout_marginStart="300dp"
             android:src="@drawable/user_square" />
 
         <ImageView
-            android:id="@+id/imageView7"
+            android:id="@+id/callBtn"
             android:layout_width="25dp"
             android:layout_height="25dp"
-            android:layout_marginStart="190dp"
-            android:layout_marginTop="75dp"
+            android:layout_marginStart="70dp"
+            android:layout_marginTop="85dp"
             android:src="@drawable/call" />
 
         <ImageView
             android:id="@+id/imageView8"
             android:layout_width="25dp"
             android:layout_height="25dp"
-            android:layout_marginStart="270dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginStart="70dp"
+            android:layout_marginTop="30dp"
             android:src="@drawable/mail" />
 
 

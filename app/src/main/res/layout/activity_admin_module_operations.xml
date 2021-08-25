@@ -71,6 +71,7 @@
         android:layout_marginEnd="50dp"
         android:layout_marginBottom="80dp"
         android:background="@drawable/add_button"
+        android:onClick="viewAllScheduledClasses"
         android:text="Reschedule and Cancel Classes" />
 
 </RelativeLayout>

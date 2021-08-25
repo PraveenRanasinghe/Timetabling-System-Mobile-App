@@ -4,60 +4,125 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
 
 import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.TimePicker;
 import android.widget.Toast;
 
-import java.text.DateFormat;
-import java.util.Calendar;
+import com.example.my_timetable.API.ApiCalls;
+import com.example.my_timetable.API.RetrofitAPI;
+import com.example.my_timetable.Model.Classroom;
+import com.example.my_timetable.Model.Timetable;
 
-public class ScheduleClasses extends AppCompatActivity implements DatePickerDialog.OnDateSetListener{
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+public class ScheduleClasses extends AppCompatActivity{
+
+    Button dateButton, startTime,endTimeBtn;
+    TextView scheduleDate, startTimeTV,endTimeTV,clzId;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_schedule_classes);
 
-        Button dateButton = (Button)findViewById(R.id.selectDate);
-        Button timeButton=(Button)findViewById(R.id.time);
+        dateButton=findViewById(R.id.selectDate);
+        startTime=findViewById(R.id.time);
+        endTimeBtn=findViewById(R.id.selectDateButton);
+
+        scheduleDate=findViewById(R.id.scheduledDate);
+        startTimeTV=findViewById(R.id.startT);
+        endTimeTV=findViewById(R.id.endTimeT);
+        clzId=findViewById(R.id.classRoomId);
 
         dateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                DialogFragment datePicker = new com.example.my_timetable.DatePicker();
-                datePicker.show(getSupportFragmentManager(),"Date Picker");
+                handleDate();
             }
         });
-
-        timeButton.setOnClickListener(new View.OnClickListener() {
+        
+        startTime.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                DialogFragment timePicker = new TimePicker();
-                timePicker.show(getSupportFragmentManager(),"Time Picker");
+                handleTime();
+            }
+        });
+
+        endTimeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                handleEndTime();
             }
         });
     }
 
-    @Override
-    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+    private void handleTime() {
         Calendar calendar = Calendar.getInstance();
-        calendar.set(Calendar.YEAR,year);
-        calendar.set(Calendar.MONTH,month);
-        calendar.set(Calendar.DAY_OF_MONTH,dayOfMonth);
+        int Hour = calendar.get(Calendar.HOUR);
+        int Min=calendar.get(Calendar.MINUTE);
 
-        String currentDate = DateFormat.getInstance().format(calendar.getTime());
+        TimePickerDialog timePickerDialog = new TimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
+            @Override
+            public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                String time=hourOfDay+":"+minute;
+                startTimeTV.setText(time);
 
-        TextView textView = (TextView) findViewById(R.id.scheduledDate);
-        textView.setText(currentDate);
+            }
+        },Hour,Min,true);
+        timePickerDialog.show();
     }
 
+    private void handleEndTime() {
+        Calendar calendar = Calendar.getInstance();
+        int Hour = calendar.get(Calendar.HOUR);
+        int Min=calendar.get(Calendar.MINUTE);
 
-    public void scheduleClass(View view){
+        TimePickerDialog timePickerDialog = new TimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
+            @Override
+            public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                String time=hourOfDay+":"+minute;
+                endTimeTV.setText(time);
+            }
+        },Hour,Min,true);
+        timePickerDialog.show();
 
+    }
+
+    private void handleDate() {
+        Calendar calendar = Calendar.getInstance();
+        int Y=calendar.get(Calendar.YEAR);
+        int M=calendar.get(Calendar.MONTH);
+        int D=calendar.get(Calendar.DAY_OF_MONTH);
+
+        DatePickerDialog datePickerDialog = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                String date=year+"-"+month+"-"+dayOfMonth;
+                scheduleDate.setText(date);
+            }
+        }, Y,M,D);
+        datePickerDialog.show();
+     }
+
+
+    public void scheduleClass(View view) throws ParseException {
 
         final String scheduledDate=((TextView)findViewById(R.id.scheduledDate)).getText().toString().trim();
         final String startTime=((TextView)findViewById(R.id.startTime)).getText().toString().trim();
@@ -76,6 +141,42 @@ public class ScheduleClasses extends AppCompatActivity implements DatePickerDial
         else if(classroom.isEmpty()){
             Toast.makeText(getApplicationContext(), "Please select a Class-Room.", Toast.LENGTH_SHORT).show();
         }
+
+
+        SharedPreferences prefs = getSharedPreferences("SHARED", Context.MODE_PRIVATE);
+        String name = prefs.getString("token", null);
+        String jwt = "Bearer " + name;
+
+        Timetable timetable = new Timetable();
+        RetrofitAPI retrofit = new RetrofitAPI();
+
+        String sDate=scheduleDate.getText().toString();
+        Date date = new SimpleDateFormat().parse(sDate);
+
+        timetable.setStartTime(startTimeTV.getText().toString());
+        timetable.setEndTime(endTimeTV.getText().toString());
+        timetable.setScheduledDate(date);
+
+
+        ApiCalls apiCalls = retrofit.getRetrofit().create(ApiCalls.class);
+        Call<Timetable> jwtResponseCall = apiCalls.scheduleClasses(jwt,timetable);
+
+        jwtResponseCall.enqueue(new Callback<Timetable>() {
+            @Override
+            public void onResponse(Call<Timetable> call, Response<Timetable> response) {
+                if(response.isSuccessful()){
+                    Toast.makeText(getApplicationContext(), "Timetable has been Scheduled Successfully! ", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    Toast.makeText(getApplicationContext(), "Operation Failed ! ", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Timetable> call, Throwable t) {
+                Toast.makeText(getApplicationContext(), "Operation Failed! ", Toast.LENGTH_SHORT).show();
+            }
+        });
 
     }
 }

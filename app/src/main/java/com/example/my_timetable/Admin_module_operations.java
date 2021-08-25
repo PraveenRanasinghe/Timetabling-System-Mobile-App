@@ -21,4 +21,8 @@ public class Admin_module_operations extends AppCompatActivity {
     public void viewAllModules(View view){
         startActivity(new Intent(Admin_module_operations.this, View_all_modules.class));
     }
+
+    public void viewAllScheduledClasses(View view){
+        startActivity(new Intent(Admin_module_operations.this, ViewAllScheduledClasses.class));
+    }
 }

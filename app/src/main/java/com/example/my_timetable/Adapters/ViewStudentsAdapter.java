@@ -37,7 +37,7 @@ public class ViewStudentsAdapter extends RecyclerView.Adapter<ViewStudentsAdapte
         holder.studentfName.setText(user.getfName());
         holder.studentlName.setText(user.getlName());
         holder.contactNum.setText(user.getContactNumber());
-        holder.batchId.setText(user.getBatchId().toString());
+        holder.batchId.setText(user.getBatchId().getBatchName());
     }
 
     @Override
