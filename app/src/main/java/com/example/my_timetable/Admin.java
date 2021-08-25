@@ -51,7 +51,7 @@ public class Admin extends AppCompatActivity {
                         return true;
 
                     case R.id.myAccount:
-                        Intent myAccountIntent = new Intent(Admin.this, My_account.class);
+                        Intent myAccountIntent = new Intent(Admin.this, My_account_staff.class);
                         startActivity(myAccountIntent);
                         return true;
 

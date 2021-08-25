@@ -40,7 +40,6 @@ public interface ApiCalls {
     @GET("/getAllTimetablesForAdmin")
     Call<List<TimetableDTO>> getAllTimetablesToAdmin(@Header("Authorization")String authorization);
 
-
     @GET("/myModules")
     Call<List<Module>> getMyModulesToLec(@Header("Authorization") String authorization);
 
@@ -91,6 +90,11 @@ public interface ApiCalls {
 
     @POST("/scheduleClasses")
     Call<Timetable> scheduleClasses(@Header("Authorization") String authorization, @Body Timetable timetable);
+
+
+    @POST("/UpdateAccount")
+    Call<DtoUser> updateAdminAccount(@Header("Authorization") String authorization,@Body DtoUser user);
+
 
 
 }

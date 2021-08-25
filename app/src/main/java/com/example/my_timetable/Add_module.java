@@ -6,7 +6,9 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.my_timetable.API.ApiCalls;
@@ -15,8 +17,10 @@ import com.example.my_timetable.Model.Batch;
 import com.example.my_timetable.Model.Classroom;
 import com.example.my_timetable.Model.DtoUser;
 import com.example.my_timetable.Model.Module;
+import com.example.my_timetable.Model.UDto;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import retrofit2.Call;
@@ -28,7 +32,7 @@ public class Add_module extends AppCompatActivity {
 
     EditText ModuleId;
     EditText ModuleName;
-    EditText lecturer;
+    Spinner spinnerLec;
     EditText learningBatches;
 
 
@@ -39,14 +43,17 @@ public class Add_module extends AppCompatActivity {
 
         ModuleId=findViewById(R.id.AMmoduleId);
         ModuleName=findViewById(R.id.AMmoduleName);
-        lecturer=findViewById(R.id.AMlecName);
+        spinnerLec=findViewById(R.id.spinnerLecName);
         learningBatches=findViewById(R.id.AMbatch);
+
+
+
     }
 
     public void addNewModule(View view){
         final String moduleId=((EditText)findViewById(R.id.AMmoduleId)).getText().toString().trim();
         final String moduleName=((EditText)findViewById(R.id.AMmoduleName)).getText().toString().trim();
-        final String lecName=((EditText)findViewById(R.id.AMlecName)).getText().toString().trim();
+        final String lecName=((Spinner)findViewById(R.id.spinnerLecName)).toString().trim();
         final String batchName=((EditText)findViewById(R.id.AMbatch)).getText().toString().trim();
 
         if(moduleId.isEmpty()){
@@ -69,14 +76,12 @@ public class Add_module extends AppCompatActivity {
         Module module=new Module();
         RetrofitAPI retrofit = new RetrofitAPI();
 
-        String lec=lecturer.getText().toString();
+        String lec=spinnerLec.toString();
         DtoUser user = new DtoUser();
         user.setEmail(lec);
 
         String batches=learningBatches.getText().toString();
         List<Batch> batchList=new ArrayList<>();
-
-
         module.setModuleID(ModuleId.getText().toString());
         module.setModuleName(ModuleName.getText().toString());
         module.setUser(user);
@@ -85,6 +90,27 @@ public class Add_module extends AppCompatActivity {
 
         ApiCalls apiCalls = retrofit.getRetrofit().create(ApiCalls.class);
         Call<Module> jwtResponseCall = apiCalls.addModule(jwt,module);
+        Call <List<UDto>> jwtResponseCall2=apiCalls.getLecturersToList(jwt);
+
+        jwtResponseCall2.enqueue(new Callback<List<UDto>>() {
+            @Override
+            public void onResponse(Call<List<UDto>> call, Response<List<UDto>> response) {
+                if(response.isSuccessful()){
+                    List<UDto> user= response.body();
+                    Spinner spinner = (Spinner) findViewById(R.id.spinnerLecName);
+
+                    ArrayAdapter<UDto> adapter = new ArrayAdapter<UDto>(Add_module.this,
+                            android.R.layout.simple_spinner_item,user);
+                    adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                    spinner.setAdapter(adapter);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<UDto>> call, Throwable t) {
+
+            }
+        });
 
         jwtResponseCall.enqueue(new Callback<Module>() {
             @Override

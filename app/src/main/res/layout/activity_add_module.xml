@@ -122,8 +122,8 @@
         android:hint="EEA"
         android:inputType="textPersonName" />
 
-    <EditText
-        android:id="@+id/AMlecName"
+    <Spinner
+        android:id="@+id/spinnerLecName"
         android:layout_width="307dp"
         android:layout_height="45dp"
         android:layout_alignParentStart="true"
@@ -134,7 +134,6 @@
         android:layout_marginBottom="280dp"
         android:background="@drawable/custom_input"
         android:ems="10"
-        android:hint="Mr. Nipunu Wijesinghe"
         android:inputType="textPersonName" />
 
     <EditText

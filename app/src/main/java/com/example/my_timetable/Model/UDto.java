@@ -13,6 +13,16 @@ public class UDto {
     public UDto() {
     }
 
+    public UDto(String email, String fName, String lName, String contactNumber, String userRole, Batch batchId, String password) {
+        this.email = email;
+        this.fName = fName;
+        this.lName = lName;
+        this.contactNumber = contactNumber;
+        this.userRole = userRole;
+        this.batchId = batchId;
+        this.password = password;
+    }
+
     public String getEmail() {
         return email;
     }
@@ -67,5 +77,10 @@ public class UDto {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    @Override
+    public String toString() {
+        return this.email;
     }
 }

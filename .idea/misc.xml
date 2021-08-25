@@ -33,6 +33,7 @@
         <entry key="..\:/Users/dell/Desktop/My Projects/EEA_Mobile/EEA-Mobile/app/src/main/res/layout/activity_lecturer_timetable.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/dell/Desktop/My Projects/EEA_Mobile/EEA-Mobile/app/src/main/res/layout/activity_main.xml" value="0.25625" />
         <entry key="..\:/Users/dell/Desktop/My Projects/EEA_Mobile/EEA-Mobile/app/src/main/res/layout/activity_my_account.xml" value="0.3015625" />
+        <entry key="..\:/Users/dell/Desktop/My Projects/EEA_Mobile/EEA-Mobile/app/src/main/res/layout/activity_my_account_staff.xml" value="0.22" />
         <entry key="..\:/Users/dell/Desktop/My Projects/EEA_Mobile/EEA-Mobile/app/src/main/res/layout/activity_my_modules_lec.xml" value="0.25677083333333334" />
         <entry key="..\:/Users/dell/Desktop/My Projects/EEA_Mobile/EEA-Mobile/app/src/main/res/layout/activity_my_modules_stud.xml" value="0.15833333333333333" />
         <entry key="..\:/Users/dell/Desktop/My Projects/EEA_Mobile/EEA-Mobile/app/src/main/res/layout/activity_schedule_classes.xml" value="0.25" />
@@ -53,6 +54,7 @@
         <entry key="..\:/Users/dell/Desktop/My Projects/EEA_Mobile/EEA-Mobile/app/src/main/res/layout/header_stud.xml" value="0.2760416666666667" />
         <entry key="..\:/Users/dell/Desktop/My Projects/EEA_Mobile/EEA-Mobile/app/src/main/res/layout/lec_header.xml" value="0.2859375" />
         <entry key="..\:/Users/dell/Desktop/My Projects/EEA_Mobile/EEA-Mobile/app/src/main/res/layout/lecturer_modules.xml" value="0.2421875" />
+        <entry key="..\:/Users/dell/Desktop/My Projects/EEA_Mobile/EEA-Mobile/app/src/main/res/layout/spinner_lec_list.xml" value="0.3392210144927536" />
         <entry key="..\:/Users/dell/Desktop/My Projects/EEA_Mobile/EEA-Mobile/app/src/main/res/layout/timetable_for_admin.xml" value="0.2994791666666667" />
         <entry key="..\:/Users/dell/Desktop/My Projects/EEA_Mobile/EEA-Mobile/app/src/main/res/layout/timetable_for_lecturer.xml" value="0.67" />
         <entry key="..\:/Users/dell/Desktop/My Projects/EEA_Mobile/EEA-Mobile/app/src/main/res/layout/timetable_for_students.xml" value="0.24427083333333333" />

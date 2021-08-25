@@ -102,7 +102,7 @@ public class Lecturer extends AppCompatActivity {
                         return true;
 
                     case R.id.myAccount:
-                        Intent myAccountIntent = new Intent(Lecturer.this, My_account.class);
+                        Intent myAccountIntent = new Intent(Lecturer.this, My_account_staff.class);
                         startActivity(myAccountIntent);
                         return true;
 
