@@ -9,15 +9,19 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.example.my_timetable.API.ApiCalls;
 import com.example.my_timetable.API.RetrofitAPI;
+import com.example.my_timetable.Model.Batch;
+import com.example.my_timetable.Model.ClassDTO;
 import com.example.my_timetable.Model.Classroom;
 import com.example.my_timetable.Model.Timetable;
 
@@ -26,6 +30,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -34,8 +39,43 @@ import retrofit2.Response;
 public class ScheduleClasses extends AppCompatActivity{
 
     Button dateButton, startTime,endTimeBtn;
-    TextView scheduleDate, startTimeTV,endTimeTV,clzId;
+    TextView scheduleDate, startTimeTV,endTimeTV;
+    Spinner clzId;
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        SharedPreferences prefs = getSharedPreferences("SHARED", Context.MODE_PRIVATE);
+        String name = prefs.getString("token", null);
+        String jwt = "Bearer " + name;
+
+        RetrofitAPI retrofit = new RetrofitAPI();
+        ApiCalls apiCalls = retrofit.getRetrofit().create(ApiCalls.class);
+
+        Call <List<ClassDTO>> jwtResponseBatchList=apiCalls.getAllClassesToList(jwt);
+
+
+        jwtResponseBatchList.enqueue(new Callback<List<ClassDTO>>() {
+            @Override
+            public void onResponse(Call<List<ClassDTO>> call, Response<List<ClassDTO>> response) {
+                if(response.isSuccessful()){
+                    List<ClassDTO> classDTOS= response.body();
+                    Spinner spinner = (Spinner) findViewById(R.id.classRoomIdSpinner);
+
+                    ArrayAdapter<ClassDTO> adapter = new ArrayAdapter<ClassDTO>(ScheduleClasses.this,
+                            android.R.layout.simple_spinner_item,classDTOS);
+                    adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                    spinner.setAdapter(adapter);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<ClassDTO>> call, Throwable t) {
+                Toast.makeText(getApplicationContext(), "Operation Failed!", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,7 +89,7 @@ public class ScheduleClasses extends AppCompatActivity{
         scheduleDate=findViewById(R.id.scheduledDate);
         startTimeTV=findViewById(R.id.startT);
         endTimeTV=findViewById(R.id.endTimeT);
-        clzId=findViewById(R.id.classRoomId);
+        clzId=findViewById(R.id.classRoomIdSpinner);
 
         dateButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -127,7 +167,7 @@ public class ScheduleClasses extends AppCompatActivity{
         final String scheduledDate=((TextView)findViewById(R.id.scheduledDate)).getText().toString().trim();
         final String startTime=((TextView)findViewById(R.id.startTime)).getText().toString().trim();
         final String endTime=((TextView)findViewById(R.id.endTime)).getText().toString().trim();
-        final String classroom=((EditText)findViewById(R.id.classRoomId)).getText().toString().trim();
+        final String classroom=((Spinner)findViewById(R.id.classRoomIdSpinner)).toString().trim();
 
         if(scheduledDate.isEmpty()){
             Toast.makeText(getApplicationContext(), "Please Select the Date Field.", Toast.LENGTH_SHORT).show();

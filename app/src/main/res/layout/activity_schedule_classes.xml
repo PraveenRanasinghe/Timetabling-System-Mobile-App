@@ -72,10 +72,10 @@
         android:textColor="#0B0606"
         android:textSize="20sp" />
 
-    <EditText
-        android:id="@+id/classRoomId"
+    <Spinner
+        android:id="@+id/classRoomIdSpinner"
         android:layout_width="340dp"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
@@ -85,7 +85,6 @@
         android:layout_marginBottom="400dp"
         android:background="@drawable/custom_input"
         android:hint=""
-        android:inputType="textUri"
         android:padding="10dp"
         android:textColor="#0C0707" />
 

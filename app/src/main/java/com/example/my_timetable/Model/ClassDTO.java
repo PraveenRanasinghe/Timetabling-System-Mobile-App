@@ -1,19 +1,13 @@
 package com.example.my_timetable.Model;
 
-public class Classroom {
+public class ClassDTO {
     private String classRoomID;
+    private Timetable timetable;
     private String capacity;
     private String smartBoard;
     private String Ac;
 
-    public Classroom(String classRoomID, String capacity, String smartBoard, String ac) {
-        this.classRoomID = classRoomID;
-        this.capacity = capacity;
-        this.smartBoard = smartBoard;
-        Ac = ac;
-    }
-
-    public Classroom() {
+    public ClassDTO() {
     }
 
     public String getClassRoomID() {
@@ -22,6 +16,14 @@ public class Classroom {
 
     public void setClassRoomID(String classRoomID) {
         this.classRoomID = classRoomID;
+    }
+
+    public Timetable getTimetable() {
+        return timetable;
+    }
+
+    public void setTimetable(Timetable timetable) {
+        this.timetable = timetable;
     }
 
     public String getCapacity() {

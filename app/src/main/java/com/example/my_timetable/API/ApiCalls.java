@@ -1,6 +1,7 @@
 package com.example.my_timetable.API;
 
 import com.example.my_timetable.Model.Batch;
+import com.example.my_timetable.Model.ClassDTO;
 import com.example.my_timetable.Model.Classroom;
 import com.example.my_timetable.Model.DtoUser;
 import com.example.my_timetable.Model.JwtRequest;
@@ -37,8 +38,8 @@ public interface ApiCalls {
     @GET("/getBatchesToList")
     Call<List<Batch>> getBatchesToList(@Header("Authorization")String authorization);
 
-    @GET("/getAllLecturers")
-    Call<List<Classroom>> getAllClassesToList(@Header("Authorization")String authorization);
+    @GET("/getAllClassesToList")
+    Call<List<ClassDTO>> getAllClassesToList(@Header("Authorization")String authorization);
 
     @GET("/getAllTimetablesForAdmin")
     Call<List<TimetableDTO>> getAllTimetablesToAdmin(@Header("Authorization")String authorization);
