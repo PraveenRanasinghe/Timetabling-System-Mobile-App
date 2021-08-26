@@ -45,10 +45,42 @@ public class Add_module extends AppCompatActivity {
         ModuleName=findViewById(R.id.AMmoduleName);
         spinnerLec=findViewById(R.id.spinnerLecName);
         learningBatches=findViewById(R.id.AMbatch);
-
-
-
     }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        SharedPreferences prefs = getSharedPreferences("SHARED", Context.MODE_PRIVATE);
+        String name = prefs.getString("token", null);
+        String jwt = "Bearer " + name;
+
+        RetrofitAPI retrofit = new RetrofitAPI();
+        ApiCalls apiCalls = retrofit.getRetrofit().create(ApiCalls.class);
+
+        Call <List<UDto>> jwtResponseCall2=apiCalls.getLecturersToList(jwt);
+
+        jwtResponseCall2.enqueue(new Callback<List<UDto>>() {
+            @Override
+            public void onResponse(Call<List<UDto>> call, Response<List<UDto>> response) {
+                if(response.isSuccessful()){
+                    List<UDto> user= response.body();
+                    Spinner spinner = (Spinner) findViewById(R.id.spinnerLecName);
+
+                    ArrayAdapter<UDto> adapter = new ArrayAdapter<UDto>(Add_module.this,
+                            android.R.layout.simple_spinner_item,user);
+                    adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                    spinner.setAdapter(adapter);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<UDto>> call, Throwable t) {
+                Toast.makeText(getApplicationContext(), "Operation Failed!", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
 
     public void addNewModule(View view){
         final String moduleId=((EditText)findViewById(R.id.AMmoduleId)).getText().toString().trim();
@@ -86,31 +118,9 @@ public class Add_module extends AppCompatActivity {
         module.setModuleName(ModuleName.getText().toString());
         module.setUser(user);
 //        module.setBatches(learningBatches.getText());
-
-
         ApiCalls apiCalls = retrofit.getRetrofit().create(ApiCalls.class);
         Call<Module> jwtResponseCall = apiCalls.addModule(jwt,module);
-        Call <List<UDto>> jwtResponseCall2=apiCalls.getLecturersToList(jwt);
 
-        jwtResponseCall2.enqueue(new Callback<List<UDto>>() {
-            @Override
-            public void onResponse(Call<List<UDto>> call, Response<List<UDto>> response) {
-                if(response.isSuccessful()){
-                    List<UDto> user= response.body();
-                    Spinner spinner = (Spinner) findViewById(R.id.spinnerLecName);
-
-                    ArrayAdapter<UDto> adapter = new ArrayAdapter<UDto>(Add_module.this,
-                            android.R.layout.simple_spinner_item,user);
-                    adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                    spinner.setAdapter(adapter);
-                }
-            }
-
-            @Override
-            public void onFailure(Call<List<UDto>> call, Throwable t) {
-
-            }
-        });
 
         jwtResponseCall.enqueue(new Callback<Module>() {
             @Override
