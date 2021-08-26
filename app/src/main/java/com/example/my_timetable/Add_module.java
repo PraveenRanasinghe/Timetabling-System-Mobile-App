@@ -33,7 +33,7 @@ public class Add_module extends AppCompatActivity {
     EditText ModuleId;
     EditText ModuleName;
     Spinner spinnerLec;
-    EditText learningBatches;
+    Spinner learningBatches;
 
 
     @Override
@@ -44,7 +44,7 @@ public class Add_module extends AppCompatActivity {
         ModuleId=findViewById(R.id.AMmoduleId);
         ModuleName=findViewById(R.id.AMmoduleName);
         spinnerLec=findViewById(R.id.spinnerLecName);
-        learningBatches=findViewById(R.id.AMbatch);
+        learningBatches=findViewById(R.id.batchSpinner);
     }
 
     @Override
@@ -59,6 +59,7 @@ public class Add_module extends AppCompatActivity {
         ApiCalls apiCalls = retrofit.getRetrofit().create(ApiCalls.class);
 
         Call <List<UDto>> jwtResponseCall2=apiCalls.getLecturersToList(jwt);
+        Call <List<Batch>> jwtResponseBatchList=apiCalls.getBatchesToList(jwt);
 
         jwtResponseCall2.enqueue(new Callback<List<UDto>>() {
             @Override
@@ -79,6 +80,26 @@ public class Add_module extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "Operation Failed!", Toast.LENGTH_SHORT).show();
             }
         });
+
+        jwtResponseBatchList.enqueue(new Callback<List<Batch>>() {
+            @Override
+            public void onResponse(Call<List<Batch>> call, Response<List<Batch>> response) {
+                if(response.isSuccessful()){
+                    List<Batch> batches= response.body();
+                    Spinner spinner = (Spinner) findViewById(R.id.batchSpinner);
+
+                    ArrayAdapter<Batch> adapter = new ArrayAdapter<Batch>(Add_module.this,
+                            android.R.layout.simple_spinner_item,batches);
+                    adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                    spinner.setAdapter(adapter);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<Batch>> call, Throwable t) {
+                Toast.makeText(getApplicationContext(), "Operation Failed!", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
 
@@ -86,7 +107,7 @@ public class Add_module extends AppCompatActivity {
         final String moduleId=((EditText)findViewById(R.id.AMmoduleId)).getText().toString().trim();
         final String moduleName=((EditText)findViewById(R.id.AMmoduleName)).getText().toString().trim();
         final String lecName=((Spinner)findViewById(R.id.spinnerLecName)).toString().trim();
-        final String batchName=((EditText)findViewById(R.id.AMbatch)).getText().toString().trim();
+        final String batchName=((Spinner)findViewById(R.id.batchSpinner)).toString().trim();
 
         if(moduleId.isEmpty()){
             Toast.makeText(getApplicationContext(), "Please Enter the Module Id", Toast.LENGTH_SHORT).show();
@@ -112,7 +133,7 @@ public class Add_module extends AppCompatActivity {
         DtoUser user = new DtoUser();
         user.setEmail(lec);
 
-        String batches=learningBatches.getText().toString();
+        String batches=learningBatches.toString();
         List<Batch> batchList=new ArrayList<>();
         module.setModuleID(ModuleId.getText().toString());
         module.setModuleName(ModuleName.getText().toString());

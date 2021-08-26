@@ -43,4 +43,9 @@ public class Batch {
     public void setEndDate(Date endDate) {
         this.endDate = endDate;
     }
+
+    @Override
+    public String toString() {
+        return this.batchID;
+    }
 }

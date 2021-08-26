@@ -167,8 +167,8 @@
         android:hint="Doe"
         android:inputType="textPersonName" />
 
-    <EditText
-        android:id="@+id/SbatchId"
+    <Spinner
+        android:id="@+id/SpinnerBatchId"
         android:layout_width="307dp"
         android:layout_height="35dp"
         android:layout_alignParentStart="true"
@@ -177,10 +177,7 @@
         android:layout_marginStart="50dp"
         android:layout_marginEnd="50dp"
         android:layout_marginBottom="170dp"
-        android:background="@drawable/custom_input"
-        android:ems="10"
-        android:hint="APIITCOSE21SE"
-        android:inputType="textPersonName" />
+        android:background="@drawable/custom_input" />
 
     <EditText
         android:id="@+id/ScontactNum"

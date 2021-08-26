@@ -132,11 +132,10 @@
         android:layout_marginStart="62dp"
         android:layout_marginEnd="62dp"
         android:layout_marginBottom="280dp"
-        android:background="@drawable/custom_input"
-        />
+        android:background="@drawable/custom_input" />
 
-    <EditText
-        android:id="@+id/AMbatch"
+    <Spinner
+        android:id="@+id/batchSpinner"
         android:layout_width="307dp"
         android:layout_height="45dp"
         android:layout_alignParentStart="true"
@@ -146,9 +145,7 @@
         android:layout_marginEnd="62dp"
         android:layout_marginBottom="170dp"
         android:background="@drawable/custom_input"
-        android:ems="10"
-        android:hint="APIITCOSE21SE"
-        android:inputType="textPersonName" />
+        />
 
     <Button
         android:id="@+id/button2"
