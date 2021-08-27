@@ -98,11 +98,10 @@
             android:src="@drawable/call" />
 
         <ImageView
-            android:id="@+id/imageView8"
+            android:id="@+id/emailBtn"
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:layout_marginStart="70dp"
-            android:layout_marginTop="30dp"
             android:src="@drawable/mail" />
 
 

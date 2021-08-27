@@ -1,11 +1,18 @@
 package com.example.my_timetable.Adapters;
 
+import android.Manifest;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.my_timetable.Model.DtoUser;
@@ -18,7 +25,7 @@ import java.util.List;
 public class ViewStudentsAdapter extends RecyclerView.Adapter<ViewStudentsAdapter.ViewHolder>{
 
     List<UDto> userList;
-
+    private static final int REQUEST_CALL=1;
     public ViewStudentsAdapter(List<UDto> userList) {
         this.userList = userList;
     }
@@ -38,6 +45,17 @@ public class ViewStudentsAdapter extends RecyclerView.Adapter<ViewStudentsAdapte
         holder.studentlName.setText(user.getlName());
         holder.contactNum.setText(user.getContactNumber());
         holder.batchId.setText(user.getBatchId().getBatchName());
+
+        holder.callBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String mobileNumber= user.getContactNumber();
+                String call="tel:"+mobileNumber.trim();
+                Intent intent= new Intent(Intent.ACTION_CALL);
+                intent.setData(Uri.parse(call));
+                v.getContext().startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -52,6 +70,7 @@ public class ViewStudentsAdapter extends RecyclerView.Adapter<ViewStudentsAdapte
         TextView studentEmail;
         TextView batchId;
         TextView contactNum;
+        ImageView callBtn;
 
 
         public ViewHolder(@NonNull View itemView) {
@@ -62,6 +81,7 @@ public class ViewStudentsAdapter extends RecyclerView.Adapter<ViewStudentsAdapte
             studentEmail=itemView.findViewById(R.id.studEmail);
             batchId=itemView.findViewById(R.id.learningBatch);
             contactNum=itemView.findViewById(R.id.studContactNum);
+            callBtn=itemView.findViewById(R.id.callStudent);
 
         }
     }

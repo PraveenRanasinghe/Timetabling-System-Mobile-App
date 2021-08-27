@@ -191,7 +191,7 @@ public class ScheduleClasses extends AppCompatActivity{
         RetrofitAPI retrofit = new RetrofitAPI();
 
         String sDate=scheduleDate.getText().toString();
-        Date date = new SimpleDateFormat().parse(sDate);
+        Date date = new SimpleDateFormat("dd/MM/yyyy").parse(sDate);
 
         timetable.setStartTime(startTimeTV.getText().toString());
         timetable.setEndTime(endTimeTV.getText().toString());

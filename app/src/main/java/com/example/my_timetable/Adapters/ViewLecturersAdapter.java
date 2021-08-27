@@ -1,7 +1,9 @@
 package com.example.my_timetable.Adapters;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -45,18 +47,28 @@ public class ViewLecturersAdapter extends RecyclerView.Adapter<ViewLecturersAdap
         holder.lecLName.setText(user.getlName());
         holder.lecContactNum.setText(user.getContactNumber());
 
-//        holder.callBtn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-////                makeCall(user.getContactNumber());
-//                if(holder.lecContactNum.getText().length()>0){
-//                    if(ContextCompat.checkSelfPermission(v.getContext(),Manifest.permission.CALL_PHONE)!= PackageManager.PERMISSION_GRANTED){
-//                        ActivityCompat.requestPermissions(v.getContext(),new String[]{Manifest.permission.CALL_PHONE},REQUEST_CALL);
-//                    }
-//
-//                }
-//            }
-//        });
+        holder.callBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String mobileNumber= user.getContactNumber();
+                String call="tel:"+mobileNumber.trim();
+                Intent intent= new Intent(Intent.ACTION_CALL);
+                intent.setData(Uri.parse(call));
+                v.getContext().startActivity(intent);
+            }
+        });
+
+        holder.emailBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String email=user.getEmail();
+                String mail="mailto:"+email.trim();
+                Intent intent= new Intent(Intent.ACTION_SEND);
+                intent.setData(Uri.parse(mail));
+                v.getContext().startActivity(intent);
+            }
+        });
+
     }
 
 
@@ -72,9 +84,9 @@ public class ViewLecturersAdapter extends RecyclerView.Adapter<ViewLecturersAdap
         TextView lecFName;
         TextView lecLName;
         TextView lecEmail;
-        TextView teachingBatches;
         TextView lecContactNum;
         ImageView callBtn;
+        ImageView emailBtn;
 
 
         public ViewHolder(@NonNull View itemView) {
@@ -85,6 +97,7 @@ public class ViewLecturersAdapter extends RecyclerView.Adapter<ViewLecturersAdap
             lecEmail=itemView.findViewById(R.id.lecEmail);
             callBtn=itemView.findViewById(R.id.callBtn);
             lecContactNum=itemView.findViewById(R.id.lecContactNum);
+            emailBtn= itemView.findViewById(R.id.emailBtn);
 
         }
     }
