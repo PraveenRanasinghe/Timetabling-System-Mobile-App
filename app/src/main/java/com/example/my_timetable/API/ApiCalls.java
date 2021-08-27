@@ -95,10 +95,10 @@ public interface ApiCalls {
     @POST("/scheduleClasses")
     Call<Timetable> scheduleClasses(@Header("Authorization") String authorization, @Body Timetable timetable);
 
-
-    @POST("/UpdateAccount")
+    @POST("/UpdateAdminAccount")
     Call<DtoUser> updateAdminAccount(@Header("Authorization") String authorization,@Body DtoUser user);
 
-
+    @POST("/UpdateStudentAccount")
+    Call<DtoUser> updateStudentAccount(@Header("Authorization") String authorization,@Body DtoUser user);
 
 }

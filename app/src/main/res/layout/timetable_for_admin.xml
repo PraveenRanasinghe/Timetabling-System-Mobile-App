@@ -10,7 +10,7 @@
         android:layout_height="220dp"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="10dp"
-        android:background="@drawable/batch_card"
+        android:background="@drawable/card_schedule"
         android:padding="20dp">
 
 
@@ -167,7 +167,8 @@
             android:textAlignment="center"
             android:textColor="@android:color/black"
             android:textSize="14dp"
-            android:textStyle="normal" />
+            android:textStyle="normal"
+            />
 
         <Button
             android:id="@+id/rescheduleBtn"

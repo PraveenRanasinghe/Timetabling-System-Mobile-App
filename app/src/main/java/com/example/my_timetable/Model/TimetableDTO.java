@@ -6,9 +6,9 @@ import java.util.List;
 
 public class TimetableDTO {
     private int timetableId;
-//    private LocalTime startTime;
-//    private LocalTime endTime;
-    private Date scheduledDate;
+    private String startTime;
+    private String endTime;
+    private String scheduledDate;
     private Module module;
     private Classroom classRoom;
     private List<Batch> batches;
@@ -24,27 +24,27 @@ public class TimetableDTO {
         this.timetableId = timetableId;
     }
 
-//    public LocalTime getStartTime() {
-//        return startTime;
-//    }
-//
-//    public void setStartTime(LocalTime startTime) {
-//        this.startTime = startTime;
-//    }
-//
-//    public LocalTime getEndTime() {
-//        return endTime;
-//    }
-//
-//    public void setEndTime(LocalTime endTime) {
-//        this.endTime = endTime;
-//    }
+    public String getStartTime() {
+        return startTime;
+    }
 
-    public Date getScheduledDate() {
+    public void setStartTime(String startTime) {
+        this.startTime = startTime;
+    }
+
+    public String getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(String endTime) {
+        this.endTime = endTime;
+    }
+
+    public String getScheduledDate() {
         return scheduledDate;
     }
 
-    public void setScheduledDate(Date scheduledDate) {
+    public void setScheduledDate(String scheduledDate) {
         this.scheduledDate = scheduledDate;
     }
 

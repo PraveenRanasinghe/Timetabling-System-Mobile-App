@@ -48,8 +48,14 @@ public class Classroom {
         Ac = ac;
     }
 
+
     @Override
     public String toString() {
-        return this.classRoomID;
+        return "Classroom{" +
+                "classRoomID='" + classRoomID + '\'' +
+                ", capacity='" + capacity + '\'' +
+                ", smartBoard='" + smartBoard + '\'' +
+                ", Ac='" + Ac + '\'' +
+                '}';
     }
 }

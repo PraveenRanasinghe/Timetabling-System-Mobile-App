@@ -18,10 +18,10 @@
             android:layout_height="50dp"
             android:layout_centerHorizontal="true"
             android:layout_weight="1"
-            android:text="All Students in Our University"
+            android:text="Scheduled Lectures"
             android:textAlignment="center"
             android:textColor="#050303"
-            android:textSize="28sp" />
+            android:textSize="28sp"/>
 
 
         <androidx.recyclerview.widget.RecyclerView

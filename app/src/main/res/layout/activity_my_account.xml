@@ -16,11 +16,11 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="112dp"
         android:layout_marginEnd="112dp"
-        android:layout_marginBottom="510dp"
+        android:layout_marginBottom="550dp"
         android:text="First Name"
         android:textAlignment="center"
         android:textColor="#0B0606"
-        android:textSize="20sp" />
+        android:textSize="15sp" />
 
     <TextView
         android:id="@+id/textView28"
@@ -31,11 +31,11 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="113dp"
         android:layout_marginEnd="113dp"
-        android:layout_marginBottom="404dp"
+        android:layout_marginBottom="470dp"
         android:text="Last Name"
         android:textAlignment="center"
         android:textColor="#0B0606"
-        android:textSize="20sp" />
+        android:textSize="15sp" />
 
     <TextView
         android:id="@+id/textView29"
@@ -46,11 +46,11 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="112dp"
         android:layout_marginEnd="112dp"
-        android:layout_marginBottom="295dp"
+        android:layout_marginBottom="390dp"
         android:text="Batch ID"
         android:textAlignment="center"
         android:textColor="#0B0606"
-        android:textSize="20sp" />
+        android:textSize="15sp" />
 
     <TextView
         android:id="@+id/textView30"
@@ -61,11 +61,41 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="112dp"
         android:layout_marginEnd="112dp"
-        android:layout_marginBottom="180dp"
+        android:layout_marginBottom="305dp"
         android:text="Contact Number"
         android:textAlignment="center"
         android:textColor="#0B0606"
-        android:textSize="20sp" />
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="112dp"
+        android:layout_marginEnd="112dp"
+        android:layout_marginBottom="135dp"
+        android:text="Confirm Password"
+        android:textAlignment="center"
+        android:textColor="#0B0606"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/textViewP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="112dp"
+        android:layout_marginEnd="112dp"
+        android:layout_marginBottom="212dp"
+        android:text="NewPassword"
+        android:textAlignment="center"
+        android:textColor="#0B0606"
+        android:textSize="15sp" />
 
     <TextView
         android:id="@+id/textView26"
@@ -80,34 +110,34 @@
         android:text="Email Address"
         android:textAlignment="center"
         android:textColor="#0B0606"
-        android:textSize="20sp" />
+        android:textSize="15sp" />
 
     <EditText
         android:id="@+id/UserEmail"
         android:layout_width="312dp"
-        android:layout_height="50dp"
+        android:layout_height="30dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="50dp"
         android:layout_marginEnd="50dp"
-        android:layout_marginBottom="573dp"
+        android:layout_marginBottom="600dp"
         android:background="@drawable/custom_input"
-        android:ems="10"
         android:editable="false"
+        android:ems="10"
         android:hint="johndoe@gmail.com"
         android:inputType="textEmailAddress" />
 
     <EditText
         android:id="@+id/uFName"
         android:layout_width="307dp"
-        android:layout_height="50dp"
+        android:layout_height="30dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="50dp"
         android:layout_marginEnd="50dp"
-        android:layout_marginBottom="457dp"
+        android:layout_marginBottom="520dp"
         android:background="@drawable/custom_input"
         android:ems="10"
         android:hint="John"
@@ -116,13 +146,13 @@
     <EditText
         android:id="@+id/uLName"
         android:layout_width="307dp"
-        android:layout_height="50dp"
+        android:layout_height="30dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="50dp"
         android:layout_marginEnd="50dp"
-        android:layout_marginBottom="348dp"
+        android:layout_marginBottom="440dp"
         android:background="@drawable/custom_input"
         android:ems="10"
         android:hint="Doe"
@@ -131,33 +161,62 @@
     <EditText
         android:id="@+id/uBatchId"
         android:layout_width="307dp"
-        android:layout_height="50dp"
+        android:layout_height="30dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="50dp"
         android:layout_marginEnd="50dp"
-        android:layout_marginBottom="239dp"
+        android:layout_marginBottom="360dp"
         android:background="@drawable/custom_input"
-        android:ems="10"
         android:editable="false"
+        android:ems="10"
         android:hint="APIITCOSE21SE"
         android:inputType="textPersonName" />
 
     <EditText
         android:id="@+id/uContactNum"
         android:layout_width="307dp"
-        android:layout_height="50dp"
+        android:layout_height="30dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="50dp"
         android:layout_marginEnd="50dp"
-        android:layout_marginBottom="120dp"
+        android:layout_marginBottom="270dp"
         android:background="@drawable/custom_input"
         android:ems="10"
         android:hint="+94715869878"
         android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/newPassword"
+        android:layout_width="307dp"
+        android:layout_height="30dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="100dp"
+        android:background="@drawable/custom_input"
+        android:ems="10"
+        android:inputType="textPassword" />
+
+    <EditText
+        android:id="@+id/Password"
+        android:layout_width="307dp"
+        android:layout_height="30dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="180dp"
+        android:background="@drawable/custom_input"
+        android:ems="10"
+        android:inputType="textPassword" />
+
 
     <TextView
         android:id="@+id/textView4"
@@ -167,11 +226,28 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="130dp"
-        android:layout_marginEnd="130dp"
-        android:layout_marginBottom="690dp"
+        android:layout_marginEnd="129dp"
+        android:layout_marginBottom="666dp"
         android:text="My Info"
         android:textAlignment="center"
         android:textColor="#220A0A"
         android:textSize="30sp"
         android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/updateBtnStudent"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="120dp"
+        android:layout_marginEnd="120dp"
+        android:layout_marginBottom="20dp"
+        android:background="@android:color/holo_orange_light"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:onClick="updateAccount"
+        android:text="Update Account"
+        android:textSize="20dp" />
 </RelativeLayout>

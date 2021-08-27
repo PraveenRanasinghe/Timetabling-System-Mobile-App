@@ -34,9 +34,9 @@ public class AdminTimetableAdapter extends RecyclerView.Adapter<AdminTimetableAd
         TimetableDTO timetableDTO= timetableList.get(position);
 
         holder.classRoomId.setText(timetableDTO.getClassRoom().getClassRoomID());
-//        holder.startTime.setText(timetableDTO.getStartTime().toString());
-//        holder.endTime.setText(timetableDTO.getStartTime().toString());
-        holder.scheduledDate.setText(timetableDTO.getScheduledDate().toString());
+        holder.startTime.setText(timetableDTO.getStartTime());
+        holder.endTime.setText(timetableDTO.getStartTime());
+        holder.scheduledDate.setText(timetableDTO.getScheduledDate());
         holder.moduleName.setText(timetableDTO.getModule().getModuleName());
         holder.batch.setText(timetableDTO.getBatches().toString());
         holder.lecFName.setText(timetableDTO.getModule().getUser().getfName());

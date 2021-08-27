@@ -138,7 +138,7 @@ public class Add_module extends AppCompatActivity {
         module.setModuleID(ModuleId.getText().toString());
         module.setModuleName(ModuleName.getText().toString());
         module.setUser(user);
-//        module.setBatches(learningBatches.getText());
+//        module.setBatches(batches);
         ApiCalls apiCalls = retrofit.getRetrofit().create(ApiCalls.class);
         Call<Module> jwtResponseCall = apiCalls.addModule(jwt,module);
 

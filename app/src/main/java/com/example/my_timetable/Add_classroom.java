@@ -40,6 +40,7 @@ public class Add_classroom extends AppCompatActivity {
         String[] items={"Yes","No"};
         String[] items1={"Yes","No"};
 
+
         ArrayAdapter arrayAdapter = new ArrayAdapter(this,R.layout.support_simple_spinner_dropdown_item,items);
         spinner.setAdapter(arrayAdapter);
 
