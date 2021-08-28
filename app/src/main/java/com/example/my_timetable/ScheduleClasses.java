@@ -6,6 +6,7 @@ import androidx.fragment.app.DialogFragment;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
@@ -23,11 +24,13 @@ import com.example.my_timetable.API.RetrofitAPI;
 import com.example.my_timetable.Model.Batch;
 import com.example.my_timetable.Model.ClassDTO;
 import com.example.my_timetable.Model.Classroom;
+import com.example.my_timetable.Model.Module;
 import com.example.my_timetable.Model.Timetable;
 
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
@@ -111,6 +114,8 @@ public class ScheduleClasses extends AppCompatActivity{
                 handleEndTime();
             }
         });
+
+
     }
 
     private void handleTime() {
@@ -154,7 +159,7 @@ public class ScheduleClasses extends AppCompatActivity{
         DatePickerDialog datePickerDialog = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                String date=year+"-"+month+"-"+dayOfMonth;
+                String date=dayOfMonth+"/"+month+"/"+year;
                 scheduleDate.setText(date);
             }
         }, Y,M,D);
@@ -164,23 +169,23 @@ public class ScheduleClasses extends AppCompatActivity{
 
     public void scheduleClass(View view) throws ParseException {
 
-        final String scheduledDate=((TextView)findViewById(R.id.scheduledDate)).getText().toString().trim();
-        final String startTime=((TextView)findViewById(R.id.startTime)).getText().toString().trim();
-        final String endTime=((TextView)findViewById(R.id.endTime)).getText().toString().trim();
-        final String classroom=((Spinner)findViewById(R.id.classRoomIdSpinner)).toString().trim();
-
-        if(scheduledDate.isEmpty()){
-            Toast.makeText(getApplicationContext(), "Please Select the Date Field.", Toast.LENGTH_SHORT).show();
-        }
-        else if(startTime.isEmpty()){
-            Toast.makeText(getApplicationContext(), "Please fill the Start Time Field.", Toast.LENGTH_SHORT).show();
-        }
-        else if(endTime.isEmpty()){
-            Toast.makeText(getApplicationContext(), "Please fill the End Time Field.", Toast.LENGTH_SHORT).show();
-        }
-        else if(classroom.isEmpty()){
-            Toast.makeText(getApplicationContext(), "Please select a Class-Room.", Toast.LENGTH_SHORT).show();
-        }
+//        final String scheduledDate=((TextView)findViewById(R.id.scheduledDate)).getText().toString().trim();
+//        final String startTime=((TextView)findViewById(R.id.startTime)).getText().toString().trim();
+//        final String endTime=((TextView)findViewById(R.id.endTime)).getText().toString().trim();
+//        final String classroom=((Spinner)findViewById(R.id.classRoomIdSpinner)).toString().trim();
+//
+//        if(scheduledDate.isEmpty()){
+//            Toast.makeText(getApplicationContext(), "Please Select the Date Field.", Toast.LENGTH_SHORT).show();
+//        }
+//        else if(startTime.isEmpty()){
+//            Toast.makeText(getApplicationContext(), "Please fill the Start Time Field.", Toast.LENGTH_SHORT).show();
+//        }
+//        else if(endTime.isEmpty()){
+//            Toast.makeText(getApplicationContext(), "Please fill the End Time Field.", Toast.LENGTH_SHORT).show();
+//        }
+//        else if(classroom.isEmpty()){
+//            Toast.makeText(getApplicationContext(), "Please select a Class-Room.", Toast.LENGTH_SHORT).show();
+//        }
 
 
         SharedPreferences prefs = getSharedPreferences("SHARED", Context.MODE_PRIVATE);
@@ -193,10 +198,19 @@ public class ScheduleClasses extends AppCompatActivity{
         String sDate=scheduleDate.getText().toString();
         Date date = new SimpleDateFormat("dd/MM/yyyy").parse(sDate);
 
+        Intent intent =getIntent();
+        Module module = (Module)intent.getSerializableExtra("moduleId");
+
+
+        Classroom classroomId= new Classroom();
+        classroomId.setClassRoomID(clzId.toString());
+
         timetable.setStartTime(startTimeTV.getText().toString());
         timetable.setEndTime(endTimeTV.getText().toString());
         timetable.setScheduledDate(date);
-
+        timetable.setClassRoom(classroomId);
+        timetable.setBatches(module.getBatches());
+        timetable.setModules(module);
 
         ApiCalls apiCalls = retrofit.getRetrofit().create(ApiCalls.class);
         Call<Timetable> jwtResponseCall = apiCalls.scheduleClasses(jwt,timetable);
@@ -204,17 +218,20 @@ public class ScheduleClasses extends AppCompatActivity{
         jwtResponseCall.enqueue(new Callback<Timetable>() {
             @Override
             public void onResponse(Call<Timetable> call, Response<Timetable> response) {
+                Timetable body = response.body();
                 if(response.isSuccessful()){
                     Toast.makeText(getApplicationContext(), "Timetable has been Scheduled Successfully! ", Toast.LENGTH_SHORT).show();
                 }
                 else {
                     Toast.makeText(getApplicationContext(), "Operation Failed ! ", Toast.LENGTH_SHORT).show();
+                    System.out.println(response);
+
                 }
             }
 
             @Override
             public void onFailure(Call<Timetable> call, Throwable t) {
-                Toast.makeText(getApplicationContext(), "Operation Failed! ", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Operation Failedddd! ", Toast.LENGTH_SHORT).show();
             }
         });
 

@@ -153,7 +153,7 @@
             android:textStyle="normal" />
 
         <Button
-            android:id="@+id/cancelBtn"
+            android:id="@+id/cancelBtnAdmin"
             android:layout_width="135dp"
             android:layout_height="30dp"
             android:layout_alignParentStart="true"

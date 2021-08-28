@@ -1,6 +1,8 @@
 package com.example.my_timetable.Model;
 
-public class DtoUser {
+import java.io.Serializable;
+
+public class DtoUser implements Serializable {
 
     private String email;
     private String fName;

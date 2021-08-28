@@ -92,7 +92,7 @@ public interface ApiCalls {
     @POST("/addModule")
     Call<Module> addModule(@Header("Authorization") String authorization,@Body Module module);
 
-    @POST("/scheduleClasses")
+    @POST("/AdminScheduleTimetable")
     Call<Timetable> scheduleClasses(@Header("Authorization") String authorization, @Body Timetable timetable);
 
     @POST("/UpdateAdminAccount")

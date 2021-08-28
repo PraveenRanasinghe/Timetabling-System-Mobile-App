@@ -1,9 +1,10 @@
 package com.example.my_timetable.Model;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
-public class Batch {
+public class Batch implements Serializable {
     private String batchID;
     private String batchName;
     private Date startDate;

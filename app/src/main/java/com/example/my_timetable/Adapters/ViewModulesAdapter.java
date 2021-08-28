@@ -1,6 +1,7 @@
 package com.example.my_timetable.Adapters;
 
 import android.content.Intent;
+import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,10 +11,12 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.my_timetable.Model.Batch;
 import com.example.my_timetable.Model.Module;
 import com.example.my_timetable.R;
 import com.example.my_timetable.ScheduleClasses;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ViewModulesAdapter extends RecyclerView.Adapter<ViewModulesAdapter.ViewHolder>{
@@ -43,9 +46,20 @@ public class ViewModulesAdapter extends RecyclerView.Adapter<ViewModulesAdapter.
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(), ScheduleClasses.class);
+
+                Module modules = new Module();
+
+                modules.setModuleID(module.getModuleID());
+                modules.setModuleName(module.getModuleName());
+                modules.setBatches(module.getBatches());
+                modules.setUser(module.getUser());
+
+                intent.putExtra("moduleId",modules);
+
                 v.getContext().startActivity(intent);
             }
         });
+
     }
 
     @Override

@@ -1,8 +1,9 @@
 package com.example.my_timetable.Model;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class Module {
+public class Module implements Serializable{
     private String moduleID;
     private String moduleName;
     private DtoUser user;
