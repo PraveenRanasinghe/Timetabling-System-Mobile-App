@@ -57,8 +57,6 @@ public class ScheduleClasses extends AppCompatActivity{
         ApiCalls apiCalls = retrofit.getRetrofit().create(ApiCalls.class);
 
         Call <List<ClassDTO>> jwtResponseBatchList=apiCalls.getAllClassesToList(jwt);
-
-
         jwtResponseBatchList.enqueue(new Callback<List<ClassDTO>>() {
             @Override
             public void onResponse(Call<List<ClassDTO>> call, Response<List<ClassDTO>> response) {
@@ -218,7 +216,7 @@ public class ScheduleClasses extends AppCompatActivity{
         jwtResponseCall.enqueue(new Callback<Timetable>() {
             @Override
             public void onResponse(Call<Timetable> call, Response<Timetable> response) {
-                Timetable body = response.body();
+
                 if(response.isSuccessful()){
                     Toast.makeText(getApplicationContext(), "Timetable has been Scheduled Successfully! ", Toast.LENGTH_SHORT).show();
                 }

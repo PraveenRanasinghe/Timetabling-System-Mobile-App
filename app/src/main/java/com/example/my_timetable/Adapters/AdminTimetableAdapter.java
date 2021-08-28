@@ -1,6 +1,6 @@
 package com.example.my_timetable.Adapters;
 
-import android.content.Intent;
+import android.content.DialogInterface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,11 +10,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.my_timetable.Model.Timetable;
 import com.example.my_timetable.Model.TimetableDTO;
-import com.example.my_timetable.Model.UDto;
-import com.example.my_timetable.PopUp;
 import com.example.my_timetable.R;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import java.util.List;
 
@@ -48,8 +46,18 @@ public class AdminTimetableAdapter extends RecyclerView.Adapter<AdminTimetableAd
         holder.cancelButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), PopUp.class);
-                v.getContext().startActivity(intent);
+//
+                new MaterialAlertDialogBuilder(v.getContext()).setTitle("Cancel Lecture").setMessage("Are you sure to Cancel this lecture?").setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                }).setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                }).show();
             }
         });
     }
