@@ -46,7 +46,7 @@ public class Admin extends AppCompatActivity {
 
                 switch (item.getItemId()) {
                     case R.id.home:
-                        Intent intent = new Intent(Admin.this, Student.class);
+                        Intent intent = new Intent(Admin.this, Admin.class);
                         startActivity(intent);
                         return true;
 
@@ -54,18 +54,6 @@ public class Admin extends AppCompatActivity {
                         Intent myAccountIntent = new Intent(Admin.this, My_account_staff.class);
                         startActivity(myAccountIntent);
                         return true;
-
-                    case R.id.myModules:
-                        Intent myModules = new Intent(Admin.this, MyModulesStud.class);
-                        startActivity(myModules);
-                        return true;
-
-
-                    case R.id.WeeklyTimetable:
-                        Intent weeklyTimetable = new Intent(Admin.this, Weekly_timetable_for_student.class);
-                        startActivity(weeklyTimetable);
-                        return true;
-
                 }
                 return false;
             }

@@ -135,10 +135,15 @@ public class Add_module extends AppCompatActivity {
 
         String batches=learningBatches.toString();
         List<Batch> batchList=new ArrayList<>();
+
+        for(Batch batch:batchList){
+
+        }
+
         module.setModuleID(ModuleId.getText().toString());
         module.setModuleName(ModuleName.getText().toString());
         module.setUser(user);
-//        module.setBatches(batches);
+        module.setBatches(batchList);
         ApiCalls apiCalls = retrofit.getRetrofit().create(ApiCalls.class);
         Call<Module> jwtResponseCall = apiCalls.addModule(jwt,module);
 

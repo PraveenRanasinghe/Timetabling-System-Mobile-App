@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -44,6 +45,7 @@ public class ScheduleClasses extends AppCompatActivity{
     Button dateButton, startTime,endTimeBtn;
     TextView scheduleDate, startTimeTV,endTimeTV;
     Spinner clzId;
+    ClassDTO clz;
 
     @Override
     protected void onStart() {
@@ -68,6 +70,17 @@ public class ScheduleClasses extends AppCompatActivity{
                             android.R.layout.simple_spinner_item,classDTOS);
                     adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                     spinner.setAdapter(adapter);
+                    spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                        @Override
+                        public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                            clz=(ClassDTO)parent.getItemAtPosition(position);
+                        }
+
+                        @Override
+                        public void onNothingSelected(AdapterView<?> parent) {
+
+                        }
+                    });
                 }
             }
 
@@ -167,25 +180,6 @@ public class ScheduleClasses extends AppCompatActivity{
 
     public void scheduleClass(View view) throws ParseException {
 
-//        final String scheduledDate=((TextView)findViewById(R.id.scheduledDate)).getText().toString().trim();
-//        final String startTime=((TextView)findViewById(R.id.startTime)).getText().toString().trim();
-//        final String endTime=((TextView)findViewById(R.id.endTime)).getText().toString().trim();
-//        final String classroom=((Spinner)findViewById(R.id.classRoomIdSpinner)).toString().trim();
-//
-//        if(scheduledDate.isEmpty()){
-//            Toast.makeText(getApplicationContext(), "Please Select the Date Field.", Toast.LENGTH_SHORT).show();
-//        }
-//        else if(startTime.isEmpty()){
-//            Toast.makeText(getApplicationContext(), "Please fill the Start Time Field.", Toast.LENGTH_SHORT).show();
-//        }
-//        else if(endTime.isEmpty()){
-//            Toast.makeText(getApplicationContext(), "Please fill the End Time Field.", Toast.LENGTH_SHORT).show();
-//        }
-//        else if(classroom.isEmpty()){
-//            Toast.makeText(getApplicationContext(), "Please select a Class-Room.", Toast.LENGTH_SHORT).show();
-//        }
-
-
         SharedPreferences prefs = getSharedPreferences("SHARED", Context.MODE_PRIVATE);
         String name = prefs.getString("token", null);
         String jwt = "Bearer " + name;
@@ -199,14 +193,16 @@ public class ScheduleClasses extends AppCompatActivity{
         Intent intent =getIntent();
         Module module = (Module)intent.getSerializableExtra("moduleId");
 
-
-        Classroom classroomId= new Classroom();
-        classroomId.setClassRoomID(clzId.toString());
+        Classroom classroom= new Classroom();
+        classroom.setClassRoomID(clz.getClassRoomID());
+        classroom.setCapacity(clz.getCapacity());
+        classroom.setSmartBoard(clz.getSmartBoard());
+        classroom.setAc(clz.getAc());
 
         timetable.setStartTime(startTimeTV.getText().toString());
         timetable.setEndTime(endTimeTV.getText().toString());
         timetable.setScheduledDate(date);
-        timetable.setClassRoom(classroomId);
+        timetable.setClassRoom(classroom);
         timetable.setBatches(module.getBatches());
         timetable.setModules(module);
 
@@ -235,3 +231,21 @@ public class ScheduleClasses extends AppCompatActivity{
 
     }
 }
+
+//        final String scheduledDate=((TextView)findViewById(R.id.scheduledDate)).getText().toString().trim();
+//        final String startTime=((TextView)findViewById(R.id.startTime)).getText().toString().trim();
+//        final String endTime=((TextView)findViewById(R.id.endTime)).getText().toString().trim();
+//        final String classroom=((Spinner)findViewById(R.id.classRoomIdSpinner)).toString().trim();
+//
+//        if(scheduledDate.isEmpty()){
+//            Toast.makeText(getApplicationContext(), "Please Select the Date Field.", Toast.LENGTH_SHORT).show();
+//        }
+//        else if(startTime.isEmpty()){
+//            Toast.makeText(getApplicationContext(), "Please fill the Start Time Field.", Toast.LENGTH_SHORT).show();
+//        }
+//        else if(endTime.isEmpty()){
+//            Toast.makeText(getApplicationContext(), "Please fill the End Time Field.", Toast.LENGTH_SHORT).show();
+//        }
+//        else if(classroom.isEmpty()){
+//            Toast.makeText(getApplicationContext(), "Please select a Class-Room.", Toast.LENGTH_SHORT).show();
+//        }

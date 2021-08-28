@@ -9,7 +9,7 @@
         android:layout_height="150dp"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="10dp"
-        android:background="@drawable/user_card"
+        android:background="@drawable/header"
         android:padding="20dp">
 
 
@@ -101,7 +101,7 @@
             android:id="@+id/emailBtn"
             android:layout_width="25dp"
             android:layout_height="25dp"
-            android:layout_marginStart="70dp"
+            android:layout_marginStart="60dp"
             android:src="@drawable/mail" />
 
 

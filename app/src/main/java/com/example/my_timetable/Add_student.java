@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -36,7 +37,7 @@ public class Add_student extends AppCompatActivity {
     EditText studEmail;
     EditText studContact;
     Spinner studBatch;
-
+    String batch_Id;
 
     @Override
     protected void onStart() {
@@ -63,6 +64,17 @@ public class Add_student extends AppCompatActivity {
                             android.R.layout.simple_spinner_item,batches);
                     adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                     spinner.setAdapter(adapter);
+                    spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                        @Override
+                        public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                            batch_Id=parent.getItemAtPosition(position).toString();
+                        }
+
+                        @Override
+                        public void onNothingSelected(AdapterView<?> parent) {
+
+                        }
+                    });
                 }
             }
 
@@ -124,7 +136,7 @@ public class Add_student extends AppCompatActivity {
         user.setPassword("User1234");
         user.setUserRole(userType.getText().toString());
         user.setEmail(studEmail.getText().toString());
-        user.setBatchId(studBatch.toString());
+        user.setBatchId(batch_Id);
         user.setContactNumber(studContact.getText().toString());
 
         ApiCalls apiCalls = retrofit.getRetrofit().create(ApiCalls.class);
