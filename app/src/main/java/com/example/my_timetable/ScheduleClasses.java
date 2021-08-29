@@ -46,6 +46,7 @@ public class ScheduleClasses extends AppCompatActivity{
     TextView scheduleDate, startTimeTV,endTimeTV;
     Spinner clzId;
     ClassDTO clz;
+    Intent nextPath;
 
     @Override
     protected void onStart() {
@@ -215,19 +216,22 @@ public class ScheduleClasses extends AppCompatActivity{
 
                 if(response.isSuccessful()){
                     Toast.makeText(getApplicationContext(), "Timetable has been Scheduled Successfully! ", Toast.LENGTH_SHORT).show();
+                    startActivity(nextPath);
                 }
                 else {
                     Toast.makeText(getApplicationContext(), "Timetable has been Scheduled Successfully! ", Toast.LENGTH_SHORT).show();
-
+                    startActivity(nextPath);
                 }
             }
 
             @Override
             public void onFailure(Call<Timetable> call, Throwable t) {
-                Toast.makeText(getApplicationContext(), "Operation Failedddd! ", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Process Failed!.Please Try Again! ", Toast.LENGTH_SHORT).show();
+                startActivity(nextPath);
             }
         });
 
+        nextPath=new Intent(ScheduleClasses.this,View_all_modules.class);
     }
 }
 

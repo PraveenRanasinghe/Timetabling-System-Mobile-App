@@ -5,6 +5,7 @@ import androidx.fragment.app.DialogFragment;
 
 import android.app.DatePickerDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
@@ -37,6 +38,7 @@ public class Add_batch extends AppCompatActivity{
     TextView terminationDate;
     Button commencement;
     Button termination;
+    Intent nextPath;
 
 
     @Override
@@ -140,11 +142,14 @@ public class Add_batch extends AppCompatActivity{
         ApiCalls apiCalls = retrofit.getRetrofit().create(ApiCalls.class);
         Call<Batch> jwtResponseCall = apiCalls.addBatch(jwt,batch);
 
+        nextPath =new Intent(Add_batch.this,Admin_batch_operations.class);
+
         jwtResponseCall.enqueue(new Callback<Batch>() {
             @Override
             public void onResponse(Call<Batch> call, Response<Batch> response) {
                 if(response.isSuccessful()){
                     Toast.makeText(getApplicationContext(), "New Batch has been Added to the University Successfully! ", Toast.LENGTH_SHORT).show();
+                    startActivity(nextPath);
                 }
                 else {
                     Toast.makeText(getApplicationContext(), "Operation Failed Response! ", Toast.LENGTH_SHORT).show();

@@ -3,6 +3,7 @@ package com.example.my_timetable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
@@ -25,6 +26,7 @@ public class Add_lecturer extends AppCompatActivity {
     EditText lecLName;
     EditText lecturerEmail;
     EditText lecContact;
+    Intent nextPath;
 
 
     @Override
@@ -73,12 +75,14 @@ public class Add_lecturer extends AppCompatActivity {
 
         ApiCalls apiCalls = retrofit.getRetrofit().create(ApiCalls.class);
         Call<User> jwtResponseCall = apiCalls.addLecturers(jwt,user);
+        nextPath=new Intent(Add_lecturer.this,Admin_user_operations.class);
 
         jwtResponseCall.enqueue(new Callback<User>() {
             @Override
             public void onResponse(Call<User> call, Response<User> response) {
                 if(response.isSuccessful()){
                     Toast.makeText(getApplicationContext(), "New Lecturer has been Added to the University Successfully! ", Toast.LENGTH_SHORT).show();
+                    startActivity(nextPath);
                 }
                 else {
                     Toast.makeText(getApplicationContext(), "Operation Failed Response! ", Toast.LENGTH_SHORT).show();

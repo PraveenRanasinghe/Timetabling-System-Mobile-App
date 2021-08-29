@@ -35,7 +35,7 @@
         android:layout_marginBottom="140dp"
         android:background="@drawable/add_button"
         android:onClick="viewBatches"
-        android:text="View Update and Remove Batches"
+        android:text="View Details of Batches"
         android:textSize="18dp" />
 
     <TextView

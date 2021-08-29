@@ -3,6 +3,7 @@ package com.example.my_timetable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
@@ -37,6 +38,7 @@ public class Add_module extends AppCompatActivity {
     Spinner learningBatches;
     String lec;
     Batch batchList;
+    Intent nextPath;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -166,12 +168,15 @@ public class Add_module extends AppCompatActivity {
 
         Call<Module> jwtResponseCall = apiCalls.addModule(jwt,module);
 
+        nextPath=new Intent(Add_module.this, Admin_module_operations.class);
+
         jwtResponseCall.enqueue(new Callback<Module>() {
             @Override
             public void onResponse(Call<Module> call, Response<Module> response) {
                 if(response.isSuccessful()){
 
                     Toast.makeText(getApplicationContext(), "New Module has been added Successfully! ", Toast.LENGTH_SHORT).show();
+                    startActivity(nextPath);
                 }
                 else {
                     Toast.makeText(getApplicationContext(), "Operation Failed........ ! ", Toast.LENGTH_SHORT).show();

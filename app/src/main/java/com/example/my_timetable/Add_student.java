@@ -38,6 +38,7 @@ public class Add_student extends AppCompatActivity {
     EditText studContact;
     Spinner studBatch;
     String batch_Id;
+    Intent nextPath;
 
     @Override
     protected void onStart() {
@@ -141,12 +142,13 @@ public class Add_student extends AppCompatActivity {
 
         ApiCalls apiCalls = retrofit.getRetrofit().create(ApiCalls.class);
         Call<User> jwtResponseCall = apiCalls.addStudents(jwt,user);
-
+        nextPath=new Intent(Add_student.this,Admin_user_operations.class);
         jwtResponseCall.enqueue(new Callback<User>() {
             @Override
             public void onResponse(Call<User> call, Response<User> response) {
                 if(response.isSuccessful()){
                     Toast.makeText(getApplicationContext(), "New Student has been Added to the University Successfully! ", Toast.LENGTH_SHORT).show();
+                    startActivity(nextPath);
                 }
                 else {
                     Toast.makeText(getApplicationContext(), "Operation Failed Response! ", Toast.LENGTH_SHORT).show();

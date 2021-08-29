@@ -55,7 +55,7 @@
         android:layout_marginBottom="117dp"
         android:background="@drawable/add_button"
         android:onClick="viewClassRooms"
-        android:text="View Update and Remove Class-Rooms"
-        android:textSize="18dp"/>
+        android:text="View Details of Class-Rooms"
+        android:textSize="18dp" />
 
 </RelativeLayout>

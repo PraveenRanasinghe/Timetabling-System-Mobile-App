@@ -18,6 +18,7 @@ import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
+import retrofit2.http.DELETE;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
 import retrofit2.http.Headers;
@@ -100,5 +101,8 @@ public interface ApiCalls {
 
     @POST("/UpdateStudentAccount")
     Call<DtoUser> updateStudentAccount(@Header("Authorization") String authorization,@Body DtoUser user);
+
+    @DELETE("/AdminCancelTimetable")
+    Call<Timetable> cancelTimetable(@Header("Authorization") String authorization,@Body Timetable timetable);
 
 }

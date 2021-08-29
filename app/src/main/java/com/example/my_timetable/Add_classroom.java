@@ -3,9 +3,11 @@ package com.example.my_timetable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -26,7 +28,9 @@ public class Add_classroom extends AppCompatActivity {
     private Spinner spinner, spinner1;
     EditText classroomId;
     EditText capa;
-
+    Intent nextPath;
+    String Ac;
+    String Sb;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,9 +47,31 @@ public class Add_classroom extends AppCompatActivity {
 
         ArrayAdapter arrayAdapter = new ArrayAdapter(this,R.layout.support_simple_spinner_dropdown_item,items);
         spinner.setAdapter(arrayAdapter);
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                Ac=parent.getItemAtPosition(position).toString();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
 
         ArrayAdapter arrayAdapter1 = new ArrayAdapter(this,R.layout.support_simple_spinner_dropdown_item,items1);
         spinner1.setAdapter(arrayAdapter1);
+        spinner1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                Sb=parent.getItemAtPosition(position).toString();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
     }
 
     public void addClassRoom(View view){
@@ -75,19 +101,21 @@ public class Add_classroom extends AppCompatActivity {
         Classroom classroom=new Classroom();
         RetrofitAPI retrofit = new RetrofitAPI();
         classroom.setClassRoomID(classroomId.getText().toString());
-        classroom.setAc(spinner.toString());
-        classroom.setSmartBoard(spinner1.toString());
+        classroom.setAc(Ac);
+        classroom.setSmartBoard(Sb);
         classroom.setCapacity(capa.getText().toString());
 
 
         ApiCalls apiCalls = retrofit.getRetrofit().create(ApiCalls.class);
         Call<Classroom> jwtResponseCall = apiCalls.addClassroom(jwt,classroom);
 
+        nextPath=new Intent(Add_classroom.this, Admin_classroom_operations.class);
         jwtResponseCall.enqueue(new Callback<Classroom>() {
             @Override
             public void onResponse(Call<Classroom> call, Response<Classroom> response) {
                 if(response.isSuccessful()){
                     Toast.makeText(getApplicationContext(), "New Classroom has been added Successfully! ", Toast.LENGTH_SHORT).show();
+                    startActivity(nextPath);
                 }
                 else {
                     Toast.makeText(getApplicationContext(), "Operation Failed ! ", Toast.LENGTH_SHORT).show();
