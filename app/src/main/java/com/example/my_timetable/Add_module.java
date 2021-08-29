@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -34,7 +35,8 @@ public class Add_module extends AppCompatActivity {
     EditText ModuleName;
     Spinner spinnerLec;
     Spinner learningBatches;
-
+    String lec;
+    Batch batchList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,9 +74,19 @@ public class Add_module extends AppCompatActivity {
                             android.R.layout.simple_spinner_item,user);
                     adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                     spinner.setAdapter(adapter);
+                    spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                        @Override
+                        public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                            lec=parent.getItemAtPosition(position).toString();
+                        }
+
+                        @Override
+                        public void onNothingSelected(AdapterView<?> parent) {
+
+                        }
+                    });
                 }
             }
-
             @Override
             public void onFailure(Call<List<UDto>> call, Throwable t) {
                 Toast.makeText(getApplicationContext(), "Operation Failed!", Toast.LENGTH_SHORT).show();
@@ -92,9 +104,19 @@ public class Add_module extends AppCompatActivity {
                             android.R.layout.simple_spinner_item,batches);
                     adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                     spinner.setAdapter(adapter);
+                    spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                        @Override
+                        public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                            batchList= (Batch)parent.getItemAtPosition(position);
+                        }
+
+                        @Override
+                        public void onNothingSelected(AdapterView<?> parent) {
+
+                        }
+                    });
                 }
             }
-
             @Override
             public void onFailure(Call<List<Batch>> call, Throwable t) {
                 Toast.makeText(getApplicationContext(), "Operation Failed!", Toast.LENGTH_SHORT).show();
@@ -129,33 +151,30 @@ public class Add_module extends AppCompatActivity {
         Module module=new Module();
         RetrofitAPI retrofit = new RetrofitAPI();
 
-        String lec=spinnerLec.toString();
+
         DtoUser user = new DtoUser();
         user.setEmail(lec);
 
-        String batches=learningBatches.toString();
-        List<Batch> batchList=new ArrayList<>();
-
-        for(Batch batch:batchList){
-
-        }
+        List<Batch> batches= new ArrayList<>();
+        batches.add(batchList);
 
         module.setModuleID(ModuleId.getText().toString());
         module.setModuleName(ModuleName.getText().toString());
         module.setUser(user);
-        module.setBatches(batchList);
+        module.setBatches(batches);
         ApiCalls apiCalls = retrofit.getRetrofit().create(ApiCalls.class);
-        Call<Module> jwtResponseCall = apiCalls.addModule(jwt,module);
 
+        Call<Module> jwtResponseCall = apiCalls.addModule(jwt,module);
 
         jwtResponseCall.enqueue(new Callback<Module>() {
             @Override
             public void onResponse(Call<Module> call, Response<Module> response) {
                 if(response.isSuccessful()){
+
                     Toast.makeText(getApplicationContext(), "New Module has been added Successfully! ", Toast.LENGTH_SHORT).show();
                 }
                 else {
-                    Toast.makeText(getApplicationContext(), "Operation Failed ! ", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Operation Failed........ ! ", Toast.LENGTH_SHORT).show();
                 }
             }
 

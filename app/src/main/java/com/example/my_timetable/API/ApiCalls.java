@@ -89,7 +89,7 @@ public interface ApiCalls {
     @POST("/addBatch")
     Call<Batch> addBatch(@Header("Authorization") String authorization,@Body Batch batch);
 
-    @POST("/addModule")
+    @POST("/AdminAddModule")
     Call<Module> addModule(@Header("Authorization") String authorization,@Body Module module);
 
     @POST("/AdminScheduleTimetable")

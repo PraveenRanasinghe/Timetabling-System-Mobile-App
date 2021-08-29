@@ -3,6 +3,7 @@ package com.example.my_timetable.Adapters;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -35,7 +36,7 @@ public class LecturerTimetableAdapter extends RecyclerView.Adapter<LecturerTimet
         holder.startTime.setText(timetable.getStartTime());
         holder.endTime.setText(timetable.getEndTime());
         holder.scheduledDate.setText(timetable.getScheduledDate().toString());
-//        holder.batchId.setText(timetable.getBatches().toString());
+        holder.batchId.setText(timetable.getBatches().toString());
     }
 
     @Override
@@ -51,6 +52,8 @@ public class LecturerTimetableAdapter extends RecyclerView.Adapter<LecturerTimet
         TextView startTime;
         TextView endTime;
         TextView classRoomId;
+        Button cancelLec;
+        Button reScheduleBtn;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -61,6 +64,8 @@ public class LecturerTimetableAdapter extends RecyclerView.Adapter<LecturerTimet
             startTime=itemView.findViewById(R.id.startTime);
             endTime=itemView.findViewById(R.id.endTime);
             classRoomId=itemView.findViewById(R.id.classRoomId);
+            cancelLec=itemView.findViewById(R.id.cancelBtnLec);
+            reScheduleBtn=itemView.findViewById(R.id.rescheduleBtnLec);
         }
     }
 }

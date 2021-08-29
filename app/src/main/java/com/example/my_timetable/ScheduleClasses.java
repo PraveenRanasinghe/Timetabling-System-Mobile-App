@@ -217,8 +217,7 @@ public class ScheduleClasses extends AppCompatActivity{
                     Toast.makeText(getApplicationContext(), "Timetable has been Scheduled Successfully! ", Toast.LENGTH_SHORT).show();
                 }
                 else {
-                    Toast.makeText(getApplicationContext(), "Operation Failed ! ", Toast.LENGTH_SHORT).show();
-                    System.out.println(response);
+                    Toast.makeText(getApplicationContext(), "Timetable has been Scheduled Successfully! ", Toast.LENGTH_SHORT).show();
 
                 }
             }

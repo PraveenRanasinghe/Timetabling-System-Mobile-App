@@ -149,7 +149,7 @@
             android:textStyle="normal" />
 
         <Button
-            android:id="@+id/cancelBtn"
+            android:id="@+id/cancelBtnLec"
             android:layout_width="135dp"
             android:layout_height="35dp"
             android:layout_alignParentStart="true"
@@ -166,7 +166,7 @@
             android:textStyle="normal" />
 
         <Button
-            android:id="@+id/rescheduleBtn"
+            android:id="@+id/rescheduleBtnLec"
             android:layout_width="135dp"
             android:layout_height="35dp"
             android:layout_alignParentStart="true"
