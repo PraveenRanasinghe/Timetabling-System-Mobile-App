@@ -1,6 +1,8 @@
 package com.example.my_timetable.Adapters;
 
+import android.content.Context;
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,11 +12,19 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.my_timetable.API.ApiCalls;
+import com.example.my_timetable.API.RetrofitAPI;
+import com.example.my_timetable.Model.Classroom;
+import com.example.my_timetable.Model.Timetable;
 import com.example.my_timetable.Model.TimetableDTO;
 import com.example.my_timetable.R;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class AdminTimetableAdapter extends RecyclerView.Adapter<AdminTimetableAdapter.ViewHolder>{
 
@@ -46,7 +56,6 @@ public class AdminTimetableAdapter extends RecyclerView.Adapter<AdminTimetableAd
         holder.cancelButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//
                 new MaterialAlertDialogBuilder(v.getContext()).setTitle("Cancel Lecture").setMessage("Are you sure to Cancel this lecture?").setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
@@ -78,9 +87,10 @@ public class AdminTimetableAdapter extends RecyclerView.Adapter<AdminTimetableAd
         TextView lecLName;
         Button cancelButton;
 
+
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-
             moduleName=itemView.findViewById(R.id.moduleIdA);
             scheduledDate=itemView.findViewById(R.id.dateA);
             startTime=itemView.findViewById(R.id.startTimeA);
@@ -90,6 +100,8 @@ public class AdminTimetableAdapter extends RecyclerView.Adapter<AdminTimetableAd
             lecFName=itemView.findViewById(R.id.fNameLec);
             lecLName=itemView.findViewById(R.id.lNameLec);
             cancelButton=itemView.findViewById(R.id.cancelBtnAdmin);
+
+//            SharedPreferences prefs = Context.getSharedPreferences("SHARED", Context.MODE_PRIVATE);
         }
     }
 }

@@ -49,33 +49,58 @@
             android:textSize="18dp"
             android:textStyle="italic" />
 
-        <Button
+        <ImageView
             android:id="@+id/callLec"
-            android:layout_width="350dp"
+            android:layout_width="35dp"
             android:layout_height="35dp"
             android:layout_marginStart="20dp"
             android:layout_marginTop="130dp"
             android:layout_marginEnd="200dp"
-            android:background="@drawable/add_button"
+            android:background="@drawable/call"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textSize="12dp"
+            android:textStyle="italic" />
+
+        <TextView
+            android:id="@+id/text1"
+            android:layout_width="350dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="138dp"
+            android:layout_marginEnd="180dp"
+            android:text="Contact Lecturer"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textSize="13dp"
+            android:textStyle="normal" />
+
+        <ImageView
+            android:id="@+id/emailLec"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="200dp"
+            android:layout_marginTop="130dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/email"
             android:text="Contact Lecturer"
             android:textAlignment="center"
             android:textColor="@android:color/black"
             android:textSize="12dp"
             android:textStyle="italic" />
 
-        <Button
-            android:id="@+id/emailLec"
-            android:layout_width="350dp"
-            android:layout_height="35dp"
-            android:layout_marginStart="200dp"
-            android:layout_marginTop="130dp"
+        <TextView
+            android:id="@+id/email"
+            android:layout_width="100dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="250dp"
+            android:layout_marginTop="140dp"
             android:layout_marginEnd="20dp"
-            android:background="@drawable/add_button"
-            android:text="Contact Lecturer"
+            android:text="Send Email"
             android:textAlignment="center"
             android:textColor="@android:color/black"
             android:textSize="12dp"
-            android:textStyle="italic" />
+            android:textStyle="normal" />
 
         <TextView
             android:id="@+id/MmoduleName"

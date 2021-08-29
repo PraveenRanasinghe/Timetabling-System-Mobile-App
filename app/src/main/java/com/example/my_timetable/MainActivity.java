@@ -77,17 +77,16 @@ public class MainActivity extends AppCompatActivity {
                                 break;
                             }
                         }
-                        Toast.makeText(getApplicationContext(), "Operation Successful! " + jwtResponse.getEmail(), Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), "Successfully Logged In! ", Toast.LENGTH_SHORT).show();
                     }
                 }
-
 
             }
 
 
             @Override
             public void onFailure(Call<JwtResponse> call, Throwable t) {
-                Toast.makeText(getApplicationContext(), "Operation Failed! " + t, Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Invalid Credentials!. Please Check Your Credentials.", Toast.LENGTH_SHORT).show();
                 System.out.println(t);
             }
         });
