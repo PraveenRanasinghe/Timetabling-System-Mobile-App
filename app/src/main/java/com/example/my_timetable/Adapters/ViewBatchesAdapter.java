@@ -12,6 +12,9 @@ import com.example.my_timetable.Model.Batch;
 import com.example.my_timetable.Model.Module;
 import com.example.my_timetable.R;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 public class ViewBatchesAdapter extends RecyclerView.Adapter<ViewBatchesAdapter.ViewHolder>{
@@ -31,12 +34,16 @@ public class ViewBatchesAdapter extends RecyclerView.Adapter<ViewBatchesAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull ViewBatchesAdapter.ViewHolder holder, int position) {
+
         Batch batch = batchList.get(position);
         holder.batchName.setText(batch.getBatchName());
         holder.batchId.setText(batch.getBatchID());
         holder.dateOfTermination.setText(batch.getStartDate().toString());
         holder.dateOfCommencement.setText(batch.getEndDate().toString());
 
+//        SimpleDateFormat df= new SimpleDateFormat("yyyy-MM-dd");
+//        df.applyPattern("dd/MM/yyyy");
+//
     }
 
     @Override

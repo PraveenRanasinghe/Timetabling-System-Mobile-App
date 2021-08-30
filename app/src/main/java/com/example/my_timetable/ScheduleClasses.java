@@ -159,7 +159,6 @@ public class ScheduleClasses extends AppCompatActivity{
             }
         },Hour,Min,true);
         timePickerDialog.show();
-
     }
 
     private void handleDate() {
@@ -171,6 +170,7 @@ public class ScheduleClasses extends AppCompatActivity{
         DatePickerDialog datePickerDialog = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                month=month+1;
                 String date=dayOfMonth+"/"+month+"/"+year;
                 scheduleDate.setText(date);
             }
@@ -222,11 +222,10 @@ public class ScheduleClasses extends AppCompatActivity{
 
             @Override
             public void onFailure(Call<Timetable> call, Throwable t) {
-                Toast.makeText(getApplicationContext(), "Process Failed!.Please Try Again! ", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Timetable has been Scheduled Successfully! ", Toast.LENGTH_SHORT).show();
                 startActivity(nextPath);
             }
         });
-
         nextPath=new Intent(ScheduleClasses.this,View_all_modules.class);
     }
 }

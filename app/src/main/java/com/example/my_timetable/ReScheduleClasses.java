@@ -44,6 +44,7 @@ public class ReScheduleClasses extends AppCompatActivity {
     Spinner clzId;
     Intent nextPath;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -123,6 +124,7 @@ public class ReScheduleClasses extends AppCompatActivity {
         DatePickerDialog datePickerDialog = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                month=month+1;
                 String date=dayOfMonth+"/"+month+"/"+year;
                 scheduleDate.setText(date);
             }
@@ -144,7 +146,8 @@ public class ReScheduleClasses extends AppCompatActivity {
         Date date = new SimpleDateFormat("dd/MM/yyyy").parse(sDate);
 
         Intent intent = getIntent();
-        TimetableDTO timetableDTO = (TimetableDTO)intent.getParcelableExtra("timetableData");
+
+        TimetableDTO timetableDTO = intent.getParcelableExtra("timetableData");
 
         timetable.setStartTime(startTimeTV.getText().toString());
         timetable.setEndTime(endTimeTV.getText().toString());

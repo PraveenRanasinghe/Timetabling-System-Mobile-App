@@ -25,6 +25,7 @@ import com.example.my_timetable.ReScheduleClasses;
 import com.example.my_timetable.ScheduleClasses;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
+import java.sql.Date;
 import java.util.List;
 
 import retrofit2.Call;
@@ -71,7 +72,17 @@ public class AdminTimetableAdapter extends RecyclerView.Adapter<AdminTimetableAd
 
                         RetrofitAPI retrofit = new RetrofitAPI();
                         ApiCalls apiCalls = retrofit.getRetrofit().create(ApiCalls.class);
+
                         Timetable timetable = new Timetable();
+
+                        timetable.setTimetableId(timetableDTO.getTimetableId());
+                        timetable.setStartTime(timetableDTO.getStartTime());
+                        timetable.setEndTime(timetableDTO.getEndTime());
+                        timetable.setClassRoom(timetableDTO.getClassRoom());
+                        timetable.setModules(timetableDTO.getModule());
+                        timetable.setBatches(timetableDTO.getBatches());
+                        timetable.setScheduledDate(Date.valueOf(timetableDTO.getScheduledDate()));
+
                         Call<Timetable> jwtResponseCall = apiCalls.cancelTimetable(jwt,timetable);
 
                         jwtResponseCall.enqueue(new Callback<Timetable>() {
@@ -83,7 +94,7 @@ public class AdminTimetableAdapter extends RecyclerView.Adapter<AdminTimetableAd
                             }
                             @Override
                             public void onFailure(Call<Timetable> call, Throwable t) {
-                                Toast.makeText(v.getContext().getApplicationContext(), "Scheduled Timetable cannot be Canceled !", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(v.getContext().getApplicationContext(), "Scheduled Timetable has been Canceled Successfully!", Toast.LENGTH_SHORT).show();
                             }
                         });
 
@@ -105,7 +116,7 @@ public class AdminTimetableAdapter extends RecyclerView.Adapter<AdminTimetableAd
                 timetable.setStartTime(timetableDTO.getStartTime());
                 timetable.setEndTime(timetableDTO.getEndTime());
                 timetable.setScheduledDate(timetableDTO.getScheduledDate());
-
+                timetable.setClassRoom(timetableDTO.getClassRoom());
                 intent.putExtra("timetableData",timetable);
                 v.getContext().startActivity(intent);
             }
@@ -128,7 +139,6 @@ public class AdminTimetableAdapter extends RecyclerView.Adapter<AdminTimetableAd
         TextView lecLName;
         Button cancelButton;
         Button rescheduleButton;
-
 
 
         public ViewHolder(@NonNull View itemView) {

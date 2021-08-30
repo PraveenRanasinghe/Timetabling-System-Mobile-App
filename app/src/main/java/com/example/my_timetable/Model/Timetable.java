@@ -16,7 +16,6 @@ public class Timetable {
     private List<Batch> batches;
 
 
-
     public Timetable() {
     }
 

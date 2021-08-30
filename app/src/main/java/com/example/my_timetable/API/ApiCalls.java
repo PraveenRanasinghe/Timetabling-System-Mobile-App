@@ -20,6 +20,7 @@ import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
+import retrofit2.http.HTTP;
 import retrofit2.http.Header;
 import retrofit2.http.Headers;
 import retrofit2.http.POST;
@@ -105,7 +106,7 @@ public interface ApiCalls {
     @POST("/adminReschedulingClasses")
     Call<Timetable> rescheduleClasses(@Header("Authorization")String authorization, @Body Timetable timetable);
 
-    @DELETE("/AdminCancelTimetable")
+    @HTTP(method = "DELETE", path = "/AdminCancelTimetable", hasBody = true)
     Call<Timetable> cancelTimetable(@Header("Authorization") String authorization,@Body Timetable timetable);
 
 }
