@@ -2,6 +2,7 @@ package com.example.my_timetable.Adapters;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,7 +17,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.my_timetable.API.ApiCalls;
 import com.example.my_timetable.API.RetrofitAPI;
 import com.example.my_timetable.Model.Timetable;
+import com.example.my_timetable.Model.TimetableDTO;
 import com.example.my_timetable.R;
+import com.example.my_timetable.ReScheduleClasses;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import java.sql.Date;
@@ -99,6 +102,23 @@ public class LecturerTimetableAdapter extends RecyclerView.Adapter<LecturerTimet
                     }
                 }).show();
              }
+        });
+
+        holder.reScheduleBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), ReScheduleClasses.class);
+                TimetableDTO timetable= new TimetableDTO();
+                timetable.setTimetableId(timetables.getTimetableId());
+                timetable.setStartTime(timetables.getStartTime());
+                timetable.setEndTime(timetables.getEndTime());
+                timetable.setScheduledDate(timetables.getScheduledDate().toString());
+                timetable.setClassRoom(timetables.getClassRoom());
+                timetable.setModule(timetables.getModules());
+                timetable.setBatches(timetables.getBatches());
+                intent.putExtra("timetableData",timetable);
+                v.getContext().startActivity(intent);
+            }
         });
     }
 

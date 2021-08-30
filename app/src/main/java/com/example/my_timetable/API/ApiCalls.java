@@ -106,6 +106,7 @@ public interface ApiCalls {
     @POST("/adminReschedulingClasses")
     Call<Timetable> rescheduleClasses(@Header("Authorization")String authorization, @Body Timetable timetable);
 
+
     @HTTP(method = "DELETE", path = "/AdminCancelTimetable", hasBody = true)
     Call<Timetable> cancelTimetable(@Header("Authorization") String authorization,@Body Timetable timetable);
 
