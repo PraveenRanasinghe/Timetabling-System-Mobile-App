@@ -181,6 +181,25 @@ public class ScheduleClasses extends AppCompatActivity{
 
     public void scheduleClass(View view) throws ParseException {
 
+
+        final String scheduledDate=((TextView)findViewById(R.id.scheduledDate)).getText().toString().trim();
+        final String startT=((TextView)findViewById(R.id.startT)).getText().toString().trim();
+        final String endTime=((TextView)findViewById(R.id.endTimeT)).getText().toString().trim();
+        final String clzz=((Spinner)findViewById(R.id.classRoomIdSpinner)).toString().trim();
+
+        if(scheduledDate.isEmpty()){
+            Toast.makeText(getApplicationContext(), "Please Select the Date Field.", Toast.LENGTH_SHORT).show();
+        }
+        else if(startT.isEmpty()){
+            Toast.makeText(getApplicationContext(), "Please fill the Start Time Field.", Toast.LENGTH_SHORT).show();
+        }
+        else if(endTime.isEmpty()){
+            Toast.makeText(getApplicationContext(), "Please fill the End Time Field.", Toast.LENGTH_SHORT).show();
+        }
+        else if(clzz.isEmpty()){
+            Toast.makeText(getApplicationContext(), "Please select a Class-Room.", Toast.LENGTH_SHORT).show();
+        }
+
         SharedPreferences prefs = getSharedPreferences("SHARED", Context.MODE_PRIVATE);
         String name = prefs.getString("token", null);
         String jwt = "Bearer " + name;
@@ -230,20 +249,4 @@ public class ScheduleClasses extends AppCompatActivity{
     }
 }
 
-//        final String scheduledDate=((TextView)findViewById(R.id.scheduledDate)).getText().toString().trim();
-//        final String startTime=((TextView)findViewById(R.id.startTime)).getText().toString().trim();
-//        final String endTime=((TextView)findViewById(R.id.endTime)).getText().toString().trim();
-//        final String classroom=((Spinner)findViewById(R.id.classRoomIdSpinner)).toString().trim();
-//
-//        if(scheduledDate.isEmpty()){
-//            Toast.makeText(getApplicationContext(), "Please Select the Date Field.", Toast.LENGTH_SHORT).show();
-//        }
-//        else if(startTime.isEmpty()){
-//            Toast.makeText(getApplicationContext(), "Please fill the Start Time Field.", Toast.LENGTH_SHORT).show();
-//        }
-//        else if(endTime.isEmpty()){
-//            Toast.makeText(getApplicationContext(), "Please fill the End Time Field.", Toast.LENGTH_SHORT).show();
-//        }
-//        else if(classroom.isEmpty()){
-//            Toast.makeText(getApplicationContext(), "Please select a Class-Room.", Toast.LENGTH_SHORT).show();
-//        }
+

@@ -113,10 +113,13 @@ public class AdminTimetableAdapter extends RecyclerView.Adapter<AdminTimetableAd
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(), ReScheduleClasses.class);
                 TimetableDTO timetable= new TimetableDTO();
+                timetable.setTimetableId(timetableDTO.getTimetableId());
                 timetable.setStartTime(timetableDTO.getStartTime());
                 timetable.setEndTime(timetableDTO.getEndTime());
                 timetable.setScheduledDate(timetableDTO.getScheduledDate());
                 timetable.setClassRoom(timetableDTO.getClassRoom());
+                timetable.setModule(timetableDTO.getModule());
+                timetable.setBatches(timetableDTO.getBatches());
                 intent.putExtra("timetableData",timetable);
                 v.getContext().startActivity(intent);
             }

@@ -98,7 +98,7 @@ public interface ApiCalls {
     Call<DtoUser> updateStudentAccount(@Header("Authorization") String authorization,@Body DtoUser user);
 
     @POST("/UpdateAdminAccount")
-    Call<DtoUser> updateAdminAccount(@Header("Authorization") String authorization,@Body DtoUser user);
+    Call<DtoUser> updateStaffAccount(@Header("Authorization") String authorization,@Body DtoUser user);
 
     @POST("/AdminScheduleTimetable")
     Call<Timetable> scheduleClasses(@Header("Authorization") String authorization, @Body Timetable timetable);
@@ -108,5 +108,10 @@ public interface ApiCalls {
 
     @HTTP(method = "DELETE", path = "/AdminCancelTimetable", hasBody = true)
     Call<Timetable> cancelTimetable(@Header("Authorization") String authorization,@Body Timetable timetable);
+
+    @HTTP(method = "DELETE", path = "/LecturerCancelTimetable", hasBody = true)
+    Call<Timetable> lecturerCancelTimetable(@Header("Authorization") String authorization,@Body Timetable timetable);
+
+
 
 }

@@ -147,11 +147,13 @@ public class ReScheduleClasses extends AppCompatActivity {
 
         Intent intent = getIntent();
 
-        TimetableDTO timetableDTO = intent.getParcelableExtra("timetableData");
-
+        TimetableDTO timetableDTO = (TimetableDTO) intent.getSerializableExtra("timetableData");
+        timetable.setTimetableId(timetableDTO.getTimetableId());
         timetable.setStartTime(startTimeTV.getText().toString());
         timetable.setEndTime(endTimeTV.getText().toString());
         timetable.setScheduledDate(date);
+        timetable.setModules(timetableDTO.getModule());
+        timetable.setBatches(timetableDTO.getBatches());
         timetable.setClassRoom(timetableDTO.getClassRoom());
 
         ApiCalls apiCalls = retrofit.getRetrofit().create(ApiCalls.class);
@@ -167,7 +169,6 @@ public class ReScheduleClasses extends AppCompatActivity {
                     startActivity(nextPath);
                 }
             }
-
             @Override
             public void onFailure(Call<Timetable> call, Throwable t) {
                 Toast.makeText(getApplicationContext(), "Process Failed!.Please Try Again! ", Toast.LENGTH_SHORT).show();
