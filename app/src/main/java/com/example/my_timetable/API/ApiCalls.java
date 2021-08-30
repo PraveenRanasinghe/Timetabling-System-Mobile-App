@@ -93,14 +93,17 @@ public interface ApiCalls {
     @POST("/AdminAddModule")
     Call<Module> addModule(@Header("Authorization") String authorization,@Body Module module);
 
-    @POST("/AdminScheduleTimetable")
-    Call<Timetable> scheduleClasses(@Header("Authorization") String authorization, @Body Timetable timetable);
+    @POST("/UpdateStudentAccount")
+    Call<DtoUser> updateStudentAccount(@Header("Authorization") String authorization,@Body DtoUser user);
 
     @POST("/UpdateAdminAccount")
     Call<DtoUser> updateAdminAccount(@Header("Authorization") String authorization,@Body DtoUser user);
 
-    @POST("/UpdateStudentAccount")
-    Call<DtoUser> updateStudentAccount(@Header("Authorization") String authorization,@Body DtoUser user);
+    @POST("/AdminScheduleTimetable")
+    Call<Timetable> scheduleClasses(@Header("Authorization") String authorization, @Body Timetable timetable);
+
+    @POST("/adminReschedulingClasses")
+    Call<Timetable> rescheduleClasses(@Header("Authorization")String authorization, @Body Timetable timetable);
 
     @DELETE("/AdminCancelTimetable")
     Call<Timetable> cancelTimetable(@Header("Authorization") String authorization,@Body Timetable timetable);

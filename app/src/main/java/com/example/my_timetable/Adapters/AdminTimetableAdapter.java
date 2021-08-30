@@ -2,22 +2,27 @@ package com.example.my_timetable.Adapters;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.my_timetable.API.ApiCalls;
 import com.example.my_timetable.API.RetrofitAPI;
+import com.example.my_timetable.Model.Batch;
 import com.example.my_timetable.Model.Classroom;
 import com.example.my_timetable.Model.Timetable;
 import com.example.my_timetable.Model.TimetableDTO;
 import com.example.my_timetable.R;
+import com.example.my_timetable.ReScheduleClasses;
+import com.example.my_timetable.ScheduleClasses;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import java.util.List;
@@ -60,6 +65,28 @@ public class AdminTimetableAdapter extends RecyclerView.Adapter<AdminTimetableAd
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 
+                        SharedPreferences prefs = v.getContext().getSharedPreferences("SHARED", Context.MODE_PRIVATE);
+                        String name = prefs.getString("token", null);
+                        String jwt = "Bearer " + name;
+
+                        RetrofitAPI retrofit = new RetrofitAPI();
+                        ApiCalls apiCalls = retrofit.getRetrofit().create(ApiCalls.class);
+                        Timetable timetable = new Timetable();
+                        Call<Timetable> jwtResponseCall = apiCalls.cancelTimetable(jwt,timetable);
+
+                        jwtResponseCall.enqueue(new Callback<Timetable>() {
+                            @Override
+                            public void onResponse(Call<Timetable> call, Response<Timetable> response) {
+                                if(response.isSuccessful()){
+                                    Toast.makeText(v.getContext().getApplicationContext(), "Scheduled Timetable has been Canceled Successfully!", Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                            @Override
+                            public void onFailure(Call<Timetable> call, Throwable t) {
+                                Toast.makeText(v.getContext().getApplicationContext(), "Scheduled Timetable cannot be Canceled !", Toast.LENGTH_SHORT).show();
+                            }
+                        });
+
                     }
                 }).setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
                     @Override
@@ -67,6 +94,20 @@ public class AdminTimetableAdapter extends RecyclerView.Adapter<AdminTimetableAd
 
                     }
                 }).show();
+            }
+        });
+
+        holder.rescheduleButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), ReScheduleClasses.class);
+                TimetableDTO timetable= new TimetableDTO();
+                timetable.setStartTime(timetableDTO.getStartTime());
+                timetable.setEndTime(timetableDTO.getEndTime());
+                timetable.setScheduledDate(timetableDTO.getScheduledDate());
+
+                intent.putExtra("timetableData",timetable);
+                v.getContext().startActivity(intent);
             }
         });
     }
@@ -86,6 +127,7 @@ public class AdminTimetableAdapter extends RecyclerView.Adapter<AdminTimetableAd
         TextView lecFName;
         TextView lecLName;
         Button cancelButton;
+        Button rescheduleButton;
 
 
 
@@ -100,8 +142,8 @@ public class AdminTimetableAdapter extends RecyclerView.Adapter<AdminTimetableAd
             lecFName=itemView.findViewById(R.id.fNameLec);
             lecLName=itemView.findViewById(R.id.lNameLec);
             cancelButton=itemView.findViewById(R.id.cancelBtnAdmin);
+            rescheduleButton=itemView.findViewById(R.id.rescheduleBtnAdmin);
 
-//            SharedPreferences prefs = Context.getSharedPreferences("SHARED", Context.MODE_PRIVATE);
         }
     }
 }

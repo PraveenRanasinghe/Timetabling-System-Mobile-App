@@ -5,17 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bgbg"
-    tools:context=".ScheduleClasses">
+    tools:context=".ReScheduleClasses">
 
     <TextView
         android:id="@+id/textView14"
         android:layout_width="match_parent"
         android:layout_height="58dp"
-        android:background="@drawable/header_stud"
-        android:text="Schedule Timetable"
+        android:background="#9F80D1"
+        android:text="Re-Schedule Timetable"
+        android:fontFamily="@font/landasans_medium"
         android:textAlignment="center"
         android:textColor="#0C0707"
-        android:textSize="36sp"/>
+        android:textSize="45sp" />
 
     <TextView
         android:id="@+id/scheduledDate"
@@ -40,8 +41,8 @@
         android:layout_marginBottom="525dp"
         android:background="@drawable/add_button"
         android:text="select"
-        android:textSize="11dp"
-        android:textAlignment="center" />
+        android:textAlignment="center"
+        android:textSize="11dp" />
 
     <TextView
         android:id="@+id/textView16"
@@ -178,9 +179,8 @@
         android:layout_marginEnd="130dp"
         android:layout_marginBottom="60dp"
         android:background="@drawable/add_button"
-        android:onClick="scheduleClass"
-        android:text="Schedule"
-        android:textSize="18sp" />
-
+        android:onClick="reScheduleClass"
+        android:text="Re-Schedule"
+        android:textSize="15sp" />
 
 </RelativeLayout>

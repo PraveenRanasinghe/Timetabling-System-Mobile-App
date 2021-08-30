@@ -170,7 +170,7 @@
             android:textStyle="normal" />
 
         <Button
-            android:id="@+id/rescheduleBtn"
+            android:id="@+id/rescheduleBtnAdmin"
             android:layout_width="135dp"
             android:layout_height="35dp"
             android:layout_alignParentStart="true"

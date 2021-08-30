@@ -1,10 +1,11 @@
 package com.example.my_timetable.Model;
 
+import java.io.Serializable;
 import java.sql.Date;
 import java.time.LocalTime;
 import java.util.List;
 
-public class TimetableDTO {
+public class TimetableDTO implements Serializable {
     private int timetableId;
     private String startTime;
     private String endTime;

@@ -1,6 +1,8 @@
 package com.example.my_timetable.Model;
 
-public class Classroom {
+import java.io.Serializable;
+
+public class Classroom implements Serializable {
     private String classRoomID;
     private String capacity;
     private String smartBoard;
