@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.my_timetable.API.ApiCalls;
@@ -19,9 +20,9 @@ import retrofit2.Response;
 
 public class My_account_staff extends AppCompatActivity {
 
-    EditText userEmail;
-    EditText fName;
-    EditText lName;
+    TextView userEmail;
+    TextView fName;
+    TextView lName;
     EditText contactNumber;
 
     @Override
@@ -66,8 +67,8 @@ public class My_account_staff extends AppCompatActivity {
         setContentView(R.layout.activity_my_account_staff);
 
         userEmail=findViewById(R.id.UserEmail);
-        fName=findViewById(R.id.uFName);
-        lName=findViewById(R.id.uLName);
+        fName=findViewById(R.id.uFNameStaff);
+        lName=findViewById(R.id.uLNameStaff);
         contactNumber=findViewById(R.id.uContactNum);
     }
 }

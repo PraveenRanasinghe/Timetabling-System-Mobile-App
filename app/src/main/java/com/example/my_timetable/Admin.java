@@ -54,6 +54,10 @@ public class Admin extends AppCompatActivity {
                         Intent myAccountIntent = new Intent(Admin.this, My_account_staff.class);
                         startActivity(myAccountIntent);
                         return true;
+
+//                    case R.id.nav_signout:
+//                        Intent logout = new Intent(Admin.this, MainActivity.class);
+//                        startActivity(logout);
                 }
                 return false;
             }

@@ -123,7 +123,7 @@
         android:textColor="#0B0606"
         android:textSize="20sp" />
 
-    <EditText
+    <TextView
         android:id="@+id/UserEmail"
         android:layout_width="312dp"
         android:layout_height="30dp"
@@ -139,8 +139,8 @@
         android:hint="johndoe@gmail.com"
         android:inputType="textEmailAddress" />
 
-    <EditText
-        android:id="@+id/uFName"
+    <TextView
+        android:id="@+id/uFNameStaff"
         android:layout_width="307dp"
         android:layout_height="30dp"
         android:layout_alignParentStart="true"
@@ -154,8 +154,8 @@
         android:hint="John"
         android:inputType="textPersonName" />
 
-    <EditText
-        android:id="@+id/uLName"
+    <TextView
+        android:id="@+id/uLNameStaff"
         android:layout_width="307dp"
         android:layout_height="30dp"
         android:layout_alignParentStart="true"

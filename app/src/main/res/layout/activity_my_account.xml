@@ -112,7 +112,7 @@
         android:textColor="#0B0606"
         android:textSize="15sp" />
 
-    <EditText
+    <TextView
         android:id="@+id/UserEmail"
         android:layout_width="312dp"
         android:layout_height="30dp"
@@ -128,7 +128,7 @@
         android:hint="johndoe@gmail.com"
         android:inputType="textEmailAddress" />
 
-    <EditText
+    <TextView
         android:id="@+id/uFName"
         android:layout_width="307dp"
         android:layout_height="30dp"
@@ -143,7 +143,7 @@
         android:hint="John"
         android:inputType="textPersonName" />
 
-    <EditText
+    <TextView
         android:id="@+id/uLName"
         android:layout_width="307dp"
         android:layout_height="30dp"
@@ -158,7 +158,7 @@
         android:hint="Doe"
         android:inputType="textPersonName" />
 
-    <EditText
+    <TextView
         android:id="@+id/uBatchId"
         android:layout_width="307dp"
         android:layout_height="30dp"
@@ -189,7 +189,7 @@
         android:hint="+94715869878"
         android:inputType="textPersonName" />
 
-    <EditText
+    <TextView
         android:id="@+id/newPassword"
         android:layout_width="307dp"
         android:layout_height="30dp"
@@ -203,7 +203,7 @@
         android:ems="10"
         android:inputType="textPassword" />
 
-    <EditText
+    <TextView
         android:id="@+id/Password"
         android:layout_width="307dp"
         android:layout_height="30dp"

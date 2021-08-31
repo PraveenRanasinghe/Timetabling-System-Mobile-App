@@ -48,7 +48,6 @@ public class ViewModulesAdapter extends RecyclerView.Adapter<ViewModulesAdapter.
                 Intent intent = new Intent(v.getContext(), ScheduleClasses.class);
 
                 Module modules = new Module();
-
                 modules.setModuleID(module.getModuleID());
                 modules.setModuleName(module.getModuleName());
                 modules.setBatches(module.getBatches());

@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.my_timetable.API.ApiCalls;
@@ -26,13 +27,13 @@ import retrofit2.Response;
 
 public class My_account extends AppCompatActivity {
 
-    EditText userEmail;
-    EditText fName;
-    EditText lName;
-    EditText batchId;
-    EditText contactNumber;
+    TextView userEmail;
+    TextView fName;
+    TextView lName;
+    TextView batchId;
+    TextView contactNumber;
     Button updateBtn;
-    EditText password;
+    TextView password;
 
 
     @Override
