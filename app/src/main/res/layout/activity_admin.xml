@@ -6,8 +6,23 @@
     android:id="@+id/adminDrawerLayout"
     android:layout_height="match_parent"
     android:background="@drawable/bgbg"
-    tools:context=".Admin"
-    >
+    tools:context=".Admin">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floating_action_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        android:layout_margin="16dp"
+        android:backgroundTint="#815AB8"
+        android:src="@drawable/home_fab"
+        />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -127,4 +142,8 @@
         app:headerLayout="@layout/header"
         app:menu="@menu/admin_menu" />
 
+
+
+
 </androidx.drawerlayout.widget.DrawerLayout>
+

@@ -14,6 +14,7 @@ import android.widget.Toast;
 import com.example.my_timetable.API.ApiCalls;
 import com.example.my_timetable.API.RetrofitAPI;
 import com.example.my_timetable.Model.User;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -33,6 +34,15 @@ public class Add_lecturer extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_lecturer);
+
+        FloatingActionButton fab=findViewById(R.id.floating_action_button);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Add_lecturer.this, Admin.class);
+                startActivity(intent);
+            }
+        });
 
         userType=findViewById(R.id.userType);
         lecFName=findViewById(R.id.fName);

@@ -20,6 +20,7 @@ import com.example.my_timetable.Model.Classroom;
 import com.example.my_timetable.Model.DtoUser;
 import com.example.my_timetable.Model.Module;
 import com.example.my_timetable.Model.UDto;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -44,6 +45,15 @@ public class Add_module extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_module);
+
+        FloatingActionButton fab=findViewById(R.id.floating_action_button);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Add_module.this, Admin.class);
+                startActivity(intent);
+            }
+        });
 
         ModuleId=findViewById(R.id.AMmoduleId);
         ModuleName=findViewById(R.id.AMmoduleName);

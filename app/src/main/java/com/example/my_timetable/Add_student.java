@@ -22,6 +22,7 @@ import com.example.my_timetable.Model.Batch;
 import com.example.my_timetable.Model.JwtResponse;
 import com.example.my_timetable.Model.UDto;
 import com.example.my_timetable.Model.User;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.List;
 
@@ -90,6 +91,15 @@ public class Add_student extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_student);
+
+        FloatingActionButton fab=findViewById(R.id.floating_action_button);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Add_student.this, Admin.class);
+                startActivity(intent);
+            }
+        });
 
         userType= findViewById(R.id.uType);
         studFName= findViewById(R.id.studFName);

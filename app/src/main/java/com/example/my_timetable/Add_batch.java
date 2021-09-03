@@ -19,6 +19,7 @@ import com.example.my_timetable.API.ApiCalls;
 import com.example.my_timetable.API.RetrofitAPI;
 import com.example.my_timetable.Model.Batch;
 import com.example.my_timetable.Model.User;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -45,6 +46,15 @@ public class Add_batch extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_batch);
+
+        FloatingActionButton fab=findViewById(R.id.floating_action_button);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Add_batch.this, Admin.class);
+                startActivity(intent);
+            }
+        });
 
         batchID=findViewById(R.id.batchId);
         BatchName=findViewById(R.id.batchName);

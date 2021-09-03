@@ -116,6 +116,17 @@ public class Student extends AppCompatActivity {
                         startActivity(weeklyTimetable);
                         return true;
 
+                    case R.id.nav_signout:{
+                        SharedPreferences preferences =getSharedPreferences("SHARED", Context.MODE_PRIVATE);
+                        SharedPreferences.Editor editor = preferences.edit();
+                        editor.clear();
+                        editor.apply();
+                        finish();
+                        Intent i = new Intent(Student.this, MainActivity.class);
+                        startActivity(i);
+                        Toast.makeText(getApplicationContext(), "You logged out from the System Successfully!", Toast.LENGTH_LONG).show();
+                        break;}
+
                 }
                 return false;
             }

@@ -7,11 +7,15 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 
 public class Admin extends AppCompatActivity {
@@ -23,6 +27,15 @@ public class Admin extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin);
+
+        FloatingActionButton fab=findViewById(R.id.floating_action_button);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Admin.this, Admin.class);
+                startActivity(intent);
+            }
+        });
 
         drawerLayout = findViewById(R.id.adminDrawerLayout);
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -55,9 +68,16 @@ public class Admin extends AppCompatActivity {
                         startActivity(myAccountIntent);
                         return true;
 
-//                    case R.id.nav_signout:
-//                        Intent logout = new Intent(Admin.this, MainActivity.class);
-//                        startActivity(logout);
+                    case R.id.nav_signout:{
+                        SharedPreferences preferences =getSharedPreferences("SHARED", Context.MODE_PRIVATE);
+                        SharedPreferences.Editor editor = preferences.edit();
+                        editor.clear();
+                        editor.apply();
+                        finish();
+                        Intent i = new Intent(Admin.this, MainActivity.class);
+                        startActivity(i);
+                        Toast.makeText(getApplicationContext(), "You logged out from the System Successfully!", Toast.LENGTH_LONG).show();
+                        break;}
                 }
                 return false;
             }

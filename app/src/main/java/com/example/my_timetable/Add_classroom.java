@@ -18,6 +18,7 @@ import com.example.my_timetable.API.ApiCalls;
 import com.example.my_timetable.API.RetrofitAPI;
 import com.example.my_timetable.Model.Classroom;
 import com.example.my_timetable.Model.User;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -35,6 +36,15 @@ public class Add_classroom extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_classroom);
+
+        FloatingActionButton fab=findViewById(R.id.floating_action_button);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Add_classroom.this, Admin.class);
+                startActivity(intent);
+            }
+        });
 
         spinner = findViewById(R.id.spinnerAc);
         spinner1= findViewById(R.id.spinnerSMB);
