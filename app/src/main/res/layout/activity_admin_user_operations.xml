@@ -2,90 +2,101 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background">
+    android:background="@drawable/bgbg">
 
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/floating_action_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|right"
+            android:layout_margin="16dp"
+            android:backgroundTint="#815AB8"
+            android:src="@drawable/home_fab"
+            />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
     <Button
         android:id="@+id/button5"
         android:layout_width="255dp"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="75dp"
         android:layout_marginEnd="75dp"
-        android:layout_marginBottom="265dp"
-        android:text="Lecturer Operations"
-        android:background="@drawable/add_button"/>
+        android:layout_marginBottom="60dp"
+        android:background="@drawable/add_button"
+        android:onClick="lecturerOperations"
+        android:text="Lecturer Operations" />
 
     <Button
         android:id="@+id/button3"
         android:layout_width="255dp"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="75dp"
         android:layout_marginEnd="75dp"
-        android:layout_marginBottom="325dp"
-        android:text="Student Operations"
-        android:background="@drawable/add_button" />
+        android:layout_marginBottom="160dp"
+        android:background="@drawable/add_button"
+        android:onClick="studentOperations"
+        android:text="Student Operations" />
 
     <Button
         android:id="@+id/addStudents"
-        android:layout_width="255dp"
-        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="75dp"
         android:layout_marginEnd="75dp"
-        android:layout_marginBottom="445dp"
+        android:layout_marginBottom="360dp"
         android:background="@drawable/add_button"
         android:onClick="addNewStudent"
         android:text="Add Students" />
 
     <TextView
-        android:layout_width="403dp"
-        android:layout_height="62dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="3dp"
-        android:layout_marginTop="156dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginBottom="513dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="470dp"
         android:text="User Operations"
         android:textAlignment="center"
-        android:textColor="#070707"
+        android:textColor="#070404"
         android:textSize="36sp" />
 
+
     <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="71dp"
+        android:id="@+id/imageView3"
+        android:layout_width="243dp"
+        android:layout_height="182dp"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="145dp"
-        android:layout_marginTop="31dp"
-        android:layout_marginEnd="145dp"
-        android:layout_marginBottom="629dp"
+        android:layout_marginStart="84dp"
+        android:layout_marginEnd="84dp"
+        android:layout_marginBottom="551dp"
         android:src="@drawable/user" />
 
     <Button
         android:id="@+id/addLecturers"
         android:layout_width="255dp"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="75dp"
         android:layout_marginEnd="75dp"
-        android:layout_marginBottom="385dp"
+        android:layout_marginBottom="260dp"
         android:background="@drawable/add_button"
         android:onClick="addLecturer"
         android:text="Add Lecturers" />

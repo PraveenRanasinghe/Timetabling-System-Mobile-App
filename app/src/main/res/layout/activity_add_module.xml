@@ -4,23 +4,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background">
+    android:background="@drawable/bgbg">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/floating_action_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|right"
+            android:layout_margin="16dp"
+            android:backgroundTint="#815AB8"
+            android:src="@drawable/home_fab"
+            />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 
     <TextView
         android:id="@+id/textView22"
         android:layout_width="match_parent"
-        android:layout_height="185dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginTop="0dp"
-        android:layout_marginBottom="661dp"
-        android:background="@drawable/header"
+        android:layout_height="65dp"
         android:text="Add New Modules"
         android:textAlignment="center"
         android:textColor="#0B0606"
         android:textSize="36sp"
-        android:textStyle="bold" />
+        android:textStyle="italic" />
 
     <TextView
         android:id="@+id/textView23"
@@ -46,12 +57,11 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="115dp"
         android:layout_marginEnd="115dp"
-        android:layout_marginBottom="515dp"
+        android:layout_marginBottom="445dp"
         android:text="Module Name"
         android:textAlignment="center"
         android:textColor="#0B0606"
-        android:textSize="20sp"
-        android:textStyle="bold" />
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/textView28"
@@ -62,12 +72,11 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="115dp"
         android:layout_marginEnd="115dp"
-        android:layout_marginBottom="418dp"
+        android:layout_marginBottom="328dp"
         android:text="Lecturer Name"
         android:textAlignment="center"
         android:textColor="#0B0606"
-        android:textSize="20sp"
-        android:textStyle="bold" />
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/textView29"
@@ -78,12 +87,11 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="115dp"
         android:layout_marginEnd="115dp"
-        android:layout_marginBottom="319dp"
+        android:layout_marginBottom="220dp"
         android:text="Assign the Batch"
         android:textAlignment="center"
         android:textColor="#0B0606"
-        android:textSize="20sp"
-        android:textStyle="bold" />
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/textView26"
@@ -94,15 +102,14 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="115dp"
         android:layout_marginEnd="115dp"
-        android:layout_marginBottom="610dp"
+        android:layout_marginBottom="560dp"
         android:text="Module ID"
         android:textAlignment="center"
         android:textColor="#0B0606"
-        android:textSize="20sp"
-        android:textStyle="bold" />
+        android:textSize="20sp" />
 
     <EditText
-        android:id="@+id/moduleId"
+        android:id="@+id/AMmoduleId"
         android:layout_width="312dp"
         android:layout_height="45dp"
         android:layout_alignParentStart="true"
@@ -110,14 +117,14 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="62dp"
         android:layout_marginEnd="62dp"
-        android:layout_marginBottom="566dp"
+        android:layout_marginBottom="510dp"
         android:background="@drawable/custom_input"
         android:ems="10"
         android:hint="MOD_any"
         android:inputType="textEmailAddress" />
 
     <EditText
-        android:id="@+id/moduleName"
+        android:id="@+id/AMmoduleName"
         android:layout_width="307dp"
         android:layout_height="45dp"
         android:layout_alignParentStart="true"
@@ -125,14 +132,14 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="62dp"
         android:layout_marginEnd="62dp"
-        android:layout_marginBottom="468dp"
+        android:layout_marginBottom="400dp"
         android:background="@drawable/custom_input"
         android:ems="10"
         android:hint="EEA"
         android:inputType="textPersonName" />
 
-    <EditText
-        android:id="@+id/lecName"
+    <Spinner
+        android:id="@+id/spinnerLecName"
         android:layout_width="307dp"
         android:layout_height="45dp"
         android:layout_alignParentStart="true"
@@ -140,14 +147,11 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="62dp"
         android:layout_marginEnd="62dp"
-        android:layout_marginBottom="369dp"
-        android:background="@drawable/custom_input"
-        android:ems="10"
-        android:hint="Mr. Nipunu Wijesinghe"
-        android:inputType="textPersonName" />
+        android:layout_marginBottom="280dp"
+        android:background="@drawable/custom_input" />
 
-    <EditText
-        android:id="@+id/batch"
+    <Spinner
+        android:id="@+id/batchSpinner"
         android:layout_width="307dp"
         android:layout_height="45dp"
         android:layout_alignParentStart="true"
@@ -155,11 +159,9 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="62dp"
         android:layout_marginEnd="62dp"
-        android:layout_marginBottom="268dp"
+        android:layout_marginBottom="170dp"
         android:background="@drawable/custom_input"
-        android:ems="10"
-        android:hint="APIITCOSE21SE"
-        android:inputType="textPersonName" />
+        />
 
     <Button
         android:id="@+id/button2"
@@ -170,23 +172,10 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="95dp"
         android:layout_marginEnd="95dp"
-        android:layout_marginBottom="154dp"
+        android:layout_marginBottom="30dp"
         android:background="@drawable/add_button"
         android:onClick="addNewModule"
         android:text="Add Module"
-        android:textSize="19dp"
-        android:textStyle="bold" />
-
-    <ImageView
-        android:id="@+id/imageView9"
-        android:layout_width="203dp"
-        android:layout_height="121dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="105dp"
-        android:layout_marginEnd="103dp"
-        android:layout_marginBottom="652dp"
-        android:src="@drawable/module" />
+        android:textSize="19dp" />
 
 </RelativeLayout>

@@ -3,10 +3,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".admin_module_operations"
-    android:background="@drawable/background">
+    tools:context=".Admin_module_operations"
+    android:background="@drawable/bgbg">
 
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/floating_action_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|right"
+            android:layout_margin="16dp"
+            android:backgroundTint="#815AB8"
+            android:src="@drawable/home_fab"
+            />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
     <TextView
         android:layout_width="match_parent"
@@ -15,7 +29,7 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="1dp"
-        android:layout_marginBottom="538dp"
+        android:layout_marginBottom="497dp"
         android:text="Module Operations"
         android:textAlignment="center"
         android:textColor="#040202"
@@ -23,54 +37,56 @@
 
     <ImageView
         android:id="@+id/imageView5"
-        android:layout_width="90dp"
-        android:layout_height="97dp"
+        android:layout_width="193dp"
+        android:layout_height="135dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="160dp"
-        android:layout_marginEnd="160dp"
-        android:layout_marginBottom="617dp"
-        android:src="@drawable/ic_baseline_library_books_24" />
+        android:layout_marginStart="108dp"
+        android:layout_marginEnd="109dp"
+        android:layout_marginBottom="577dp"
+        android:src="@drawable/mod" />
 
     <Button
         android:id="@+id/addModule"
-        android:layout_width="213dp"
-        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_height="85dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="99dp"
-        android:layout_marginEnd="99dp"
-        android:layout_marginBottom="440dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="360dp"
         android:background="@drawable/add_button"
         android:onClick="addModule"
         android:text="Add New Modules" />
 
     <Button
         android:id="@+id/button11"
-        android:layout_width="213dp"
-        android:layout_height="wrap_content"
+        android:layout_width="311dp"
+        android:layout_height="85dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="99dp"
-        android:layout_marginEnd="99dp"
-        android:layout_marginBottom="360dp"
-        android:text="Schedule Classes For Modules"
-        android:background="@drawable/add_button"/>
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="220dp"
+        android:background="@drawable/add_button"
+        android:onClick="viewAllModules"
+        android:text="Schedule Classes For Modules" />
 
     <Button
         android:id="@+id/button12"
-        android:layout_width="213dp"
-        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_height="85dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="99dp"
-        android:layout_marginEnd="99dp"
-        android:layout_marginBottom="280dp"
-        android:text="Reschedule and Cancel Classes"
-        android:background="@drawable/add_button"/>
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="80dp"
+        android:background="@drawable/add_button"
+        android:onClick="viewAllScheduledClasses"
+        android:text="Reschedule and Cancel Classes" />
 
 </RelativeLayout>

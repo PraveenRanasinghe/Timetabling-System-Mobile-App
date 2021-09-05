@@ -2,26 +2,68 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.my_timetable">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".weekly_timetable"></activity>
-        <activity android:name=".my_account" />
-        <activity android:name=".student_timetable" />
-        <activity android:name=".lecturer" />
-        <activity android:name=".student" />
-        <activity android:name=".add_classroom" />
-        <activity android:name=".add_batch" />
-        <activity android:name=".add_module" />
-        <activity android:name=".add_lecturer" />
-        <activity android:name=".admin_classroom_operations" />
-        <activity android:name=".admin_batch_operations" />
-        <activity android:name=".admin_module_operations" />
-        <activity android:name=".admin_user_operations" />
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".ReScheduleClasses"
+            android:exported="true" />
+        <activity
+            android:name=".My_account_staff"
+            android:exported="true" />
+        <activity
+            android:name=".ViewAllScheduledClasses"
+            android:exported="true" />
+        <activity
+            android:name=".MyModulesStud"
+            android:exported="true" />
+        <activity
+            android:name=".MyModulesLec"
+            android:exported="true" />
+        <activity
+            android:name=".ViewBatches"
+            android:exported="true" />
+        <activity
+            android:name=".ViewClassrooms"
+            android:exported="true" />
+        <activity
+            android:name=".Weekly_timetable_for_lecturer"
+            android:exported="true" />
+        <activity
+            android:name=".View_all_lecturers"
+            android:exported="true" />
+        <activity
+            android:name=".View_all_students"
+            android:exported="true" />
+        <activity
+            android:name=".Weekly_timetable_for_student"
+            android:exported="true" />
+        <activity
+            android:name=".ScheduleClasses"
+            android:exported="true" />
+        <activity
+            android:name=".View_all_modules"
+            android:exported="true" />
+        <activity android:name=".My_account" />
+        <activity android:name=".Lecturer" />
+        <activity android:name=".Student" />
+        <activity android:name=".Add_classroom" />
+        <activity android:name=".Add_batch" />
+        <activity android:name=".Add_module" />
+        <activity android:name=".Add_lecturer" />
+        <activity android:name=".Add_student" />
+        <activity android:name=".Admin_classroom_operations" />
+        <activity android:name=".Admin_batch_operations" />
+        <activity android:name=".Admin_module_operations" />
+        <activity android:name=".Admin_user_operations" />
         <activity android:name=".Admin" />
         <activity android:name=".MainActivity">
             <intent-filter>

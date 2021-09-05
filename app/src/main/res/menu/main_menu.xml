@@ -16,16 +16,18 @@
         android:title="My Account" />
 
     <item
+        android:id="@+id/myModules"
+        android:title="My Modules" />
+
+    <item
         android:id="@+id/WeeklyTimetable"
         android:title="Weekly Time Table" />
 
     <item android:title="= = = = = = OTHER = = = = = =">
         <menu>
-
             <item
                 android:id="@+id/nav_signout"
                 android:title="Sign Out" />
-
         </menu>
     </item>
 

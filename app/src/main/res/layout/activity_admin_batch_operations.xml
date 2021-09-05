@@ -4,44 +4,63 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".admin_batch_operations"
-    android:background="@drawable/background">
+    tools:context=".Admin_batch_operations"
+    android:background="@drawable/bgbg">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/floating_action_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|right"
+            android:layout_margin="16dp"
+            android:backgroundTint="#815AB8"
+            android:src="@drawable/home_fab"
+            />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 
     <Button
         android:id="@+id/addBatch"
-        android:layout_width="155dp"
-        android:layout_height="135dp"
+        android:layout_width="296dp"
+        android:layout_height="100dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="227dp"
-        android:layout_marginBottom="350dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="320dp"
         android:background="@drawable/add_button"
         android:onClick="addBatch"
-        android:text="Create Batch" />
+        android:text="Create New Batch"
+        android:textSize="18dp" />
 
     <Button
         android:id="@+id/viewBatches"
-        android:layout_width="155dp"
-        android:layout_height="135dp"
+        android:layout_width="312dp"
+        android:layout_height="107dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="227dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginBottom="350dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="140dp"
         android:background="@drawable/add_button"
-        android:text="View Update and Remove Batches" />
+        android:onClick="viewBatches"
+        android:text="View Details of Batches"
+        android:textSize="18dp" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="548dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="488dp"
         android:text="Batch Operations"
         android:textAlignment="center"
         android:textColor="#070404"
@@ -49,15 +68,15 @@
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="127dp"
-        android:layout_height="102dp"
+        android:layout_width="249dp"
+        android:layout_height="163dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="140dp"
-        android:layout_marginEnd="144dp"
-        android:layout_marginBottom="630dp"
-        android:src="@drawable/school" />
+        android:layout_marginStart="81dp"
+        android:layout_marginEnd="79dp"
+        android:layout_marginBottom="569dp"
+        android:src="@drawable/batch" />
 
 
 </RelativeLayout>

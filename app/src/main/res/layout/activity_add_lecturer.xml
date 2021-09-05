@@ -4,36 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background">
+    android:background="@drawable/bgbg">
 
-    <TextView
-        android:id="@+id/textView22"
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
-        android:layout_height="159dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginTop="0dp"
-        android:layout_marginBottom="687dp"
-        android:background="@drawable/header"
-        android:text="Add New Lecturers"
-        android:textAlignment="center"
-        android:textColor="#0B0606"
-        android:textSize="36sp" />
+        android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/textView23"
-        android:layout_width="313dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="48dp"
-        android:layout_marginEnd="48dp"
-        android:layout_marginBottom="767dp"
-        android:text="Add New Lecturers to the University Here!"
-        android:textAlignment="center"
-        android:textColor="#0C0707"
-        android:textSize="16sp" />
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/floating_action_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|right"
+            android:layout_margin="16dp"
+            android:backgroundTint="#815AB8"
+            android:src="@drawable/home_fab"
+            />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
 
     <TextView
         android:id="@+id/textView24"
@@ -44,7 +32,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="110dp"
         android:layout_marginEnd="110dp"
-        android:layout_marginBottom="633dp"
+        android:layout_marginBottom="583dp"
         android:text="User Type"
         android:textAlignment="center"
         android:textColor="#0B0606"
@@ -59,7 +47,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="110dp"
         android:layout_marginEnd="110dp"
-        android:layout_marginBottom="435dp"
+        android:layout_marginBottom="385dp"
         android:text="First Name"
         android:textAlignment="center"
         android:textColor="#0B0606"
@@ -74,7 +62,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="110dp"
         android:layout_marginEnd="110dp"
-        android:layout_marginBottom="336dp"
+        android:layout_marginBottom="286dp"
         android:text="Last Name"
         android:textAlignment="center"
         android:textColor="#0B0606"
@@ -89,7 +77,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="110dp"
         android:layout_marginEnd="110dp"
-        android:layout_marginBottom="238dp"
+        android:layout_marginBottom="188dp"
         android:text="Contact Number"
         android:textAlignment="center"
         android:textColor="#0B0606"
@@ -104,14 +92,14 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="110dp"
         android:layout_marginEnd="110dp"
-        android:layout_marginBottom="535dp"
+        android:layout_marginBottom="485dp"
         android:text="Email Address"
         android:textAlignment="center"
         android:textColor="#0B0606"
         android:textSize="20sp" />
 
     <EditText
-        android:id="@+id/textView25"
+        android:id="@+id/userType"
         android:layout_width="308dp"
         android:layout_height="38dp"
         android:layout_alignParentStart="true"
@@ -119,14 +107,14 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="50dp"
         android:layout_marginEnd="50dp"
-        android:layout_marginBottom="595dp"
+        android:layout_marginBottom="545dp"
         android:background="@drawable/custom_input"
         android:editable="false"
-        android:text="Lecturer"
+        android:text="lecturer"
         android:textAlignment="textStart" />
 
     <EditText
-        android:id="@+id/lecEmail"
+        android:id="@+id/lecturerEmail"
         android:layout_width="312dp"
         android:layout_height="38dp"
         android:layout_alignParentStart="true"
@@ -134,7 +122,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="50dp"
         android:layout_marginEnd="50dp"
-        android:layout_marginBottom="495dp"
+        android:layout_marginBottom="445dp"
         android:background="@drawable/custom_input"
         android:ems="10"
         android:hint="johndoe@gmail.com"
@@ -149,7 +137,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="50dp"
         android:layout_marginEnd="50dp"
-        android:layout_marginBottom="396dp"
+        android:layout_marginBottom="346dp"
         android:background="@drawable/custom_input"
         android:ems="10"
         android:hint="John"
@@ -164,14 +152,14 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="50dp"
         android:layout_marginEnd="50dp"
-        android:layout_marginBottom="298dp"
+        android:layout_marginBottom="248dp"
         android:background="@drawable/custom_input"
         android:ems="10"
         android:hint="Doe"
         android:inputType="textPersonName" />
 
     <EditText
-        android:id="@+id/contactNum"
+        android:id="@+id/lecContactNum"
         android:layout_width="307dp"
         android:layout_height="36dp"
         android:layout_alignParentStart="true"
@@ -179,7 +167,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="50dp"
         android:layout_marginEnd="50dp"
-        android:layout_marginBottom="200dp"
+        android:layout_marginBottom="150dp"
         android:background="@drawable/custom_input"
         android:ems="10"
         android:hint="+94715869878"
@@ -194,20 +182,19 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="115dp"
         android:layout_marginEnd="115dp"
-        android:layout_marginBottom="86dp"
+        android:layout_marginBottom="56dp"
         android:background="@drawable/add_button"
         android:onClick="addLecturers"
         android:text="Create Account" />
 
-    <ImageView
-        android:id="@+id/imageView8"
-        android:layout_width="wrap_content"
-        android:layout_height="95dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="143dp"
-        android:layout_marginEnd="140dp"
-        android:layout_marginBottom="681dp"
-        android:src="@drawable/lecturer" />
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:text="Add New Lecturers"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+
 </RelativeLayout>

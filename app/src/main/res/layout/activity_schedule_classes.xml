@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bgbg"
+    tools:context=".ScheduleClasses">
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:background="@drawable/header_stud"
+        android:text="Schedule Timetable"
+        android:textAlignment="center"
+        android:textColor="#0C0707"
+        android:textSize="36sp"/>
+
+    <TextView
+        android:id="@+id/scheduledDate"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="525dp"
+        android:background="@drawable/custom_input"
+        android:inputType="textUri"
+        android:padding="10dp"
+        android:textColor="#0C0707" />
+
+    <Button
+        android:id="@+id/selectDate"
+        android:layout_width="80dp"
+        android:layout_height="35dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="320dp"
+        android:layout_marginBottom="525dp"
+        android:background="@drawable/add_button"
+        android:text="select"
+        android:textSize="11dp"
+        android:textAlignment="center" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="213dp"
+        android:layout_height="30dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="114dp"
+        android:layout_marginEnd="114dp"
+        android:layout_marginBottom="565dp"
+        android:text="Select Date"
+        android:textAlignment="center"
+        android:textColor="#090505"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="206dp"
+        android:layout_height="31dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="110dp"
+        android:layout_marginEnd="110dp"
+        android:layout_marginBottom="445dp"
+        android:text="Select Class-Room"
+        android:textAlignment="center"
+        android:textColor="#0B0606"
+        android:textSize="20sp" />
+
+    <Spinner
+        android:id="@+id/classRoomIdSpinner"
+        android:layout_width="340dp"
+        android:layout_height="40dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="43dp"
+        android:layout_marginBottom="400dp"
+        android:background="@drawable/custom_input"
+        android:hint=""
+        android:padding="10dp"
+        android:textColor="#0C0707" />
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="233dp"
+        android:layout_height="30dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="96dp"
+        android:layout_marginEnd="96dp"
+        android:layout_marginBottom="340dp"
+        android:text="Start Time"
+        android:textAlignment="center"
+        android:textColor="#050303"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/startT"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="50dp"
+        android:layout_marginBottom="300dp"
+        android:background="@drawable/custom_input"
+        android:textAlignment="center"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/time"
+        android:layout_width="80dp"
+        android:layout_height="35dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="320dp"
+        android:layout_marginBottom="303dp"
+        android:background="@drawable/add_button"
+        android:text="select"
+        android:textSize="11dp"
+        android:textAlignment="center" />
+
+    <TextView
+        android:id="@+id/endTimeT"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="50dp"
+        android:layout_marginBottom="190dp"
+        android:background="@drawable/custom_input"
+        android:textAlignment="center"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/selectDateButton"
+        android:layout_width="80dp"
+        android:layout_height="35dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="320dp"
+        android:layout_marginBottom="191dp"
+        android:background="@drawable/add_button"
+        android:textAlignment="center"
+        android:textSize="11dp"
+        tools:text="select" />
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="237dp"
+        android:layout_height="30dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="95dp"
+        android:layout_marginEnd="95dp"
+        android:layout_marginBottom="230dp"
+        android:text="End Time"
+        android:textAlignment="center"
+        android:textColor="#0B0606"
+        android:textSize="20sp"/>
+
+
+    <Button
+        android:id="@+id/scheduleClass"
+        android:layout_width="171dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="130dp"
+        android:layout_marginEnd="130dp"
+        android:layout_marginBottom="60dp"
+        android:background="@drawable/add_button"
+        android:onClick="scheduleClass"
+        android:text="Schedule"
+        android:textSize="18sp" />
+
+
+</RelativeLayout>

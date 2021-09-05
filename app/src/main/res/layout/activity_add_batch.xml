@@ -4,39 +4,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background">
+    android:background="@drawable/bgbg">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/floating_action_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|right"
+            android:layout_margin="16dp"
+            android:backgroundTint="#815AB8"
+            android:src="@drawable/home_fab"
+            />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
     <TextView
         android:id="@+id/textView14"
         android:layout_width="match_parent"
-        android:layout_height="164dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginTop="0dp"
-        android:layout_marginBottom="682dp"
-        android:background="@drawable/header"
+        android:layout_height="58dp"
         android:text="Add New Batch"
         android:textAlignment="center"
         android:textColor="#0C0707"
         android:textSize="36sp" />
 
 
-    <TextView
-        android:id="@+id/textView15"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="27dp"
-        android:layout_marginEnd="22dp"
-        android:layout_marginBottom="750dp"
-        android:text="Now you can create New Batches In the Institute here!"
-        android:textAlignment="center"
-        android:textColor="#0E0808"
-        android:textSize="16sp" />
-
     <EditText
+        android:id="@+id/batchId"
         android:layout_width="340dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -45,9 +42,8 @@
         android:layout_marginStart="50dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="43dp"
-        android:layout_marginBottom="544dp"
+        android:layout_marginBottom="510dp"
         android:background="@drawable/custom_input"
-        android:id="@+id/batchId"
         android:hint="APIIT_any"
         android:inputType="textUri"
         android:padding="10dp"
@@ -62,7 +58,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="114dp"
         android:layout_marginEnd="114dp"
-        android:layout_marginBottom="592dp"
+        android:layout_marginBottom="550dp"
         android:text="Batch ID"
         android:textAlignment="center"
         android:textColor="#090505"
@@ -77,13 +73,14 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="110dp"
         android:layout_marginEnd="110dp"
-        android:layout_marginBottom="484dp"
+        android:layout_marginBottom="450dp"
         android:text="Batch Name"
         android:textAlignment="center"
         android:textColor="#0B0606"
         android:textSize="20sp" />
 
     <EditText
+        android:id="@+id/batchName"
         android:layout_width="340dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -92,10 +89,9 @@
         android:layout_marginStart="50dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="43dp"
-        android:layout_marginBottom="435dp"
+        android:layout_marginBottom="400dp"
         android:background="@drawable/custom_input"
         android:hint="SE batch"
-        android:id="@+id/batchName"
         android:inputType="textUri"
         android:padding="10dp"
         android:textColor="#0C0707" />
@@ -103,61 +99,75 @@
     <TextView
         android:id="@+id/textView18"
         android:layout_width="233dp"
-        android:layout_height="35dp"
+        android:layout_height="30dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="96dp"
         android:layout_marginEnd="96dp"
-        android:layout_marginBottom="375dp"
+        android:layout_marginBottom="325dp"
         android:text="Date of Commencement"
         android:textColor="#050303"
         android:textSize="20sp" />
 
-    <Button
-        android:id="@+id/dateOfCommencement"
-        style="?android:spinnerStyle"
-        android:layout_width="332dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
+    <TextView
+        android:id="@+id/commencementDate"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="50dp"
-        android:layout_marginEnd="50dp"
-        android:layout_marginBottom="324dp"
+        android:layout_marginBottom="285dp"
         android:background="@drawable/custom_input"
-        android:onClick="openDatePicker"
         android:textAlignment="center"
         android:textSize="20sp"
         tools:text="mm-dd-yyyy" />
 
     <Button
-        android:id="@+id/dateOfTermination"
-        style="?android:spinnerStyle"
-        android:layout_width="332dp"
-        android:layout_height="wrap_content"
+        android:id="@+id/selectDate"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="320dp"
+        android:layout_marginBottom="285dp"
+        android:background="@drawable/add_button"
+        android:text="select"
+        android:textAlignment="center" />
+
+
+    <TextView
+        android:id="@+id/terminationDate"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
         android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="50dp"
-        android:layout_marginEnd="50dp"
-        android:layout_marginBottom="211dp"
+        android:layout_marginBottom="180dp"
         android:background="@drawable/custom_input"
-        android:onClick="openDatePicker"
         android:textAlignment="center"
         android:textSize="20sp"
         tools:text="mm-dd-yyyy" />
+
+    <Button
+        android:id="@+id/selectDate2"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="320dp"
+        android:layout_marginBottom="180dp"
+        android:background="@drawable/add_button"
+        android:textAlignment="center"
+        tools:text="select" />
 
     <TextView
         android:id="@+id/textView19"
         android:layout_width="237dp"
-        android:layout_height="36dp"
+        android:layout_height="30dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="95dp"
         android:layout_marginEnd="95dp"
-        android:layout_marginBottom="262dp"
+        android:layout_marginBottom="220dp"
         android:text="Date of Termination"
         android:textAlignment="center"
         android:textColor="#0B0606"
@@ -172,21 +182,10 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="130dp"
         android:layout_marginEnd="130dp"
-        android:layout_marginBottom="103dp"
+        android:layout_marginBottom="85dp"
         android:background="@drawable/add_button"
         android:onClick="createBatch"
         android:text="Create Batch"
         android:textSize="18sp" />
 
-    <ImageView
-        android:id="@+id/imageView12"
-        android:layout_width="196dp"
-        android:layout_height="103dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="106dp"
-        android:layout_marginEnd="106dp"
-        android:layout_marginBottom="682dp"
-        android:src="@drawable/batch" />
 </RelativeLayout>
