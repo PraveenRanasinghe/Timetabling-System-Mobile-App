@@ -113,6 +113,17 @@ public interface ApiCalls {
     @HTTP(method = "DELETE", path = "/LecturerCancelTimetable", hasBody = true)
     Call<Timetable> lecturerCancelTimetable(@Header("Authorization") String authorization,@Body Timetable timetable);
 
+    @HTTP(method = "DELETE", path = "/adminRemoveClassroom", hasBody = true)
+    Call<Classroom> removeClassroom(@Header("Authorization") String authorization,@Body Classroom timetable);
+
+    @HTTP(method = "DELETE", path = "/adminDeleteLec", hasBody = true)
+    Call<DtoUser> removeLecturer(@Header("Authorization") String authorization,@Body DtoUser user);
+
+    @HTTP(method = "DELETE", path = "/adminDeleteModule", hasBody = true)
+    Call<Module> removeModule(@Header("Authorization") String authorization,@Body Module module);
+
+    @HTTP(method = "DELETE", path = "/adminDeleteBatch", hasBody = true)
+    Call<Batch> removeBatch(@Header("Authorization") String authorization,@Body Batch batch);
 
 
 }

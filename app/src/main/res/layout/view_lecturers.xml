@@ -90,6 +90,14 @@
             android:src="@drawable/user_square" />
 
         <ImageView
+            android:id="@+id/deleteIco"
+            android:layout_width="50dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="300dp"
+            android:layout_marginTop="60dp"
+            android:src="@drawable/deleteico" />
+
+        <ImageView
             android:id="@+id/callBtn"
             android:layout_width="25dp"
             android:layout_height="25dp"
