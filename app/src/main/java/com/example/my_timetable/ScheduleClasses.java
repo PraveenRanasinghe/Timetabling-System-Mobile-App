@@ -182,70 +182,68 @@ public class ScheduleClasses extends AppCompatActivity{
     public void scheduleClass(View view) throws ParseException {
 
 
-        final String scheduledDate=((TextView)findViewById(R.id.scheduledDate)).getText().toString().trim();
-        final String startT=((TextView)findViewById(R.id.startT)).getText().toString().trim();
-        final String endTime=((TextView)findViewById(R.id.endTimeT)).getText().toString().trim();
-        final String clzz=((Spinner)findViewById(R.id.classRoomIdSpinner)).toString().trim();
+        final String scheduledDate = ((TextView) findViewById(R.id.scheduledDate)).getText().toString().trim();
+        final String startT = ((TextView) findViewById(R.id.startT)).getText().toString().trim();
+        final String endTime = ((TextView) findViewById(R.id.endTimeT)).getText().toString().trim();
+        final String clzz = ((Spinner) findViewById(R.id.classRoomIdSpinner)).toString().trim();
 
-        if(scheduledDate.isEmpty()){
+        if (scheduledDate.isEmpty()) {
             Toast.makeText(getApplicationContext(), "Please Select the Date Field.", Toast.LENGTH_SHORT).show();
-        }
-        else if(startT.isEmpty()){
+        } else if (startT.isEmpty()) {
             Toast.makeText(getApplicationContext(), "Please fill the Start Time Field.", Toast.LENGTH_SHORT).show();
-        }
-        else if(endTime.isEmpty()){
+        } else if (endTime.isEmpty()) {
             Toast.makeText(getApplicationContext(), "Please fill the End Time Field.", Toast.LENGTH_SHORT).show();
-        }
-        else if(clzz.isEmpty()){
+        } else if (clzz.isEmpty()) {
             Toast.makeText(getApplicationContext(), "Please select a Class-Room.", Toast.LENGTH_SHORT).show();
-        }
+        } else {
 
-        SharedPreferences prefs = getSharedPreferences("SHARED", Context.MODE_PRIVATE);
-        String name = prefs.getString("token", null);
-        String jwt = "Bearer " + name;
+            SharedPreferences prefs = getSharedPreferences("SHARED", Context.MODE_PRIVATE);
+            String name = prefs.getString("token", null);
+            String jwt = "Bearer " + name;
 
-        Timetable timetable = new Timetable();
-        RetrofitAPI retrofit = new RetrofitAPI();
+            Timetable timetable = new Timetable();
+            RetrofitAPI retrofit = new RetrofitAPI();
 
-        String sDate=scheduleDate.getText().toString();
-        Date date = new SimpleDateFormat("dd/MM/yyyy").parse(sDate);
+            String sDate = scheduleDate.getText().toString();
+            Date date = new SimpleDateFormat("dd/MM/yyyy").parse(sDate);
 
-        Intent intent =getIntent();
-        Module module = (Module)intent.getSerializableExtra("moduleId");
+            Intent intent = getIntent();
+            Module module = (Module) intent.getSerializableExtra("moduleId");
 
-        Classroom classroom= new Classroom();
-        classroom.setClassRoomID(clz.getClassRoomID());
-        classroom.setCapacity(clz.getCapacity());
-        classroom.setSmartBoard(clz.getSmartBoard());
-        classroom.setAc(clz.getAc());
+            Classroom classroom = new Classroom();
+            classroom.setClassRoomID(clz.getClassRoomID());
+            classroom.setCapacity(clz.getCapacity());
+            classroom.setSmartBoard(clz.getSmartBoard());
+            classroom.setAc(clz.getAc());
 
-        timetable.setStartTime(startTimeTV.getText().toString());
-        timetable.setEndTime(endTimeTV.getText().toString());
-        timetable.setScheduledDate(date);
-        timetable.setClassRoom(classroom);
-        timetable.setBatches(module.getBatches());
-        timetable.setModules(module);
+            timetable.setStartTime(startTimeTV.getText().toString());
+            timetable.setEndTime(endTimeTV.getText().toString());
+            timetable.setScheduledDate(date);
+            timetable.setClassRoom(classroom);
+            timetable.setBatches(module.getBatches());
+            timetable.setModules(module);
 
-        ApiCalls apiCalls = retrofit.getRetrofit().create(ApiCalls.class);
-        Call<Timetable> jwtResponseCall = apiCalls.scheduleClasses(jwt,timetable);
+            ApiCalls apiCalls = retrofit.getRetrofit().create(ApiCalls.class);
+            Call<Timetable> jwtResponseCall = apiCalls.scheduleClasses(jwt, timetable);
 
-        jwtResponseCall.enqueue(new Callback<Timetable>() {
-            @Override
-            public void onResponse(Call<Timetable> call, Response<Timetable> response) {
+            jwtResponseCall.enqueue(new Callback<Timetable>() {
+                @Override
+                public void onResponse(Call<Timetable> call, Response<Timetable> response) {
 
-                if(response.isSuccessful()){
+                    if (response.isSuccessful()) {
+                        Toast.makeText(getApplicationContext(), "Timetable has been Scheduled Successfully! ", Toast.LENGTH_SHORT).show();
+                        startActivity(nextPath);
+                    }
+                }
+
+                @Override
+                public void onFailure(Call<Timetable> call, Throwable t) {
                     Toast.makeText(getApplicationContext(), "Timetable has been Scheduled Successfully! ", Toast.LENGTH_SHORT).show();
                     startActivity(nextPath);
                 }
-            }
-
-            @Override
-            public void onFailure(Call<Timetable> call, Throwable t) {
-                Toast.makeText(getApplicationContext(), "Timetable has been Scheduled Successfully! ", Toast.LENGTH_SHORT).show();
-                startActivity(nextPath);
-            }
-        });
-        nextPath=new Intent(ScheduleClasses.this,View_all_modules.class);
+            });
+            nextPath = new Intent(ScheduleClasses.this, View_all_modules.class);
+        }
     }
 }
 

@@ -155,49 +155,49 @@ public class Add_module extends AppCompatActivity {
         else if(batchName.isEmpty()){
             Toast.makeText(getApplicationContext(), "Please Enter the Batch Name.", Toast.LENGTH_SHORT).show();
         }
+        else {
 
-        SharedPreferences prefs = getSharedPreferences("SHARED", Context.MODE_PRIVATE);
-        String name = prefs.getString("token", null);
-        String jwt = "Bearer " + name;
+            SharedPreferences prefs = getSharedPreferences("SHARED", Context.MODE_PRIVATE);
+            String name = prefs.getString("token", null);
+            String jwt = "Bearer " + name;
 
-        Module module=new Module();
-        RetrofitAPI retrofit = new RetrofitAPI();
+            Module module = new Module();
+            RetrofitAPI retrofit = new RetrofitAPI();
 
 
-        DtoUser user = new DtoUser();
-        user.setEmail(lec);
+            DtoUser user = new DtoUser();
+            user.setEmail(lec);
 
-        List<Batch> batches= new ArrayList<>();
-        batches.add(batchList);
+            List<Batch> batches = new ArrayList<>();
+            batches.add(batchList);
 
-        module.setModuleID(ModuleId.getText().toString());
-        module.setModuleName(ModuleName.getText().toString());
-        module.setUser(user);
-        module.setBatches(batches);
-        ApiCalls apiCalls = retrofit.getRetrofit().create(ApiCalls.class);
+            module.setModuleID(ModuleId.getText().toString());
+            module.setModuleName(ModuleName.getText().toString());
+            module.setUser(user);
+            module.setBatches(batches);
+            ApiCalls apiCalls = retrofit.getRetrofit().create(ApiCalls.class);
 
-        Call<Module> jwtResponseCall = apiCalls.addModule(jwt,module);
+            Call<Module> jwtResponseCall = apiCalls.addModule(jwt, module);
 
-        nextPath=new Intent(Add_module.this, Admin_module_operations.class);
+            nextPath = new Intent(Add_module.this, Admin_module_operations.class);
 
-        jwtResponseCall.enqueue(new Callback<Module>() {
-            @Override
-            public void onResponse(Call<Module> call, Response<Module> response) {
-                if(response.isSuccessful()){
+            jwtResponseCall.enqueue(new Callback<Module>() {
+                @Override
+                public void onResponse(Call<Module> call, Response<Module> response) {
+                    if (response.isSuccessful()) {
 
-                    Toast.makeText(getApplicationContext(), "New Module has been added Successfully! ", Toast.LENGTH_SHORT).show();
-                    startActivity(nextPath);
+                        Toast.makeText(getApplicationContext(), "New Module has been added Successfully! ", Toast.LENGTH_SHORT).show();
+                        startActivity(nextPath);
+                    } else {
+                        Toast.makeText(getApplicationContext(), "Operation Failed........ ! ", Toast.LENGTH_SHORT).show();
+                    }
                 }
-                else {
-                    Toast.makeText(getApplicationContext(), "Operation Failed........ ! ", Toast.LENGTH_SHORT).show();
+
+                @Override
+                public void onFailure(Call<Module> call, Throwable t) {
+                    Toast.makeText(getApplicationContext(), "Operation Failed! ", Toast.LENGTH_SHORT).show();
                 }
-            }
-
-            @Override
-            public void onFailure(Call<Module> call, Throwable t) {
-                Toast.makeText(getApplicationContext(), "Operation Failed! ", Toast.LENGTH_SHORT).show();
-            }
-        });
-
+            });
+        }
     }
 }

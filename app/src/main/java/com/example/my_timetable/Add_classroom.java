@@ -84,31 +84,27 @@ public class Add_classroom extends AppCompatActivity {
         });
     }
 
-    public void addClassRoom(View view){
-        final String classId=((EditText)findViewById(R.id.classRoomId)).getText().toString().trim();
-        final String capacity=((EditText)findViewById(R.id.capacity)).getText().toString().trim();
-        final String  ac=(findViewById(R.id.spinnerAc)).toString().trim();
-        final String smartBoard=(findViewById(R.id.spinnerSMB).toString().trim());
+    public void addClassRoom(View view) {
+        final String classId = ((EditText) findViewById(R.id.classRoomId)).getText().toString().trim();
+        final String capacity = ((EditText) findViewById(R.id.capacity)).getText().toString().trim();
+        final String ac = (findViewById(R.id.spinnerAc)).toString().trim();
+        final String smartBoard = (findViewById(R.id.spinnerSMB).toString().trim());
 
-        if(classId.isEmpty()){
+        if (classId.isEmpty()) {
             Toast.makeText(getApplicationContext(), "Please fill the ClassRoom Id Field.", Toast.LENGTH_SHORT).show();
-        }
-        else if(capacity.isEmpty()){
+        } else if (capacity.isEmpty()) {
             Toast.makeText(getApplicationContext(), "Please Enter the Capacity of the ClassRoom", Toast.LENGTH_SHORT).show();
-        }
-        else if(ac.isEmpty()){
+        } else if (ac.isEmpty()) {
             Toast.makeText(getApplicationContext(), "Please Enter the Air Condition Status of the ClassRoom", Toast.LENGTH_SHORT).show();
-        }
-        else if(smartBoard.isEmpty()){
+        } else if (smartBoard.isEmpty()) {
             Toast.makeText(getApplicationContext(), "Please Enter the SmartBoard Status of the ClassRoom", Toast.LENGTH_SHORT).show();
-        }
-
+        } else{
 
         SharedPreferences prefs = getSharedPreferences("SHARED", Context.MODE_PRIVATE);
         String name = prefs.getString("token", null);
         String jwt = "Bearer " + name;
 
-        Classroom classroom=new Classroom();
+        Classroom classroom = new Classroom();
         RetrofitAPI retrofit = new RetrofitAPI();
         classroom.setClassRoomID(classroomId.getText().toString());
         classroom.setAc(Ac);
@@ -117,17 +113,16 @@ public class Add_classroom extends AppCompatActivity {
 
 
         ApiCalls apiCalls = retrofit.getRetrofit().create(ApiCalls.class);
-        Call<Classroom> jwtResponseCall = apiCalls.addClassroom(jwt,classroom);
+        Call<Classroom> jwtResponseCall = apiCalls.addClassroom(jwt, classroom);
 
-        nextPath=new Intent(Add_classroom.this, Admin_classroom_operations.class);
+        nextPath = new Intent(Add_classroom.this, Admin_classroom_operations.class);
         jwtResponseCall.enqueue(new Callback<Classroom>() {
             @Override
             public void onResponse(Call<Classroom> call, Response<Classroom> response) {
-                if(response.isSuccessful()){
+                if (response.isSuccessful()) {
                     Toast.makeText(getApplicationContext(), "New Classroom has been added Successfully! ", Toast.LENGTH_SHORT).show();
                     startActivity(nextPath);
-                }
-                else {
+                } else {
                     Toast.makeText(getApplicationContext(), "Operation Failed ! ", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -137,6 +132,6 @@ public class Add_classroom extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "Operation Failed! ", Toast.LENGTH_SHORT).show();
             }
         });
-
+    }
     }
 }

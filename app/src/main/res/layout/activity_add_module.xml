@@ -121,7 +121,7 @@
         android:background="@drawable/custom_input"
         android:ems="10"
         android:hint="MOD_any"
-        android:inputType="textEmailAddress" />
+        />
 
     <EditText
         android:id="@+id/AMmoduleName"

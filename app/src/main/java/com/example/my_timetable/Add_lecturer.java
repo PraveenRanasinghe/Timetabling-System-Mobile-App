@@ -69,41 +69,41 @@ public class Add_lecturer extends AppCompatActivity {
         else if(contactNum.isEmpty()){
             Toast.makeText(getApplicationContext(), "Please Enter the Contact Number.", Toast.LENGTH_SHORT).show();
         }
+        else {
 
-        SharedPreferences prefs = getSharedPreferences("SHARED", Context.MODE_PRIVATE);
-        String name = prefs.getString("token", null);
-        String jwt = "Bearer " + name;
+            SharedPreferences prefs = getSharedPreferences("SHARED", Context.MODE_PRIVATE);
+            String name = prefs.getString("token", null);
+            String jwt = "Bearer " + name;
 
-        User user = new User();
-        RetrofitAPI retrofit = new RetrofitAPI();
-        user.setfName(lecFName.getText().toString());
-        user.setlName(lecLName.getText().toString());
-        user.setPassword("Lecturer1234");
-        user.setUserRole(userType.getText().toString());
-        user.setEmail(lecturerEmail.getText().toString());
-        user.setContactNumber(lecContact.getText().toString());
+            User user = new User();
+            RetrofitAPI retrofit = new RetrofitAPI();
+            user.setfName(lecFName.getText().toString());
+            user.setlName(lecLName.getText().toString());
+            user.setPassword("Lecturer1234");
+            user.setUserRole(userType.getText().toString());
+            user.setEmail(lecturerEmail.getText().toString());
+            user.setContactNumber(lecContact.getText().toString());
 
-        ApiCalls apiCalls = retrofit.getRetrofit().create(ApiCalls.class);
-        Call<User> jwtResponseCall = apiCalls.addLecturers(jwt,user);
-        nextPath=new Intent(Add_lecturer.this,Admin_user_operations.class);
+            ApiCalls apiCalls = retrofit.getRetrofit().create(ApiCalls.class);
+            Call<User> jwtResponseCall = apiCalls.addLecturers(jwt, user);
+            nextPath = new Intent(Add_lecturer.this, Admin_user_operations.class);
 
-        jwtResponseCall.enqueue(new Callback<User>() {
-            @Override
-            public void onResponse(Call<User> call, Response<User> response) {
-                if(response.isSuccessful()){
-                    Toast.makeText(getApplicationContext(), "New Lecturer has been Added to the University Successfully! ", Toast.LENGTH_SHORT).show();
-                    startActivity(nextPath);
+            jwtResponseCall.enqueue(new Callback<User>() {
+                @Override
+                public void onResponse(Call<User> call, Response<User> response) {
+                    if (response.isSuccessful()) {
+                        Toast.makeText(getApplicationContext(), "New Lecturer has been Added to the University Successfully! ", Toast.LENGTH_SHORT).show();
+                        startActivity(nextPath);
+                    } else {
+                        Toast.makeText(getApplicationContext(), "Operation Failed Response! ", Toast.LENGTH_SHORT).show();
+                    }
                 }
-                else {
-                    Toast.makeText(getApplicationContext(), "Operation Failed Response! ", Toast.LENGTH_SHORT).show();
+
+                @Override
+                public void onFailure(Call<User> call, Throwable t) {
+                    Toast.makeText(getApplicationContext(), "Operation Failed! ", Toast.LENGTH_SHORT).show();
                 }
-            }
-
-            @Override
-            public void onFailure(Call<User> call, Throwable t) {
-                Toast.makeText(getApplicationContext(), "Operation Failed! ", Toast.LENGTH_SHORT).show();
-            }
-        });
-
+            });
+        }
     }
 }
