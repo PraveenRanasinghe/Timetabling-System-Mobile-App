@@ -56,7 +56,7 @@ public class ViewBatchesAdapter extends RecyclerView.Adapter<ViewBatchesAdapter.
         holder.deleteBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new MaterialAlertDialogBuilder(v.getContext()).setTitle("Remove Classroom").setMessage("Are you sure to Remove this Classroom?").setPositiveButton("YES", new DialogInterface.OnClickListener() {
+                new MaterialAlertDialogBuilder(v.getContext()).setTitle("Remove Batch").setMessage("Are you sure to Remove this Batch?").setPositiveButton("YES", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         SharedPreferences prefs = v.getContext().getSharedPreferences("SHARED", Context.MODE_PRIVATE);

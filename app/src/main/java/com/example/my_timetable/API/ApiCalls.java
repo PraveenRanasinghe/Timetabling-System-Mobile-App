@@ -24,6 +24,7 @@ import retrofit2.http.HTTP;
 import retrofit2.http.Header;
 import retrofit2.http.Headers;
 import retrofit2.http.POST;
+import retrofit2.http.Path;
 
 public interface ApiCalls {
 
@@ -125,5 +126,10 @@ public interface ApiCalls {
     @HTTP(method = "DELETE", path = "/adminDeleteBatch", hasBody = true)
     Call<Batch> removeBatch(@Header("Authorization") String authorization,@Body Batch batch);
 
+    @GET("/adminSearchBatches/{keyword}")
+    Call<List<Batch>> searchBatches(@Header("Authorization")String authorization, @Path("keyword") String keyword);
+
+    @GET("/adminSearchModules/{keyword}")
+    Call<List<Module>> searchModules(@Header("Authorization")String authorization, @Path("keyword") String keyword);
 
 }

@@ -9,11 +9,15 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.my_timetable.API.ApiCalls;
 import com.example.my_timetable.API.RetrofitAPI;
+import com.example.my_timetable.Adapters.ViewBatchesAdapter;
 import com.example.my_timetable.Adapters.ViewModulesAdapter;
+import com.example.my_timetable.Model.Batch;
 import com.example.my_timetable.Model.Module;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -26,13 +30,16 @@ import retrofit2.Response;
 public class View_all_modules extends AppCompatActivity {
 
     private RecyclerView recyclerView;
-
+    EditText searchingWord;
+    Button searchButton;
 
     @Override
     protected void onStart() {
         super.onStart();
 
         recyclerView =findViewById(R.id.viewAllModulesRecyclerView);
+        searchingWord=findViewById(R.id.searchTextModule);
+        searchButton=findViewById(R.id.searchBtnModule);
 
 
         SharedPreferences prefs = getSharedPreferences("SHARED", Context.MODE_PRIVATE);
@@ -56,6 +63,30 @@ public class View_all_modules extends AppCompatActivity {
             public void onFailure(Call<List<Module>> call, Throwable t) {
                 Toast.makeText(getApplicationContext(),"Operation Failed ! "+t, Toast.LENGTH_LONG).show();
                 System.out.println(t);
+            }
+        });
+
+        searchButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Call<List<Module>> searchModules = RetrofitAPI.getRetrofit().create(ApiCalls.class).searchModules(jwt,searchingWord.getText().toString());
+
+                searchModules.enqueue(new Callback<List<Module>>() {
+                    @Override
+                    public void onResponse(Call<List<Module>> call, Response<List<Module>> response) {
+                        if(response.isSuccessful()){
+                            List<Module> moduleList = response.body();
+                            ViewModulesAdapter adapter = new ViewModulesAdapter(moduleList);
+                            recyclerView.setAdapter(adapter);
+                            recyclerView.setLayoutManager(new LinearLayoutManager(View_all_modules.this));
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<List<Module>> call, Throwable t) {
+                        Toast.makeText(getApplicationContext(),"Operation Failed ! "+t, Toast.LENGTH_LONG).show();
+                    }
+                });
             }
         });
 
