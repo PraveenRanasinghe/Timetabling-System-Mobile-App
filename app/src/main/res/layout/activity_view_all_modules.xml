@@ -23,8 +23,34 @@
                 android:backgroundTint="#815AB8"
                 android:src="@drawable/home_fab"
                 />
-
         </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+        <EditText
+            android:id="@+id/searchTextModule"
+            android:layout_width="230dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="50dp"
+            android:layout_weight="1"
+            android:hint="Search Here!"
+            android:textAlignment="center"
+            android:textColor="#050303"
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/searchBtnModule"
+            android:layout_width="135dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="250dp"
+            android:layout_marginTop="42dp"
+            android:layout_marginEnd="55dp"
+            android:backgroundTint="#00ADCC"
+            android:text="Search"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textSize="13dp"
+            android:textStyle="normal" />
+
 
         <TextView
             android:id="@+id/textView3"
@@ -41,8 +67,9 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/viewAllModulesRecyclerView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="643dp"
             android:layout_below="@id/textView3"
+            android:layout_marginTop="39dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

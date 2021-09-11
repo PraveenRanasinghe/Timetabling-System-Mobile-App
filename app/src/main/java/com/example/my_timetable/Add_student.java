@@ -135,41 +135,41 @@ public class Add_student extends AppCompatActivity {
         else if(contactNum.isEmpty()){
             Toast.makeText(getApplicationContext(), "Please Enter the Contact Number.", Toast.LENGTH_SHORT).show();
         }
+        else {
 
-        SharedPreferences prefs = getSharedPreferences("SHARED", Context.MODE_PRIVATE);
-        String name = prefs.getString("token", null);
-        String jwt = "Bearer " + name;
+            SharedPreferences prefs = getSharedPreferences("SHARED", Context.MODE_PRIVATE);
+            String name = prefs.getString("token", null);
+            String jwt = "Bearer " + name;
 
-        User user = new User();
-        RetrofitAPI retrofit = new RetrofitAPI();
-        user.setfName(studFName.getText().toString());
-        user.setlName(studLName.getText().toString());
-        user.setPassword("User1234");
-        user.setUserRole(userType.getText().toString());
-        user.setEmail(studEmail.getText().toString());
-        user.setBatchId(batch_Id);
-        user.setContactNumber(studContact.getText().toString());
+            User user = new User();
+            RetrofitAPI retrofit = new RetrofitAPI();
+            user.setfName(studFName.getText().toString());
+            user.setlName(studLName.getText().toString());
+            user.setPassword("User1234");
+            user.setUserRole(userType.getText().toString());
+            user.setEmail(studEmail.getText().toString());
+            user.setBatchId(batch_Id);
+            user.setContactNumber(studContact.getText().toString());
 
-        ApiCalls apiCalls = retrofit.getRetrofit().create(ApiCalls.class);
-        Call<User> jwtResponseCall = apiCalls.addStudents(jwt,user);
-        nextPath=new Intent(Add_student.this,Admin_user_operations.class);
-        jwtResponseCall.enqueue(new Callback<User>() {
-            @Override
-            public void onResponse(Call<User> call, Response<User> response) {
-                if(response.isSuccessful()){
-                    Toast.makeText(getApplicationContext(), "New Student has been Added to the University Successfully! ", Toast.LENGTH_SHORT).show();
-                    startActivity(nextPath);
+            ApiCalls apiCalls = retrofit.getRetrofit().create(ApiCalls.class);
+            Call<User> jwtResponseCall = apiCalls.addStudents(jwt, user);
+            nextPath = new Intent(Add_student.this, Admin_user_operations.class);
+            jwtResponseCall.enqueue(new Callback<User>() {
+                @Override
+                public void onResponse(Call<User> call, Response<User> response) {
+                    if (response.isSuccessful()) {
+                        Toast.makeText(getApplicationContext(), "New Student has been Added to the University Successfully! ", Toast.LENGTH_SHORT).show();
+                        startActivity(nextPath);
+                    } else {
+                        Toast.makeText(getApplicationContext(), "Operation Failed Response! ", Toast.LENGTH_SHORT).show();
+                    }
                 }
-                else {
-                    Toast.makeText(getApplicationContext(), "Operation Failed Response! ", Toast.LENGTH_SHORT).show();
+
+                @Override
+                public void onFailure(Call<User> call, Throwable t) {
+                    Toast.makeText(getApplicationContext(), "Operation Failed! ", Toast.LENGTH_SHORT).show();
                 }
-            }
-
-            @Override
-            public void onFailure(Call<User> call, Throwable t) {
-                Toast.makeText(getApplicationContext(), "Operation Failed! ", Toast.LENGTH_SHORT).show();
-            }
-        });
-
+            });
+        }
     }
 }

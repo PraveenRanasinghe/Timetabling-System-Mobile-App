@@ -111,6 +111,14 @@
             app:srcCompat="@drawable/user_square" />
 
         <ImageView
+            android:id="@+id/removeStud"
+            android:layout_width="50dp"
+            android:layout_height="45dp"
+            android:layout_marginRight="0dp"
+            android:layout_marginLeft="305dp"
+            app:srcCompat="@drawable/delete2"/>
+
+        <ImageView
             android:id="@+id/callStudent"
             android:layout_width="25dp"
             android:layout_height="25dp"

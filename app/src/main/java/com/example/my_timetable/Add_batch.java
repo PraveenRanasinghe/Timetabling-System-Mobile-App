@@ -113,25 +113,22 @@ public class Add_batch extends AppCompatActivity{
     }
 
     public void createBatch(View view) throws ParseException {
-        final String batchId=((EditText)findViewById(R.id.batchId)).getText().toString().trim();
-        final String batchName=((EditText)findViewById(R.id.batchName)).getText().toString().trim();
-        final String dateOfCommencement=((TextView)findViewById(R.id.commencementDate)).getText().toString().trim();
-        final String dateOfTermination=((TextView)findViewById(R.id.terminationDate)).getText().toString().trim();
+        final String batchId = ((EditText) findViewById(R.id.batchId)).getText().toString().trim();
+        final String batchName = ((EditText) findViewById(R.id.batchName)).getText().toString().trim();
+        final String dateOfCommencement = ((TextView) findViewById(R.id.commencementDate)).getText().toString().trim();
+        final String dateOfTermination = ((TextView) findViewById(R.id.terminationDate)).getText().toString().trim();
 
-        if(batchId.isEmpty()){
+        if (batchId.isEmpty()) {
             Toast.makeText(getApplicationContext(), "Please fill the Batch Id Field.", Toast.LENGTH_SHORT).show();
-        }
-        else if(batchName.isEmpty()){
+        } else if (batchName.isEmpty()) {
             Toast.makeText(getApplicationContext(), "Please fill the Batch Name.", Toast.LENGTH_SHORT).show();
-        }
-        else if(dateOfCommencement.isEmpty()){
+        } else if (dateOfCommencement.isEmpty()) {
             Toast.makeText(getApplicationContext(), "Please fill the Date of Commencement.", Toast.LENGTH_SHORT).show();
-        }
-        else if(dateOfTermination.isEmpty()){
+        } else if (dateOfTermination.isEmpty()) {
             Toast.makeText(getApplicationContext(), "Please fill the Date of Termination.", Toast.LENGTH_SHORT).show();
-        }
+        } else{
 
-        SharedPreferences prefs = getSharedPreferences("SHARED", Context.MODE_PRIVATE);
+            SharedPreferences prefs = getSharedPreferences("SHARED", Context.MODE_PRIVATE);
         String name = prefs.getString("token", null);
         String jwt = "Bearer " + name;
 
@@ -139,8 +136,8 @@ public class Add_batch extends AppCompatActivity{
         RetrofitAPI retrofit = new RetrofitAPI();
 
 
-        String cDate=commencementDate.getText().toString();
-        String tDate=terminationDate.getText().toString();
+        String cDate = commencementDate.getText().toString();
+        String tDate = terminationDate.getText().toString();
         Date date = new SimpleDateFormat("dd/MM/yyyy").parse(cDate);
         Date ter = new SimpleDateFormat("dd/MM/yyyy").parse(tDate);
 
@@ -150,18 +147,17 @@ public class Add_batch extends AppCompatActivity{
         batch.setEndDate(ter);
 
         ApiCalls apiCalls = retrofit.getRetrofit().create(ApiCalls.class);
-        Call<Batch> jwtResponseCall = apiCalls.addBatch(jwt,batch);
+        Call<Batch> jwtResponseCall = apiCalls.addBatch(jwt, batch);
 
-        nextPath =new Intent(Add_batch.this,Admin_batch_operations.class);
+        nextPath = new Intent(Add_batch.this, Admin_batch_operations.class);
 
         jwtResponseCall.enqueue(new Callback<Batch>() {
             @Override
             public void onResponse(Call<Batch> call, Response<Batch> response) {
-                if(response.isSuccessful()){
+                if (response.isSuccessful()) {
                     Toast.makeText(getApplicationContext(), "New Batch has been Added to the University Successfully! ", Toast.LENGTH_SHORT).show();
                     startActivity(nextPath);
-                }
-                else {
+                } else {
                     Toast.makeText(getApplicationContext(), "Operation Failed Response! ", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -171,6 +167,6 @@ public class Add_batch extends AppCompatActivity{
                 Toast.makeText(getApplicationContext(), "Operation Failed! ", Toast.LENGTH_SHORT).show();
             }
         });
-
+    }
     }
 }

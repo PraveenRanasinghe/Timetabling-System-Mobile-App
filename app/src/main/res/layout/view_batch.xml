@@ -11,7 +11,13 @@
         android:background="@drawable/batch_card"
         android:padding="20dp">
 
-
+        <ImageView
+            android:id="@+id/deleteBatch"
+            android:layout_width="50dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="300dp"
+            android:layout_marginTop="6dp"
+            android:src="@drawable/deleteico" />
         <TextView
             android:id="@+id/AbatchId"
             android:layout_width="280dp"

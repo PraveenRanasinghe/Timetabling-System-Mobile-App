@@ -18,12 +18,27 @@
             android:layout_height="22dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginStart="122dp"
-            android:layout_marginEnd="70dp"
+            android:layout_marginStart="125dp"
+            android:layout_marginEnd="130dp"
             android:text="CLZ_001"
             android:textAlignment="center"
             android:textColor="@android:color/black"
             android:textSize="18dp"
+            android:textStyle="normal" />
+
+        <Button
+            android:id="@+id/clzRemoveBtn"
+            android:layout_width="280dp"
+            android:layout_height="50dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="250dp"
+            android:layout_marginEnd="10dp"
+            android:text="Remove Class"
+            android:backgroundTint="#FA3131"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textSize="9dp"
             android:textStyle="normal" />
 
         <TextView
