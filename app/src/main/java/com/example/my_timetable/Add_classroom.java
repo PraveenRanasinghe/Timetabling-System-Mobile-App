@@ -123,7 +123,7 @@ public class Add_classroom extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "New Classroom has been added Successfully! ", Toast.LENGTH_SHORT).show();
                     startActivity(nextPath);
                 } else {
-                    Toast.makeText(getApplicationContext(), "Operation Failed ! ", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Classroom Id is Already used. Please try with another Id!", Toast.LENGTH_SHORT).show();
                 }
             }
 

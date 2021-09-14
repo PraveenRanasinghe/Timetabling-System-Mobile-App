@@ -161,7 +161,7 @@ public class Add_student extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(), "New Student has been Added to the University Successfully! ", Toast.LENGTH_SHORT).show();
                         startActivity(nextPath);
                     } else {
-                        Toast.makeText(getApplicationContext(), "Operation Failed Response! ", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Operation Failed. Cannot Add the Student. Please Check the given details!", Toast.LENGTH_SHORT).show();
                     }
                 }
 

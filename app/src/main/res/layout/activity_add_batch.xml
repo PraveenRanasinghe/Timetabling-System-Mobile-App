@@ -129,9 +129,10 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="320dp"
         android:layout_marginBottom="285dp"
-        android:background="@drawable/add_button"
+        android:backgroundTint="#B53AEA"
         android:text="select"
-        android:textAlignment="center" />
+        android:textAlignment="center"
+        android:textSize="10dp" />
 
 
     <TextView
@@ -154,8 +155,9 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="320dp"
         android:layout_marginBottom="180dp"
-        android:background="@drawable/add_button"
+        android:backgroundTint="#B53AEA"
         android:textAlignment="center"
+        android:textSize="10dp"
         tools:text="select" />
 
     <TextView

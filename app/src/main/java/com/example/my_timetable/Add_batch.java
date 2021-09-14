@@ -158,7 +158,7 @@ public class Add_batch extends AppCompatActivity{
                     Toast.makeText(getApplicationContext(), "New Batch has been Added to the University Successfully! ", Toast.LENGTH_SHORT).show();
                     startActivity(nextPath);
                 } else {
-                    Toast.makeText(getApplicationContext(), "Operation Failed Response! ", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Batch Id is Already Used. Please try with new Batch Id!", Toast.LENGTH_SHORT).show();
                 }
             }
 

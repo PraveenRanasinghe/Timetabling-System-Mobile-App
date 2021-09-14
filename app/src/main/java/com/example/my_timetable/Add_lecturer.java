@@ -95,7 +95,7 @@ public class Add_lecturer extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(), "New Lecturer has been Added to the University Successfully! ", Toast.LENGTH_SHORT).show();
                         startActivity(nextPath);
                     } else {
-                        Toast.makeText(getApplicationContext(), "Operation Failed Response! ", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Operation Failed. Cannot Add the Lecturer. Please Check the given details!", Toast.LENGTH_SHORT).show();
                     }
                 }
 

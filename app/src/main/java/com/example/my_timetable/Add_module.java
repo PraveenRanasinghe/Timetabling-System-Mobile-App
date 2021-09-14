@@ -189,7 +189,7 @@ public class Add_module extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(), "New Module has been added Successfully! ", Toast.LENGTH_SHORT).show();
                         startActivity(nextPath);
                     } else {
-                        Toast.makeText(getApplicationContext(), "Operation Failed........ ! ", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Operation Failed. Cannot Add the Module. Please Check the given details! ", Toast.LENGTH_SHORT).show();
                     }
                 }
 

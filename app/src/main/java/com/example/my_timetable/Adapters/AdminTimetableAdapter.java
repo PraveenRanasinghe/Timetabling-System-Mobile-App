@@ -52,7 +52,7 @@ public class AdminTimetableAdapter extends RecyclerView.Adapter<AdminTimetableAd
 
         holder.classRoomId.setText(timetableDTO.getClassRoom().getClassRoomID());
         holder.startTime.setText(timetableDTO.getStartTime());
-        holder.endTime.setText(timetableDTO.getStartTime());
+        holder.endTime.setText(timetableDTO.getEndTime());
         holder.scheduledDate.setText(timetableDTO.getScheduledDate());
         holder.moduleName.setText(timetableDTO.getModule().getModuleName());
         holder.batch.setText(timetableDTO.getBatches().toString());
